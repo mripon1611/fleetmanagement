@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TblvechileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,4 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/managevehicle', function () {
-    return view('pages.managevehicle');
-});
+Route::get('/managevehicle', [TblvechileController::class, 'managevehicle']);
