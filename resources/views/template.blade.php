@@ -28,6 +28,7 @@
     <!-- ico font -->
     <link rel="stylesheet" type="text/css" href="files/assets/icon/icofont/css/icofont.css">
     <!-- feather Awesome -->
+    <script src="https://kit.fontawesome.com/8293ff3daa.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="files/assets/icon/feather/css/feather.css">
     <!-- Data Table Css -->
     <!-- <link rel="stylesheet" type="text/css" href="../files/assets/pages/data-table/css/jquery.dataTables.min.css"> -->
@@ -36,6 +37,7 @@
     <link rel="stylesheet" type="text/css" href="files/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="files/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="files/assets/css/linearicons.css">
     <link rel="stylesheet" type="text/css" href="files/assets/css/jquery.mCustomScrollbar.css">
 </head>
 

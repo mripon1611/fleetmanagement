@@ -26,6 +26,33 @@
                                         </li>
                                     </ul>
                                 </li>
+
+                                <!-- Manage Vehicle start here -->
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)">
+                                        <span class="pcoded-micon"><i class="fas fa-truck-monster"></i></span>
+                                        <span class="pcoded-mtext">Manage Vehicle</span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="/managevehicle">
+                                                <span class="pcoded-mtext">Vehicle</span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="/driverlist">
+                                                <span class="pcoded-mtext">Driver List</span>
+                                            </a>
+                                        </li>
+                                        <li class="Disabled">
+                                            <a href="/modals">
+                                                <span class="pcoded-mtext">Modals</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- Mange Vehicle ends here -->
+
                                 <li class="pcoded-hasmenu">
                                     <a href="javascript:void(0)">
                                         <span class="pcoded-micon"><i class="feather icon-sidebar"></i></span>
