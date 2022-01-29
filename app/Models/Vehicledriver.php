@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 
-class Driver extends Model
+class Vehicledriver extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -19,18 +19,10 @@ class Driver extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'name_bn',
-        'nid',
-        'blood',
-        'license',
-        'license_ex',
-        'photograph',
-        'isassigned',
-        'join_date',
-        'salary',
-        'contact',
-        'emergency',
+        'vregno',
+        'dlicensenumber',
+        'assigndate',
+        'releasedate',
+        'status',
     ];
-
 }

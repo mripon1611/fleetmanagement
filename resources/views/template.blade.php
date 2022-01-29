@@ -171,6 +171,9 @@
 
 
     <!-- custom js -->
+    <script type="text/javascript" src="js/main.js"></script>
+
+
     <script src="files/assets/js/vartical-layout.min.js"></script>
     <script type="text/javascript" src="files/assets/pages/dashboard/custom-dashboard.js"></script>
     <script type="text/javascript" src="files/assets/js/script.min.js"></script>
@@ -178,6 +181,7 @@
     <script src="files/assets/js/pcoded.min.js"></script>
     <script src="files/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script type="text/javascript" src="files/assets/js/script.js"></script>
+    
 </body>
 
 </html>

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TblvechileController;
 use App\Http\Controllers\DriverController;
+use App\Http\Controllers\VehicleController;
+use App\Http\Controllers\FileUploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +27,11 @@ Route::get('/modals', function () {
 Route::get('/managevehicle', [TblvechileController::class, 'managevehicle']);
 Route::get('/driverlist', [DriverController::class, 'driverList']);
 Route::post('/addnewdriver', [DriverController::class, 'addNewDriver']);
+Route::post('/driverupdate', [DriverController::class, 'driverUpdate']);
+
+
+
+Route::get('/vehicle', [VehicleController::class, 'vehicleList']);
+Route::post('/addnewvehicle', [VehicleController::class, 'addNewVehicle']);
+
+
