@@ -4,24 +4,23 @@
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="pcoded-hasmenu active pcoded-trigger">
                                     <a href="javascript:void(0)">
-                                        <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                                        <span class="pcoded-micon"><i class="fas fa-truck-monster"></i></span>
                                         <span class="pcoded-mtext">Dashboard</span>
                                     </a>
                                     <ul class="pcoded-submenu">
                                         <li class="active">
-                                            <a href="https://demo.dashboardpack.com/adminty-html/default/index.html">
-                                                <span class="pcoded-mtext">Default</span>
+                                            <a href="/managevehicle">
+                                                <span class="pcoded-mtext">Vehicles</span>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a href="default/dashboard-crm.html">
-                                                <span class="pcoded-mtext">CRM</span>
+                                            <a href="/driverlist">
+                                                <span class="pcoded-mtext">Driver List</span>
                                             </a>
                                         </li>
                                         <li class=" ">
-                                            <a href="default/dashboard-analytics.html">
-                                                <span class="pcoded-mtext">Analytics</span>
-                                                <span class="pcoded-badge label label-info ">NEW</span>
+                                            <a href="/vehicle">
+                                                <span class="pcoded-mtext">Manage Vehicle</span>
                                             </a>
                                         </li>
                                     </ul>

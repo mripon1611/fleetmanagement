@@ -11,7 +11,6 @@ use App\Models\Vehicledriver;
 use App\Repositories\ModelsRepository;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
-// use Validation;
 
 class DriverController extends Controller
 {
@@ -83,43 +82,20 @@ class DriverController extends Controller
         return $freevehicles;
         
     }
+    static function assignVehicleToDriver() {
+        $assignvehicletodrivers = DB::table('vehicledrivers')->select('*')->where('status', 'present')->get();
+
+        return $assignvehicletodrivers;   
+
+        
+    }
 
     public function driverUpdate ( Request $req ) {
+        $reqdata = $req->input();
 
+        $this->data->editDriverDetails($reqdata);
 
-
-        $driver = Driver::find($req->id);
-
-        $vehicledriver = Vehicledriver::select('*')
-                ->where('dlicensenumber', $req->license)
-                ->where('status','present')
-                ->get();
-
-        $vehicle = Vehicle::select('*')
-                ->where('regno', $req->vehicle)
-                ->get();
-        
-        if($vehicledriver == null) {
-            // $vcldrvr = new Vehicledriver;
-            $vcldrvr = [];
-            $vcldrvr['vregno'] = $req->vehicle;
-            $vcldrvr['dlicensenumber'] = $req->license;
-            $vcldrvr['assigndate'] = $req->assigndate;
-            $vcldrvr['status'] = 'present';
-
-            Vehicledriver::create($vcldrvr);
-            return redirect('/driverlist');
-        } 
-        // else{
-        //     $vehicledriver->releasedate = $req->assigndate;
-        //     $vehicledriver->save();
-        // }
-
-        // $vehicle->toassigned = 1;
-        // $vehicle->save();
-
-
-        // die();
+        return redirect('/driverlist');
 
     }
 }

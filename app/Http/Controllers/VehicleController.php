@@ -5,9 +5,13 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Driver;
 use App\Models\Vehicle;
+use App\Models\Vehicledriver;
+use App\Models\Vpaper;
 use App\Repositories\ModelsRepository;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class VehicleController extends Controller
 {
@@ -41,5 +45,21 @@ class VehicleController extends Controller
         $vehicle = $this->data->newVehicle($data);
         return redirect('/vehicle');
 
+    }
+    static function freeDriver() {
+
+        $freedrivers = DB::table('drivers')
+        ->select('name')
+        ->where('isassigned', '0')
+        ->get();
+
+        return $freedrivers;
+        
+    }
+
+    public function addNewDocuments ( Request $req ) {
+        $reqdata = $req->input();
+        Vpaper::create($reqdata);
+        return redirect('/vehicle');
     }
 }

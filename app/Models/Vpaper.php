@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 
-class Vehicledriver extends Model
+class Vpaper extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -19,11 +19,15 @@ class Vehicledriver extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'vregno',
-        'dlicensenumber',
-        'drivername',
-        'assigndate',
-        'releasedate',
-        'status',
+        'vehicleregno',
+        'ttokenissuedate',
+        'ttokenexpiredate',
+        'tokenfile',
+        'rpermitissuedate',
+        'rpermitexpiredate',
+        'permitfile',
+        'fitnessissuedate',
+        'fitnessexpiredate',
+        'fitnessfile',
     ];
 }
