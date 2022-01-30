@@ -12,26 +12,14 @@
 <!-- Page-header start -->
 <div class="page-header">
     <div class="row align-items-end">
-        <div class="col-lg-8">
-            <div class="page-header-title">
-                <div class="d-inline">
-                    <h4>Basic Table Sizes</h4>
-                    <span>lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
+        <div class="col-lg-12">
             <div class="page-header-breadcrumb">
                 <ul class="breadcrumb-title">
                     <li class="breadcrumb-item" style="float: left;">
                         <a href="/"> <i class="feather icon-home"></i> </a>
                     </li>
                     <li class="breadcrumb-item" style="float: left;">
-                        <a href="dt-basic.html#!">Bootstrap Table</a>
-                    </li>
-                    <li class="breadcrumb-item" style="float: left;">
-                        <a href="dt-basic.html#!">Basic Initialization</a>
+                        <a href="/driverlist">Driver List</a>
                     </li>
                 </ul>
             </div>

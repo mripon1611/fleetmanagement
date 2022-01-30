@@ -34,6 +34,7 @@ Route::post('/driverupdate', [DriverController::class, 'driverUpdate']);
 Route::get('/vehicle', [VehicleController::class, 'vehicleList']);
 Route::post('/addnewvehicle', [VehicleController::class, 'addNewVehicle']);
 
+Route::get('/vehicledocuments/{regno}', [VehicleController::class, 'vehicleDocuments'])->named('vehicledocuments');
 Route::post('/adddocuments', [VehicleController::class, 'addNewDocuments']);
 
 

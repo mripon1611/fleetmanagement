@@ -13,25 +13,14 @@
 <!-- Page-header start -->
 <div class="page-header">
     <div class="row align-items-end">
-        <div class="col-lg-8">
-            <div class="page-header-title">
-                <div class="d-inline">
-                    <h4>Basic Table Sizes</h4>
-                    <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
+        <div class="col-lg-12">
             <div class="page-header-breadcrumb">
                 <ul class="breadcrumb-title">
                     <li class="breadcrumb-item" style="float: left;">
                         <a href="/"> <i class="feather icon-home"></i> </a>
                     </li>
                     <li class="breadcrumb-item" style="float: left;">
-                        <a href="dt-basic.html#!">Bootstrap Table</a>
-                    </li>
-                    <li class="breadcrumb-item" style="float: left;">
-                        <a href="dt-basic.html#!">Basic Initialization</a>
+                        <a href="/vehicle">Manage Vehicle</a>
                     </li>
                 </ul>
             </div>
@@ -52,8 +41,8 @@
                     <div class="d-flex justify-content-end mb-2">
                         <button class="btn btn-primary" data-toggle="modal" data-target="#addnewvehicle">Add New Vehicle</button>
                     </div>
-                    <div class="dt-responsive table-responsive text-center">
-                        <table id="vehicletable" class="table table-hover table-bordered nowrap">
+                    <div class="dt-responsive table-responsive">
+                        <table id="vehicletable" class="table table-hover table-bordered nowrap text-center">
                             <thead>
                                 <tr>
                                     <th>SL</th>
@@ -91,7 +80,7 @@
                                         </button>
                                     </td>
                                     <td>
-                                        <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#documents_{{$data['id']}}"><i class="fas fa-eye"></i></i>Documents</button>
+                                        <a href="/vehicledocuments/{{$data['regno']}}" class="btn btn-xs btn-primary"><i class="fas fa-eye"></i></i>Documents</a>
                                         <button class="btn btn-xs btn-success" data-toggle="modal" data-target="#addnewdocuments_{{$data['id']}}"><i class="fas fa-edit"></i>Document</button>
                                         <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#vehicledetails_{{$data['id']}}"><i class="fas fa-eye"></i>Details</button>
                                         <button class="btn btn-xs btn-success" data-toggle="modal" data-target="#vehicleupdate"><i class="fas fa-edit"></i>Update</button>
@@ -256,7 +245,7 @@
                                                             <input type="hidden" class="form-control" id="vehicleregno" name="vehicleregno" value="{{$data['regno']}}">
                                                             <div class="form-group col-md-6">
                                                                 <label for="doctype">Select Documents Type</label>
-                                                                <select id="doctype" class="form-control" name="doctype">
+                                                                <select id="doctype" class="form-control doctype" name="doctype">
                                                                     <option>--select--</option>
                                                                     <option value="taxtoken">Tax Token</option>
                                                                     <option value="fitness">Fitness</option>

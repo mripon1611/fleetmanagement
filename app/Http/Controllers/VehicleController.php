@@ -62,4 +62,14 @@ class VehicleController extends Controller
         Vpaper::create($reqdata);
         return redirect('/vehicle');
     }
+
+    public function vehicleDocuments ($regno) {
+        $documents = DB::table('vpapers')
+        ->select('*')
+        ->where('vehicleregno', $regno)
+        ->get();
+
+        return view('pages.vehicledocuments',['datas'=>$documents]);
+        // return $documents;
+    }
 }

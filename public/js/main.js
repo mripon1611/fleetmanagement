@@ -1,10 +1,10 @@
 $(document).ready(function() {
 
     $('#vehicletable').DataTable();
-    $('.vcldocument').DataTable();
+    $('#vehicledocuments').DataTable();
 
-    $( "#doctype" ).click(function() {
-        var val = $( "#doctype" ).val();
+    $( ".doctype" ).click(function() {
+        var val = $( ".doctype" ).val();
         console.log(val);
         if(val === 'taxtoken') {
             $("#ttoken").show();
