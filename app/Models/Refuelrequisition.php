@@ -25,6 +25,7 @@ class Refuelrequisition extends Model
         'crodo',
         'ttlqty',
         'fueltype',
+        'costplitter',
         'totalprice',
         'file',
         'created_date',

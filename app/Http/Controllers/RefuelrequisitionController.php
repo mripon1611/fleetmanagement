@@ -24,4 +24,27 @@ class RefuelrequisitionController extends Controller
         return view('pages.refuel-requisition',['datas'=>$datas]);
         // return $datas;
     }
+
+    public function addnewRefuelreq( Request $req ) {
+        $datas = $req->input();
+        $datas['totalprice'] = ($datas['ttlqty'] * $datas['costplitter']);
+        // return $datas['totalprice'];
+        Refuelrequisition::create($datas);
+        return redirect('/refuel-requisition');
+
+    }
+
+    static function vehiclesList() {
+        $vehicleslist = DB::table('vehicledrivers')
+                            ->select('vregno', 'drivername')
+                            ->where('status', 'present')
+                            ->get();
+        return $vehicleslist;
+    }
+    static function addedVehicles() {
+        $addedvehicles = DB::table('refuelrequisitions')
+                            ->select('vregno')
+                            ->get();
+        return $addedvehicles;
+    }
 }

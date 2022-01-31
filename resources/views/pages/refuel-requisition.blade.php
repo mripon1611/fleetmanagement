@@ -2,7 +2,11 @@
 @section('maincontents')
 
 <?php
+    use App\Http\Controllers\RefuelrequisitionController;
+    $vehicleslists = RefuelrequisitionController::vehiclesList();
+    $addedvehicles = RefuelrequisitionController::addedVehicles();
     $sl = 1;
+    $t= 0; // 0= flase, 1=true 
 ?>
 
 <!-- Page-header start -->
@@ -64,12 +68,81 @@
                                     <td>{{$data['fueltype']}}</td>
                                     <td>{{$data['created_date']}}</td>
                                     <td>
-                                        <button class="btn btn-xs btn-success"><i class="fas fa-eye"></i>Details</button>
+                                        <button class="btn btn-xs btn-success" data-toggle="modal" data-target="#details_{{$data['id']}}"><i class="fas fa-eye"></i>Details</button>
                                         <button class="btn btn-xs btn-primary"><i class="fas fa-eye"></i>Updates</button>
                                         <button class="btn btn-xs btn-success"><i class="fas fa-history"></i>History</button>
                                         <button class="btn btn-xs btn-danger"><i class="fas fa-trash-alt"></i>Delete</button>
                                     </td>
                                 </tr>
+                                <!-- Modal  details  -->
+                                <div id="details_{{$data['id']}}" class="modal fade mixed-form" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="login-card login-card-modal modal-content card">
+                                            <form class="md-float-material" enctype="multipart/form-data">
+                                                <div class="card m-t-15">
+                                                    <div class="auth-box card-block">
+                                                        <div class="row m-b-20">
+                                                            <div class="col-md-12">
+                                                                <h3 class="text-center txt-primary">Details</h3>
+                                                            </div>
+                                                        </div>
+                                                        <hr />
+                                                        <div class="row">
+                                                            <div class="form-group col-md-6">
+                                                                <label for="vregno">Vehicle Reg No</label>
+                                                                <input type="text" class="form-control" id="vregno" name="vregno" value="{{$data['vregno']}}" readonly>
+                                                                <span class="md-line"></span>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="staffname">Staff Name</label>
+                                                                <input type="text" class="form-control" id="staffname" name="staffname" value="{{$data['staffname']}}" readonly>
+                                                                <span class="md-line"></span>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="pvsodo">Previous ODO</label>
+                                                                <input type="text" class="form-control" id="pvsodo" name="pvsodo" placeholder="{{$data['pvsodo']}}" readonly>
+                                                                <span class="md-line"></span>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="crodo">Current ODO</label>
+                                                                <input type="text" class="form-control" id="crodo" name="crodo" placeholder="{{$data['crodo']}}" readonly>
+                                                                <span class="md-line"></span>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="ttlqty">Total Quntity</label>
+                                                                <input type="text" class="form-control" id="ttlqty" name="ttlqty" placeholder="{{$data['ttlqty']}}" readonly>
+                                                                <span class="md-line"></span>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="fueltype">Fuel Type</label>
+                                                                <input type="text" class="form-control" id="fueltype" name="fueltype" placeholder="{{$data['fueltype']}}" readonly>
+                                                                <span class="md-line"></span>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="totalprice">Total Price</label>
+                                                                <input type="text" class="form-control" id="totalprice" name="totalprice" placeholder="{{$data['totalprice']}}" readonly>
+                                                                <span class="md-line"></span>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="file">File</label>
+                                                                <a href="#" class="form-control">{{$data['file']}}</a>
+                                                                <!-- <input type="file" class="form-control" id="file" name="file"> -->
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="crtdate">Created Date</label>
+                                                                <input type="text" class="form-control" id="crtdate" name="crtdate" placeholder="{{$data['created_date']}}" readonly>
+                                                                <span class="md-line"></span>
+                                                            </div>                                    
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <!-- end of form -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--End Modal  details -->
+
                                 @endforeach
                                 <!-- foreach end for $datas -->
                             </tbody>
@@ -99,7 +172,7 @@
 <div id="addnew" class="modal fade mixed-form" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="login-card login-card-modal modal-content card">
-            <form class="md-float-material" action="/addnewvehicle" method="POST" enctype="multipart/form-data">
+            <form class="md-float-material" action="/addnew-refuelreq" method="POST" enctype="multipart/form-data">
                 <div class="card m-t-15">
                     <div class="auth-box card-block">
                         <div class="row m-b-20">
@@ -110,12 +183,43 @@
                         <hr />
                         @csrf()
                         <div class="row">
-                            <div class="form-group col-md-6">
-                                <label for="vregno">Vehicle Reg No<span style="color: red;">*</span></label>
-                                <input type="text" class="form-control" id="vregno" name="vregno" placeholder="dhaka metro-ha 123-4567">
-                                <span class="md-line"></span>
-                                <span class="md-line text-danger">@error('vregno'){{$message}}@enderror</span>
-                            </div>
+                            @foreach($vehicleslists as $vehicleslist)
+                                @foreach($addedvehicles as $addedvehicle)
+                                    @if($vehicleslist->vregno == $addedvehicle->vregno)
+                                        @php
+                                            $t = 0
+                                        @endphp
+                                        @break
+                                    @else
+                                        @php
+                                            $t = 1
+                                        @endphp
+                                    @endif
+                                @endforeach
+                                @if($t == 1)
+                                    <div class="form-group col-md-6">
+                                        <label for="vregno">Vehicle Reg No<span style="color: red;">*</span></label>
+                                        <select id="vregno" class="form-control" name="vregno">
+                                            <option>Select Vehicle</option>
+                                            <option value="{{$vehicleslist->vregno}}">{{$vehicleslist->vregno}}</option>
+                                        </select>
+                                        <span class="md-line"></span>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="staffname">Staff Name<span style="color: red;">*</span></label>
+                                        <select id="staffname" class="form-control" name="staffname">
+                                            <option>Select Staff</option>
+                                            <option value="{{$vehicleslist->drivername}}">{{$vehicleslist->drivername}}</option>
+                                        </select>
+                                        <span class="md-line"></span>
+                                    </div>
+                                @else
+                                    @php
+                                        $t = 0
+                                    @endphp
+                                @endif
+                                
+                            @endforeach
                             <div class="form-group col-md-6">
                                 <label for="pvsodo">Previous ODO</label>
                                 <input type="text" class="form-control" id="pvsodo" name="pvsodo" placeholder="Previous ODO" readonly>
@@ -154,10 +258,10 @@
                                 <span class="md-line text-danger">@error('file'){{$message}}@enderror</span>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="crtdate">Created Date<span style="color: red;">*</span></label>
-                                <input type="date" class="form-control" id="crtdate" name="crtdate">
+                                <label for="created_date">Created Date<span style="color: red;">*</span></label>
+                                <input type="date" class="form-control" id="created_date" name="created_date">
                                 <span class="md-line"></span>
-                                <span class="md-line text-danger">@error('crtdate'){{$message}}@enderror</span>
+                                <span class="md-line text-danger">@error('created_date'){{$message}}@enderror</span>
                             </div>                                    
                         </div>
                         <div class="row m-t-15">
