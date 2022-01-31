@@ -63,12 +63,11 @@ class VehicleController extends Controller
         return redirect('/vehicle');
     }
 
-    public function vehicleDocuments ($regno) {
+    public function vehicleDocuments (Request $req) {
         $documents = DB::table('vpapers')
         ->select('*')
-        ->where('vehicleregno', $regno)
+        ->where('vehicleregno', $req->regno)
         ->get();
-
         return view('pages.vehicledocuments',['datas'=>$documents]);
         // return $documents;
     }

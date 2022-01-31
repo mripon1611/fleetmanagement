@@ -15,12 +15,17 @@
                                         </li>
                                         <li class="">
                                             <a href="/driverlist">
-                                                <span class="pcoded-mtext">Driver List</span>
+                                                <span class="pcoded-mtext">Manage Driver</span>
                                             </a>
                                         </li>
                                         <li class=" ">
                                             <a href="/vehicle">
                                                 <span class="pcoded-mtext">Manage Vehicle</span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="/refuel-requisition">
+                                                <span class="pcoded-mtext">Refuel Requisition</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -40,7 +45,7 @@
                                         </li>
                                         <li class=" ">
                                             <a href="/driverlist">
-                                                <span class="pcoded-mtext">Driver List</span>
+                                                <span class="pcoded-mtext">Manage Driver</span>
                                             </a>
                                         </li>
                                         <li class=" ">

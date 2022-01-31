@@ -98,4 +98,23 @@ class DriverController extends Controller
         return redirect('/driverlist');
 
     }
+
+    public function unique () {
+        $datas = DB::table('vehicledrivers')
+            ->select('vregno')
+            ->distinct()
+            ->get();
+
+        return $datas;
+    }
+
+    public function drivingHistory(Request $req) {
+        $drivinglists = DB::table('vehicledrivers')
+        ->select('*')
+        ->where('dlicensenumber', $req->license)
+        ->get();
+
+        return view('pages.drivinghistory',['datas'=>$drivinglists]);
+
+    }
 }
