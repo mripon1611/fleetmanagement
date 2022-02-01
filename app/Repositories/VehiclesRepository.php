@@ -77,35 +77,6 @@ class VehiclesRepository implements VehiclesInterface {
             $driver->save();
 
         }
-
-        // if(count($vdid) > 0) {
-
-        //     $avid = (Vehicle::select('id'))
-        //         ->where('regno', $vehicledriver->vregno)
-        //         ->get();
-        //     $avehicle = Vehicle::find($avid[0]->id);
-        //     $avehicle->toassigned = 0;
-        //     $avehicle->save();
-
-        //     $vehicle->toassigned = 1;
-        //     $vehicle->save();
-
-        //     $driver->isassigned = 1;
-        //     $driver->save();
-
-        //     return;
-
-        // } else{
-        //     Vehicledriver::create($vcldrvr);
-
-        //     $vehicle->toassigned = 1;
-        //     $vehicle->save();
-
-        //     $driver->isassigned = 1;
-        //     $driver->save();
-
-        //     return;
-        // }
         return;
     }
 
