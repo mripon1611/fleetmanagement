@@ -14,7 +14,6 @@ class CreateVpapersTable extends Migration
     public function up()
     {
         Schema::create('vpapers', function (Blueprint $table) {
-            $table->id();
             $table->charset = 'utf8';
             $table->collation = 'utf8_general_ci';
             $table->id();
