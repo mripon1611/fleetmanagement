@@ -21,10 +21,10 @@ class CreateDriversTable extends Migration
             $table->string('name_bn',50)->nullable();
             $table->string('nid',20)->unique()->nullable();
             $table->string('blood',5)->nullable();
-            $table->string('lisence',30)->unique()->nullable();
+            $table->string('license',30)->unique()->nullable();
             $table->date('license_ex')->nullable();
-            $table->string('photograp',50)->nullable();
-            $table->string('isaasigned',5)->nullable();
+            $table->string('photograph',50)->nullable();
+            $table->string('isassigned',5)->nullable();
             $table->date('join_date')->nullable();
             $table->string('salary',15)->nullable();
             $table->string('contact',13)->nullable();

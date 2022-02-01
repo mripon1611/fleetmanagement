@@ -4,27 +4,8 @@
 <?php
     $sl = 1;
 ?>
-
 <!-- Page-header start -->
-<div class="page-header">
-    <div class="row align-items-end">
-        <div class="col-lg-12">
-            <div class="page-header-breadcrumb">
-                <ul class="breadcrumb-title">
-                    <li class="breadcrumb-item" style="float: left;">
-                        <a href="/"> <i class="feather icon-home"></i> </a>
-                    </li>
-                    <li class="breadcrumb-item" style="float: left;">
-                        <a href="/refuel-requisition">Refuel Requisition</a>
-                    </li>
-                    <li class="breadcrumb-item" style="float: left;">
-                        Refuel Requisition History
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+@include('pages.Fuel.historyheader')
 <!-- Page-header end -->
 
 <!-- Page-body start -->
@@ -35,9 +16,7 @@
             <div class="card">
                 <div class="card-header">
                     <p>Refuel Requisition History : <span style="color:#1684c5;">
-                            @if(count($datas)>0)
-                            {{$datas[0]->vregno}}
-                            @endif
+                            {{$vregno}}
                         </span>
                     </p>
                 </div>
@@ -92,7 +71,5 @@
     </div>
 </div>
 <!-- Page-body end -->
-
-
 
 @endsection

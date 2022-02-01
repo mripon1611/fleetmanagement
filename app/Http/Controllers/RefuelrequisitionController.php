@@ -26,7 +26,7 @@ class RefuelrequisitionController extends Controller
 
     public function index() {
         $datas = Refuelrequisition::all();
-        return view('pages.refuel-requisition',['datas'=>$datas]);
+        return view('pages.Fuel.refuel-requisition',['datas'=>$datas]);
         // return $datas;
     }
 
@@ -61,7 +61,7 @@ class RefuelrequisitionController extends Controller
         ->where('vregno', $req->vregno)
         ->get();
 
-        return view('pages.refuelreqhistory',['datas'=>$refuelreqlists]);
+        return view('pages.Fuel.refuelreqhistory',['datas'=>$refuelreqlists,'vregno'=>$req->vregno]);
         // return $drivinglists;
     }
 

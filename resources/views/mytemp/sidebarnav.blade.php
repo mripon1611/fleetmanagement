@@ -8,11 +8,6 @@
                                         <span class="pcoded-mtext">Dashboard</span>
                                     </a>
                                     <ul class="pcoded-submenu">
-                                        <li class="active">
-                                            <a href="/managevehicle">
-                                                <span class="pcoded-mtext">Vehicles</span>
-                                            </a>
-                                        </li>
                                         <li class="">
                                             <a href="/driverlist">
                                                 <span class="pcoded-mtext">Manage Driver</span>
@@ -38,11 +33,6 @@
                                         <span class="pcoded-mtext">Manage Vehicle</span>
                                     </a>
                                     <ul class="pcoded-submenu">
-                                        <li class=" ">
-                                            <a href="/managevehicle">
-                                                <span class="pcoded-mtext">Vehicles</span>
-                                            </a>
-                                        </li>
                                         <li class=" ">
                                             <a href="/driverlist">
                                                 <span class="pcoded-mtext">Manage Driver</span>

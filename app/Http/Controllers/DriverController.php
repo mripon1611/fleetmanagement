@@ -26,7 +26,7 @@ class DriverController extends Controller
         $datas = Driver::all();
         // $freevehicles = freeVehicle();
         // $assignvehicletodrivers = DriverController::assignVehicleToDriver();
-        return view('pages.driverlist',['datas'=>$datas]);
+        return view('pages.Driver.driverlist',['datas'=>$datas]);
     }
 
     public function addNewDriver( Request $req ) {
@@ -116,7 +116,7 @@ class DriverController extends Controller
         ->where('dlicensenumber', $req->license)
         ->get();
 
-        return view('pages.drivinghistory',['datas'=>$drivinglists]);
+        return view('pages.Driver.drivinghistory',['datas'=>$drivinglists]);
 
     }
 }

@@ -25,7 +25,7 @@ class VehicleController extends Controller
 
     public function vehicleList() {
         $datas = Vehicle::all();
-        return view('pages.vehicles',['datas'=>$datas]);
+        return view('pages.Vehicle.vehicles',['datas'=>$datas]);
     }
 
     public function addNewVehicle( Request $req ) {
@@ -68,7 +68,7 @@ class VehicleController extends Controller
         ->select('*')
         ->where('vehicleregno', $req->regno)
         ->get();
-        return view('pages.vehicledocuments',['datas'=>$documents]);
         // return $documents;
+        return view('pages.Vehicle.vehicledocuments',['datas'=>$documents, 'regno'=>$req->regno]);
     }
 }
