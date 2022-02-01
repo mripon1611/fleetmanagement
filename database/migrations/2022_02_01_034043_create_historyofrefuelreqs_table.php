@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRefuelrequisitionsTable extends Migration
+class CreateHistoryofrefuelreqsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateRefuelrequisitionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('refuelrequisitions', function (Blueprint $table) {
+        Schema::create('historyofrefuelreqs', function (Blueprint $table) {
             $table->charset = 'utf8';
             $table->collation = 'utf8_general_ci';
             $table->id();
@@ -38,6 +38,6 @@ class CreateRefuelrequisitionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('refuelrequisitions');
+        Schema::dropIfExists('historyofrefuelreqs');
     }
 }

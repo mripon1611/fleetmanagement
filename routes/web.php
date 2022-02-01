@@ -47,6 +47,7 @@ Route::post('/adddocuments', [VehicleController::class, 'addNewDocuments']);
 //manage refuel-requisition
 Route::get('/refuel-requisition', [RefuelrequisitionController::class ,'index']);
 Route::post('/addnew-refuelreq', [RefuelrequisitionController::class ,'addnewRefuelreq']);
-
+Route::post('/updates-refuelreq', [RefuelrequisitionController::class ,'updatesRefuelreq']);
+Route::post('/refuelreqhistory', [RefuelrequisitionController::class ,'refuelreqHistory']);
 
 

@@ -14,7 +14,15 @@ class CreateVehicledriversTable extends Migration
     public function up()
     {
         Schema::create('vehicledrivers', function (Blueprint $table) {
+            $table->charset = 'utf8';
+            $table->collation = 'utf8_general_ci';
             $table->id();
+            $table->string('vregno',30)->nullable();
+            $table->string('dlicensenumber',30)->nullable();
+            $table->string('drivername',30)->nullable();
+            $table->date('assigndate')->nullable();
+            $table->date('releasedate')->nullable();
+            $table->string('status',15)->nullable();
             $table->timestamps();
         });
     }

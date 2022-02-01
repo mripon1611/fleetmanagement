@@ -24,6 +24,8 @@ class DriverController extends Controller
 
     public function driverList() {
         $datas = Driver::all();
+        // $freevehicles = freeVehicle();
+        // $assignvehicletodrivers = DriverController::assignVehicleToDriver();
         return view('pages.driverlist',['datas'=>$datas]);
     }
 

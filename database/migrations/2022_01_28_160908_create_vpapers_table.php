@@ -15,6 +15,19 @@ class CreateVpapersTable extends Migration
     {
         Schema::create('vpapers', function (Blueprint $table) {
             $table->id();
+            $table->charset = 'utf8';
+            $table->collation = 'utf8_general_ci';
+            $table->id();
+            $table->string('vehicleregno',30)->nullable();
+            $table->date('ttokenissuedate')->nullable();
+            $table->date('ttokenexpiredate')->nullable();
+            $table->string('tokenfile',30)->nullable();
+            $table->date('rpermitissuedate')->nullable();
+            $table->date('rpermitexpiredate')->nullable();
+            $table->string('permitfile',30)->nullable();
+            $table->date('fitnessissuedate')->nullable();
+            $table->date('fitnessexpiredate')->nullable();
+            $table->string('fitnessfile',30)->nullable();
             $table->timestamps();
         });
     }

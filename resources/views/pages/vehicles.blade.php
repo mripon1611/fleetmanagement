@@ -75,7 +75,7 @@
                                     <td>{{$data['seatcapacity']}}</td>
                                     <td>{{$data['ownername']}}</td>
                                     <td>
-                                        <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#moredetails_{{$data['id']}}">
+                                        <button class="btn btn-xs btn-primary p-1 m-1" data-toggle="modal" data-target="#moredetails_{{$data['id']}}">
                                             <i class="fas fa-eye"></i>N/Assign
                                         </button>
                                     </td>
@@ -83,12 +83,12 @@
                                         <form action="/vehicledocuments" class="float-left" method="POST" enctype="multipart/form-data">
                                             @csrf()
                                             <input type="hidden" id="regno" name="regno" value="{{$data['regno']}}">
-                                            <button class="btn btn-success" type="submit"><i class="fas fa-eye"></i></i>Documents</button>
+                                            <button class="btn btn-success p-1 m-1" type="submit"><i class="fas fa-eye"></i></i>Documents</button>
                                         </form>
                                         <!-- <a href="/{{$data['regno']}}" class="btn btn-xs btn-success"><i class="fas fa-eye"></i></i>Documents</a> -->
-                                        <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#vehicledetails_{{$data['id']}}"><i class="fas fa-eye"></i>Details</button>
-                                        <button class="btn btn-xs btn-success" data-toggle="modal" data-target="#vehicleupdates_{{$data['id']}}"><i class="fas fa-edit"></i>Update</button>
-                                        <button class="btn btn-xs btn-danger"><i class="fas fa-trash-alt"></i>Delete</button>
+                                        <button class="btn btn-xs btn-primary float-left p-1 m-1" data-toggle="modal" data-target="#vehicledetails_{{$data['id']}}"><i class="fas fa-eye"></i>Details</button>
+                                        <button class="btn btn-xs btn-success float-left p-1 m-1" data-toggle="modal" data-target="#vehicleupdates_{{$data['id']}}"><i class="fas fa-edit"></i>Update</button>
+                                        <button class="btn btn-xs btn-danger float-left p-1 m-1"><i class="fas fa-trash-alt"></i>Delete</button>
                                     </td>
                                 </tr>
                                 <!-- Modal  details -->

@@ -14,15 +14,17 @@ class CreateDriversTable extends Migration
     public function up()
     {
         Schema::create('drivers', function (Blueprint $table) {
+            $table->charset = 'utf8';
+            $table->collation = 'utf8_general_ci';
             $table->id();
-            $table->string('name');
-            $table->string('name_bn');
-            $table->string('nid')->unique();
-            $table->string('lisence')->unique();
-            $table->string('photograp');
-            $table->string('isaasigned');
-            $table->string('start_date');
-            $table->string('end_date');
+            $table->string('name',50)->nullable();
+            $table->string('name_bn',50)->nullable();
+            $table->string('nid',20)->unique()->nullable();
+            $table->string('lisence',30)->unique()->nullable();
+            $table->string('photograp',50)->nullable();
+            $table->string('isaasigned',5)->nullable();
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
             $table->timestamps();
         });
     }
