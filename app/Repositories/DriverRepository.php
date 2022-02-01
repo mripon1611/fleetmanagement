@@ -12,8 +12,6 @@ use App\Models\Historyofrefuelreq;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 
-
-
 class DriverRepository implements DriverInterface {
     // New driver input validation
     public function newDriverValidation( array $data ) {
@@ -102,6 +100,5 @@ class DriverRepository implements DriverInterface {
         }
 
     }
-
 
 }

@@ -28,7 +28,6 @@
                                     <th>Assigned Driver</th>
                                     <th>Seat capacity</th>
                                     <th>Owner Name</th>
-                                    <th>Assign Status</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -52,11 +51,6 @@
                                     <td>{{$data['seatcapacity']}}</td>
                                     <td>{{$data['ownername']}}</td>
                                     <td>
-                                        <button class="btn btn-xs btn-primary p-1 m-1" data-toggle="modal" data-target="#moredetails_{{$data['id']}}">
-                                            <i class="fas fa-eye"></i>N/Assign
-                                        </button>
-                                    </td>
-                                    <td>
                                         <form action="/vehicledocuments" class="float-left" method="POST" enctype="multipart/form-data">
                                             @csrf()
                                             <input type="hidden" id="regno" name="regno" value="{{$data['regno']}}">
@@ -76,10 +70,6 @@
                                 @include('Modals.Vehicle.updates')
                                 <!--End Modal  updates -->
 
-                                <!-- Modal assign details -->
-                                @include('Modals.Vehicle.assigndetails')
-                                <!-- End Modal assign details -->
-
                                 @endforeach
                                 <!-- foreach end for $datas -->
                             </tbody>
@@ -91,7 +81,6 @@
                                     <th>Assigned Driver</th>
                                     <th>Seat capacity</th>
                                     <th>Owner Name</th>
-                                    <th>Assign Status</th>
                                     <th>Actions</th>
                                 </tr>
                             </tfoot>

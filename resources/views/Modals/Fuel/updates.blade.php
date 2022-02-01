@@ -20,11 +20,15 @@
                                                             </div>
                                                             <div class="form-group col-md-6">
                                                                 <label for="staffname">Staff Name</label>
-                                                                @foreach($vehicleslists as $vehicleslist)
-                                                                    @if($data['vregno'] == $vehicleslist->vregno)
-                                                                    <input type="vregno" class="form-control" id="staffname" name="staffname" value="{{$vehicleslist->drivername}}" readonly>
-                                                                    @endif
-                                                                @endforeach
+                                                                @if(count($vehicleslists)>0)
+                                                                    @foreach($vehicleslists as $vehicleslist)
+                                                                        @if($data['vregno'] == $vehicleslist->vregno)
+                                                                        <input type="vregno" class="form-control" id="staffname" name="staffname" value="{{$vehicleslist->drivername}}" readonly>
+                                                                        @endif
+                                                                    @endforeach
+                                                                @else
+                                                                    <input type="vregno" class="form-control" id="staffname" name="staffname" value="Currently no Staff assigned" readonly>
+                                                                @endif
                                                                 <span class="md-line"></span>
                                                             </div>
                                                             <div class="form-group col-md-6">

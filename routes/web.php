@@ -40,7 +40,7 @@ Route::get('/unique', [DriverController::class, 'unique']);
 // Manage Vehicle
 Route::get('/vehicle', [VehicleController::class, 'vehicleList']);
 Route::post('/addnewvehicle', [VehicleController::class, 'addNewVehicle']);
-// Route::get('/{regno}', [VehicleController::class, 'vehicleDocuments'])->named('vehicledocuments');
+Route::post('/vehicleupdates', [VehicleController::class, 'vehicleUpdates']);
 Route::post('/vehicledocuments', [VehicleController::class, 'vehicleDocuments']);
 Route::post('/adddocuments', [VehicleController::class, 'addNewDocuments']);
 

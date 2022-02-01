@@ -49,6 +49,14 @@ class VehicleController extends Controller
         return redirect('/vehicle');
 
     }
+
+    public function vehicleUpdates( Request $req ) {
+        $reqdata = $req->input();
+        $this->data->detailUpdates($reqdata);
+        return redirect('/vehicle');
+    }
+
+
     static function freeDriver() {
 
         $freedrivers = DB::table('drivers')

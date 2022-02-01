@@ -12,6 +12,7 @@
                                                         <hr />
                                                         @csrf()
                                                         <div class="row">
+                                                            <input type="hidden" class="form-control" id="id" name="id" value="{{$data['id']}}">
                                                             <div class="form-group col-md-6">
                                                                 <label for="name">Name</label>
                                                                 <input type="text" class="form-control" id="name" name="name" value="{{$data['name']}}" readonly>
@@ -58,7 +59,7 @@
                                                             </div>
                                                             <div class="form-group col-md-6">
                                                                 <label for="driver">Driver</label>
-                                                                <select id="vehicle" class="form-control" name="vehicle">
+                                                                <select id="driver" class="form-control" name="driver">
                                                                     @if($data['toassigned'] ==1)
                                                                         @foreach($assignvehicletodrivers as $assignvehicletodriver)
                                                                             @if($assignvehicletodriver->vregno == $data['regno'])

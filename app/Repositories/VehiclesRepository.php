@@ -21,45 +21,92 @@ class VehiclesRepository implements VehiclesInterface {
         return (Vehicle::all());
     }
 
-    public function updatesRefuel( array $reqdata ){
-        $vid = (Refuelrequisition::select('id'))
-                ->where('vregno', $reqdata['vregno'])
-                ->get();
+    public function detailUpdates( array $reqdata ) {
+        $vehicle = Vehicle::find($reqdata['id']);
 
-        $vehicle = Refuelrequisition::find($vid[0]->id);
-
-        // store $vehicle data as history
-        $hvehicle = new Historyofrefuelreq;
-        $hvehicle->vregno = $vehicle->vregno;
-        $hvehicle->staffname = $vehicle->staffname;
-        $hvehicle->pvsodo = $vehicle->pvsodo;
-        $hvehicle->crodo = $vehicle->crodo;
-        $hvehicle->ttlqty = $vehicle->ttlqty;
-        $hvehicle->fueltype = $vehicle->fueltype;
-        $hvehicle->costplitter = $vehicle->costplitter;
-        $hvehicle->totalprice = $vehicle->totalprice;
-        $hvehicle->file = $vehicle->file;
-        $hvehicle->created_date = $vehicle->created_date;
-        
-                // store update data
-        $reqdata['totalprice'] = ($reqdata['ttlqty'] * $reqdata['costplitter']);
-        $vehicle->vregno = $reqdata['vregno'];
-        $vehicle->staffname = $reqdata['staffname'];
-        $vehicle->pvsodo = $reqdata['pvsodo'];
-        $vehicle->crodo = $reqdata['crodo'];
-        $vehicle->ttlqty = $reqdata['ttlqty'];
-        $vehicle->fueltype = $reqdata['fueltype'];
-        $vehicle->costplitter = $reqdata['costplitter'];
-        $vehicle->totalprice = $reqdata['totalprice'];
-        $vehicle->file = $reqdata['file'];
-        $vehicle->created_date = $reqdata['created_date'];
-
-        // save data
-        $hvehicle->save();
+        // update vehicle
+        $vehicle->ownername = $reqdata['ownername'];
+        $vehicle->seatcapacity = $reqdata['seatcapacity'];
+        $vehicle->regdate = $reqdata['regdate'];
+        $vehicle->licensedate = $reqdata['licensedate'];
+        $vehicle->division = $reqdata['division'];
+        $vehicle->mapcolor = $reqdata['mapcolor'];
         $vehicle->save();
 
-        return;
+        if($reqdata['driver']!='') {
+            $driverid = (Driver::select('id'))
+                ->where('name', $reqdata['driver'])
+                ->get();
 
+            $driver = Driver::find($driverid[0]->id);
+
+            $vcldrvr = [];
+            $vcldrvr['vregno'] = $reqdata['regno'];
+            $vcldrvr['dlicensenumber'] = $driver->license;
+            $vcldrvr['drivername'] = $driver->name;
+            $vcldrvr['assigndate'] = $reqdata['assigndate'];
+            $vcldrvr['status'] = 'present';
+
+            $vdid = Vehicledriver::select('id')
+                ->where('vregno', $reqdata['regno'])
+                ->where('status','present')
+                ->get();
+
+            if(count($vdid) > 0) {
+                $vehicledriver = Vehicledriver::find($vdid[0]->id);
+
+                $vehicledriver->releasedate = $reqdata['assigndate'];
+                $vehicledriver->status = "past";
+                $vehicledriver->save();
+
+                $adriverid = (Driver::select('id'))
+                    ->where('license', $vehicledriver->dlicensenumber)
+                    ->get();
+
+                $adriver = Driver::find($adriverid[0]->id);
+                $adriver->isassigned = 0;
+                $adriver->save();
+
+            } 
+                
+            Vehicledriver::create($vcldrvr);
+            $vehicle->toassigned = 1;
+            $vehicle->save();
+
+            $driver->isassigned = 1;
+            $driver->save();
+
+        }
+
+        // if(count($vdid) > 0) {
+
+        //     $avid = (Vehicle::select('id'))
+        //         ->where('regno', $vehicledriver->vregno)
+        //         ->get();
+        //     $avehicle = Vehicle::find($avid[0]->id);
+        //     $avehicle->toassigned = 0;
+        //     $avehicle->save();
+
+        //     $vehicle->toassigned = 1;
+        //     $vehicle->save();
+
+        //     $driver->isassigned = 1;
+        //     $driver->save();
+
+        //     return;
+
+        // } else{
+        //     Vehicledriver::create($vcldrvr);
+
+        //     $vehicle->toassigned = 1;
+        //     $vehicle->save();
+
+        //     $driver->isassigned = 1;
+        //     $driver->save();
+
+        //     return;
+        // }
+        return;
     }
 
 }

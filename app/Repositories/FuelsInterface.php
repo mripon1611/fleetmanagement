@@ -8,5 +8,4 @@ interface FuelsInterface {
     public function updatesRefuel( array $reqdata );
     
     
-    
 }
