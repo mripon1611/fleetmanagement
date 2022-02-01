@@ -9,7 +9,8 @@ use App\Models\Driver;
 use App\Models\Vehicle;
 use App\Models\Vehicledriver;
 use App\Models\Vpaper;
-use App\Repositories\ModelsRepository;
+use App\Http\Controllers\DriverController;
+use App\Repositories\VehiclesRepository;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 
@@ -18,14 +19,16 @@ class VehicleController extends Controller
     //
 
     protected $data;
-    public function __construct(ModelsRepository $data) {
+    public function __construct(VehiclesRepository $data) {
         $this->data = $data;
     }
 
 
     public function vehicleList() {
         $datas = Vehicle::all();
-        return view('pages.Vehicle.vehicles',['datas'=>$datas]);
+        $freedrivers = VehicleController::freeDriver();
+        $assignvehicletodrivers = DriverController::assignVehicleToDriver();
+        return view('pages.Vehicle.vehicles',['datas'=>$datas,'freedrivers'=>$freedrivers,'assignvehicletodrivers'=>$assignvehicletodrivers,'sl'=>1]);
     }
 
     public function addNewVehicle( Request $req ) {

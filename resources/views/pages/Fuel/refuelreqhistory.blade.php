@@ -1,9 +1,6 @@
 @extends('template')
 @section('maincontents')
 
-<?php
-    $sl = 1;
-?>
 <!-- Page-header start -->
 @include('pages.Fuel.historyheader')
 <!-- Page-header end -->

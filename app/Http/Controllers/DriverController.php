@@ -8,25 +8,23 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\Driver;
 use App\Models\Vehicle;
 use App\Models\Vehicledriver;
-use App\Repositories\ModelsRepository;
+use App\Repositories\DriverRepository;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 
 class DriverController extends Controller
 {
     //
-
-
     protected $data;
-    public function __construct(ModelsRepository $data) {
+    public function __construct(DriverRepository $data) {
         $this->data = $data;
     }
 
     public function driverList() {
         $datas = Driver::all();
-        // $freevehicles = freeVehicle();
-        // $assignvehicletodrivers = DriverController::assignVehicleToDriver();
-        return view('pages.Driver.driverlist',['datas'=>$datas]);
+        $freevehicles = DriverController::freeVehicle();
+        $assignvehicletodrivers = DriverController::assignVehicleToDriver();
+        return view('pages.Driver.driverlist',['datas'=>$datas,'freevehicles'=>$freevehicles,'assignvehicletodrivers'=>$assignvehicletodrivers,'sl'=>1]);
     }
 
     public function addNewDriver( Request $req ) {
@@ -99,15 +97,6 @@ class DriverController extends Controller
 
         return redirect('/driverlist');
 
-    }
-
-    public function unique () {
-        $datas = DB::table('vehicledrivers')
-            ->select('vregno')
-            ->distinct()
-            ->get();
-
-        return $datas;
     }
 
     public function drivingHistory(Request $req) {

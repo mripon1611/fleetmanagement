@@ -10,23 +10,23 @@ use App\Models\Vehicle;
 use App\Models\Vehicledriver;
 use App\Models\Refuelrequisition;
 use App\Models\Historyofrefuelreq;
-use App\Repositories\ModelsRepository;
+use App\Repositories\FuelsRepository;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
-
-
 
 class RefuelrequisitionController extends Controller
 {
     //
     protected $data;
-    public function __construct(ModelsRepository $data) {
+    public function __construct(FuelsRepository $data) {
         $this->data = $data;
     }
 
     public function index() {
         $datas = Refuelrequisition::all();
-        return view('pages.Fuel.refuel-requisition',['datas'=>$datas]);
+        $vehicleslists = RefuelrequisitionController::vehiclesList();
+        $addedvehicles = RefuelrequisitionController::addedVehicles();
+        return view('pages.Fuel.refuel-requisition',['datas'=>$datas,'vehicleslists'=>$vehicleslists,'addedvehicles'=>$addedvehicles,'sl'=>1,'t'=>0]);
         // return $datas;
     }
 
@@ -61,7 +61,7 @@ class RefuelrequisitionController extends Controller
         ->where('vregno', $req->vregno)
         ->get();
 
-        return view('pages.Fuel.refuelreqhistory',['datas'=>$refuelreqlists,'vregno'=>$req->vregno]);
+        return view('pages.Fuel.refuelreqhistory',['datas'=>$refuelreqlists,'vregno'=>$req->vregno,'sl'=>1]);
         // return $drivinglists;
     }
 

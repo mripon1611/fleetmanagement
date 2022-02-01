@@ -1,14 +1,6 @@
 @extends('template')
 @section('maincontents')
 
-<?php
-    use App\Http\Controllers\RefuelrequisitionController;
-    $vehicleslists = RefuelrequisitionController::vehiclesList();
-    $addedvehicles = RefuelrequisitionController::addedVehicles();
-    $sl = 1;
-    $t= 0; // 0= flase, 1=true 
-?>
-
 <!-- Page-header start -->
 @include('pages.Fuel.header')
 <!-- Page-header end -->

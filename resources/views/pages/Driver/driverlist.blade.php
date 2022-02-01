@@ -2,13 +2,6 @@
 
 @section('maincontents')
 
-<?php
-    use App\Http\Controllers\DriverController;
-    $freevehicles = DriverController::freeVehicle();
-    $assignvehicletodrivers = DriverController::assignVehicleToDriver();
-    $sl = 1;
-?>
-
 <!-- Page-header start -->
 @include('pages.Driver.header')
 <!-- Page-header end -->
