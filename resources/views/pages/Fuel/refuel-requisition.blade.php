@@ -1,4 +1,5 @@
 @extends('template')
+@section('title','refuel requisition')
 @section('maincontents')
 
 <!-- Page-header start -->

@@ -1,4 +1,5 @@
 @extends('template')
+@section('title','refuel requisition history')
 @section('maincontents')
 
 <!-- Page-header start -->

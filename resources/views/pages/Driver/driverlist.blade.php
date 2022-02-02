@@ -1,5 +1,5 @@
 @extends('template')
-
+@section('title','manage driver')
 @section('maincontents')
 
 <!-- Page-header start -->
