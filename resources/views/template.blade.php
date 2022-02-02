@@ -175,7 +175,6 @@
 
 
     <script src="files/assets/js/vartical-layout.min.js"></script>
-    <script type="text/javascript" src="files/assets/pages/dashboard/custom-dashboard.js"></script>
     <script type="text/javascript" src="files/assets/js/script.min.js"></script>
     <script src="../files/assets/pages/data-table/js/data-table-custom.js"></script>
     <script src="files/assets/js/pcoded.min.js"></script>
