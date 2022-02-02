@@ -17,31 +17,30 @@ $(document).ready(function() {
         }
     });
 
+    $( "#vregno" ).click(function() {
+        var val = $("#vregno").val();
+        console.log(val);
+        if(val !=='select') {
+            $(".checklist").show();
+        }
+    });
+
     // var table =$('#simpletable').DataTable();
 
 
-    // table.on('click', '.edit', function() {
-    //     $tr = $(this).closest('tr');
-    //     if($($tr).hasClass('child')) {
-    //         $tr = $tr.prev('.parent');
-    //     }
+    // check box select for weekly check report
 
-    //     var data = table.row($tr).data();
-    //     console.log(data);
+    // $(".sanitizer").on('click', function()
+    $("input:checkbox").on('click', function() {
+        var $box = $(this);
+        if ($box.is(":checked")) {
+            var group = "input:checkbox[name='" + $box.attr("name") + "']";
+            $(group).prop("checked", false);
+            $box.prop("checked", true);
+        } else {
+            $box.prop("checked", false);
+        }
+    });
 
-    //     $('#mname').val(data[1]);
-    //     $('#mname_bn').val(data[2]);
-    //     $('#mnid').val(data[7]);
-    //     $('#mblood').val(data[6]);
-    //     $('#mcontact').val(data[3]);
-    //     $('#memergency').val(data[4]);
 
-    //     // $('#editModal').modal('show');
-    // })
-
-    // $( "#addnewdocument" ).click(function() {
-    //     console.log($( "#addnewdocument" ));
-    //     $( "#vehicledocumen" ).hide();
-    //     console.log($( "#vehicledocumen" ));
-    // });
 })

@@ -26,31 +26,31 @@
                 </ul>
             </li>
 
-            <!-- Manage Vehicle start here -->
-            <!-- <li class="pcoded-hasmenu">
+            <!--  Weekly Check Report start here -->
+            <li class="pcoded-hasmenu">
                 <a href="javascript:void(0)">
-                    <span class="pcoded-micon"><i class="fas fa-truck-monster"></i></span>
-                    <span class="pcoded-mtext">Manage Vehicle</span>
+                    <span class="pcoded-micon"><i class="fas fa-viruses"></i></span>
+                    <span class="pcoded-mtext">Weekly Check Report</span>
                 </a>
                 <ul class="pcoded-submenu">
                     <li class=" ">
-                        <a href="/driverlist">
-                            <span class="pcoded-mtext">Manage Driver</span>
+                        <a href="/create-weekly-report">
+                            <span class="pcoded-mtext">Create Report</span>
                         </a>
                     </li>
                     <li class=" ">
-                        <a href="/vehicle">
-                            <span class="pcoded-mtext">Vehicle List</span>
+                        <a href="/view-weekly-report">
+                            <span class="pcoded-mtext">View Report</span>
                         </a>
                     </li>
-                    <li class="Disabled">
+                    <!-- <li class="Disabled">
                         <a href="/modals">
                             <span class="pcoded-mtext">Modals</span>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
-            </li> -->
-            <!-- Mange Vehicle ends here -->
+            </li>
+            <!-- Weekly Check Report ends here -->
         </ul>
                             
     </div>

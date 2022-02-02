@@ -6,6 +6,7 @@ use App\Http\Controllers\DriverController;
 use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\RefuelrequisitionController;
 use App\Http\Controllers\FileUploadController;
+use App\Http\Controllers\WeeklycheckreportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,5 +50,12 @@ Route::get('/refuel-requisition', [RefuelrequisitionController::class ,'index'])
 Route::post('/addnew-refuelreq', [RefuelrequisitionController::class ,'addnewRefuelreq']);
 Route::post('/updates-refuelreq', [RefuelrequisitionController::class ,'updatesRefuelreq']);
 Route::post('/refuelreqhistory', [RefuelrequisitionController::class ,'refuelreqHistory']);
+
+
+// Weekly check report
+Route::get('/create-weekly-report', [WeeklycheckreportController::class ,'generateReport']);
+Route::post('/wselectdate', [WeeklycheckreportController::class ,'selectDate']);
+Route::post('/store-report', [WeeklycheckreportController::class ,'storeReport']);
+
 
 
