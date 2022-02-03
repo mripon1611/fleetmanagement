@@ -12,7 +12,7 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <h3>Generate Report</h3>
+                    <h3>Check Report Entry(weekly)</h3>
                 </div>
                 <div class="card-block">
                     <!-- Modal  add new vehicle -->

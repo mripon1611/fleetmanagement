@@ -13,13 +13,12 @@
             <!-- Zero config.table start -->
             <div class="card">
                 <div class="card-header">
-                    <h5>Driver List</h5>
-
-                </div>
-                <div class="card-block">
-                    <div class="d-flex justify-content-end mb-2">
+                    <div class="d-flex justify-content-xl-between">
+                        <h3>Driver List</h3>
                         <button class="btn btn-primary" data-toggle="modal" data-target="#addnewdriver">Add New Driver</button>
                     </div>
+                </div>
+                <div class="card-block">
                     <div class="dt-responsive table-responsive">
                         <table id="simpletable"
                             class="table table-hover table-bordered nowrap text-center">

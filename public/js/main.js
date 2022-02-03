@@ -25,6 +25,13 @@ $(document).ready(function() {
         }
     });
 
+    $( ".driver_edit" ).click(function() {
+        
+        $(".input_hide").show();
+        $(".input_show").hide();
+       
+    });
+
     // var table =$('#simpletable').DataTable();
 
 

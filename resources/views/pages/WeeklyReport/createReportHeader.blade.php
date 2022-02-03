@@ -7,7 +7,7 @@
                         <a href="/"> <i class="feather icon-home"></i> </a>
                     </li>
                     <li class="breadcrumb-item" style="float: left;">
-                        <a href="/create-weekly-report">Generate Report</a>
+                        <a href="/create-weekly-report">Check Report Entry</a>
                     </li>
                 </ul>
             </div>

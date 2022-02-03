@@ -28,7 +28,7 @@ class CreateWeeklycheckreportsTable extends Migration
             $table->string('ac',10)->nullable();
             $table->string('engine',10)->nullable();
             $table->string('looking_glass',10)->nullable();
-            $table->string('cleen_inout',10)->nullable();
+            $table->string('clean_indoor_outdoor',10)->nullable();
             $table->string('oil',15)->nullable();
             $table->string('papers',20)->nullable();
             $table->string('remarks',255)->nullable();

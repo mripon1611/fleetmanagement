@@ -30,7 +30,7 @@ class Weeklycheckreport extends Model
         'ac',
         'engine',
         'looking_glass',
-        'cleen_inout',
+        'clean_indoor_outdoor',
         'oil',
         'papers',
         'remarks',
