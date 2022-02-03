@@ -39,7 +39,7 @@
                         </a>
                     </li>
                     <li class=" ">
-                        <a href="/view-weekly-report">
+                        <a href="/weekly-check-report">
                             <span class="pcoded-mtext">View Report</span>
                         </a>
                     </li>

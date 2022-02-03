@@ -61,4 +61,16 @@ class WeeklycheckreportController extends Controller
         DB::table('queues')->where('vregno', $req->vregno)->delete();
         return redirect('create-weekly-report');
     }
+
+    public function weeklyCheckReport() {
+        $reports = DB::table('weeklycheckreports')
+                    ->select('*')
+                    ->orderBy('date', 'DESC')
+                    ->get();
+
+        $date = $reports[0]->date;
+
+        // return $reports;
+        return view('pages.WeeklyReport.weekly_check_report',['datas'=>$reports,'date'=>$date]);
+    }
 }

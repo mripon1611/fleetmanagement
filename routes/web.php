@@ -56,6 +56,6 @@ Route::post('/refuelreqhistory', [RefuelrequisitionController::class ,'refuelreq
 Route::get('/create-weekly-report', [WeeklycheckreportController::class ,'generateReport']);
 Route::post('/wselectdate', [WeeklycheckreportController::class ,'selectDate']);
 Route::post('/store-report', [WeeklycheckreportController::class ,'storeReport']);
-
+Route::get('/weekly-check-report', [WeeklycheckreportController::class, 'weeklyCheckReport']);
 
 

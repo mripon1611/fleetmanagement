@@ -2,6 +2,7 @@ $(document).ready(function() {
 
     $('#vehicletable').DataTable();
     $('#vehicledocuments').DataTable();
+    $('#weekly_report').DataTable();
 
     $( ".doctype" ).click(function() {
         var val = $( ".doctype" ).val();
