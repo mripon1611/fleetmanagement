@@ -52,7 +52,8 @@ class DriverController extends Controller
         $data['photograph'] = $fileName;
 
         $ddriver = $this->data->newDriver($data);
-        return redirect('/driverlist');
+        return redirect('/driverlist')
+                    ->with('success', 'Successfully added a new driver in driver list!');
 
         // if ($validator->fails()) {
         //     return back();

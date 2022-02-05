@@ -36,8 +36,8 @@ class VehicleController extends Controller
         $req->validate([
             'name'=>'required',
             'regno'=>'required|unique:vehicles',
-            'regdate'=>'required|unique:vehicles',
-            'licensedate'=>'required|unique:vehicles',
+            'regdate'=>'required',
+            'licensedate'=>'required',
             'seatcapacity'=>'required',
             'division'=>'required',
             'mapcolor'=>'required',
@@ -46,7 +46,8 @@ class VehicleController extends Controller
 
         $data = $req->input();
         $vehicle = $this->data->newVehicle($data);
-        return redirect('/vehicle');
+        return redirect('/vehicle')
+                    ->with('success', 'Successfully added a new vehicle in vehicle list!');;
 
     }
 

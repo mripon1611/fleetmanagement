@@ -14,6 +14,11 @@
                 <div class="card-header">
                     <h5>Vehicle List</h5>
                 </div>
+                    @if(Session::has('success'))
+						<div class="alert alert-success">
+							{{Session::get('success')}}
+						</div>
+					@endif
                 <div class="card-block">
                     <div class="d-flex justify-content-end mb-2">
                         <button class="btn btn-primary" data-toggle="modal" data-target="#addnewvehicle">Add New Vehicle</button>

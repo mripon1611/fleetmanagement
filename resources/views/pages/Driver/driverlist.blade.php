@@ -17,6 +17,11 @@
                         <h3>Driver List</h3>
                         <button class="btn btn-primary" data-toggle="modal" data-target="#addnewdriver">Add New Driver</button>
                     </div>
+                    @if(Session::has('success'))
+						<div class="alert alert-success">
+							{{Session::get('success')}}
+						</div>
+					@endif
                 </div>
                 <div class="card-block">
                     <div class="dt-responsive table-responsive">

@@ -35,6 +35,8 @@
     <link rel="stylesheet" type="text/css" href="files/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="files/assets/pages/data-table/css/buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="files/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
+     <!-- Chartlist chart css -->
+    <link rel="stylesheet" type="text/css" href="files/bower_components/chartist/dist/chartist.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="files/assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="files/assets/css/linearicons.css">
@@ -180,6 +182,8 @@
     <script src="files/assets/js/pcoded.min.js"></script>
     <script src="files/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script type="text/javascript" src="files/assets/js/script.js"></script>
+
+     <script type="text/javascript" src="files/assets/pages/chart/chartjs/chartjs-custom.js"></script>
     
 </body>
 
