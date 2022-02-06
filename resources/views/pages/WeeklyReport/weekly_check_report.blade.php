@@ -3,7 +3,7 @@
 @section('maincontents')
 
 <!-- Page-header start -->
-@include('pages.Driver.header')
+@include('pages.WeeklyReport.check_report_header')
 <!-- Page-header end -->
 
 <!-- Page-body start -->

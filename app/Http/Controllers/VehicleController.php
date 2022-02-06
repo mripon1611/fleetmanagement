@@ -69,12 +69,6 @@ class VehicleController extends Controller
         
     }
 
-    public function addNewDocuments ( Request $req ) {
-        $reqdata = $req->input();
-        Vpaper::create($reqdata);
-        return redirect('/vehicle');
-    }
-
     public function vehicleDocuments (Request $req) {
         $documents = DB::table('vpapers')
         ->select('*')
@@ -82,5 +76,65 @@ class VehicleController extends Controller
         ->get();
         // return $documents;
         return view('pages.Vehicle.vehicledocuments',['datas'=>$documents, 'regno'=>$req->regno]);
+    }
+    public function addNewDocuments ( Request $req ) {
+        $reqdata = $req->input();
+        Vpaper::create($reqdata);
+        return redirect('/vehicle');
+    }
+
+    public function vehicleMinistrations( Request $req ) {
+        $documents = DB::table('ministrations')
+        ->select('*')
+        ->where('vehicleregno', $req->regno)
+        ->get();
+        // return $documents;
+        return view('pages.Vehicle.vehicle_ministrations',['datas'=>$documents, 'regno'=>$req->regno]);
+    }
+
+    public function addMinstartions( Request $req ) {
+        $reqdata = $req->input();
+        $staffname = DB::table('vehicledrivers')
+                    ->select('drivername')
+                    ->where('vregno', $req->vehicleregno)
+                    ->where('status', 'present')
+                    ->get();
+        if(count($staffname)>0) {
+            $reqdata['staffname'] = $staffname[0]->drivername;
+        }else {
+            $reqdata['staffname'] = '';
+        }
+
+        // if($req->service_cost > 0){
+        //     $fileName = time().'-'.$req->servecing_receipt->getClientOriginalName();
+        //     $req->servecing_receipt->move(public_path('uploads'), $fileName);
+        //     $reqdata['servecing_receipt'] = $fileName;
+            
+        // }
+        // if($req->tyre_change_cost > 0){
+        //     $fileName = time().'-'.$req->tyre_change_receipt->getClientOriginalName();
+        //     $req->tyre_change_receipt->move(public_path('uploads'), $fileName);
+        //     $reqdata['tyre_change_receipt'] = $fileName;
+        // }
+        // if($req->battary_change_cost > 0){
+        //     $fileName = time().'-'.$req->battary_change_receipt->getClientOriginalName();
+        //     $req->battary_change_receipt->move(public_path('uploads'), $fileName);
+        //     $reqdata['battary_change_receipt'] = $fileName;
+        // }
+        // if($req->normal_works_cost > 0){
+        //     $fileName = time().'-'.$req->normal_works_receipt->getClientOriginalName();
+        //     $req->normal_works_receipt->move(public_path('uploads'), $fileName);
+        //     $reqdata['normal_works_receipt'] = $fileName;
+        // }
+        // if($req->major_works_cost > 0){
+        //     $fileName = time().'-'.$req->major_works_receipt->getClientOriginalName();
+        //     $req->major_works_receipt->move(public_path('uploads'), $fileName);
+        //     $reqdata['major_works_receipt'] = $fileName;
+        // }
+
+        $this->data->addNewMinstartions($reqdata);
+
+        // return $req;
+        return redirect('/vehicle'); 
     }
 }

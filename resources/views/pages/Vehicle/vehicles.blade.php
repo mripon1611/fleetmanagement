@@ -61,7 +61,11 @@
                                             <input type="hidden" id="regno" name="regno" value="{{$data['regno']}}">
                                             <button class="btn btn-success p-1 m-1" type="submit"><i class="fas fa-eye"></i></i>Documents</button>
                                         </form>
-                                        <!-- <a href="/{{$data['regno']}}" class="btn btn-xs btn-success"><i class="fas fa-eye"></i></i>Documents</a> -->
+                                        <form action="/vehicleministrations" class="float-left" method="POST" enctype="multipart/form-data">
+                                            @csrf()
+                                            <input type="hidden" id="regno" name="regno" value="{{$data['regno']}}">
+                                            <button class="btn btn-info p-1 m-1" type="submit"><i class="fas fa-eye"></i></i>Ministrations</button>
+                                        </form>
                                         <button class="btn btn-xs btn-primary float-left p-1 m-1" data-toggle="modal" data-target="#vehicledetails_{{$data['id']}}"><i class="fas fa-eye"></i>Details</button>
                                         <button class="btn btn-xs btn-success float-left p-1 m-1" data-toggle="modal" data-target="#vehicleupdates_{{$data['id']}}"><i class="fas fa-edit"></i>Update</button>
                                         <button class="btn btn-xs btn-danger float-left p-1 m-1"><i class="fas fa-trash-alt"></i>Delete</button>

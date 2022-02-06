@@ -7,5 +7,6 @@ interface VehiclesInterface {
     // Vehicles
     public function newVehicle( array $data );  
     public function detailUpdates( array $reqdata );
+    public function addNewMinstartions( array $reqdata );
     
 }

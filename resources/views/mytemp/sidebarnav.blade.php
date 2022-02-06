@@ -23,6 +23,11 @@
                             <span class="pcoded-mtext">Refuel Requisition</span>
                         </a>
                     </li>
+                    <li class=" ">
+                        <a href="#">
+                            <span class="pcoded-mtext">Ministration</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 

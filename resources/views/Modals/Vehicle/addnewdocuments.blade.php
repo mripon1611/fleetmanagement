@@ -6,7 +6,7 @@
                     <div class="auth-box card-block">
                         <div class="row m-b-20">
                             <div class="col-md-12">
-                                <h3 class="text-center txt-primary">Vehicle Details</h3>
+                                <h3 class="text-center txt-primary">Add Documents</h3>
                             </div>
                         </div>
                         <hr />

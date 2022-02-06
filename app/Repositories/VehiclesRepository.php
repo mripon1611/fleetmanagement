@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\Driver;
 use App\Models\Vehicle;
 use App\Models\Vpaper;
+use App\Models\Ministration;
 use App\Models\Vehicledriver;
 use App\Models\Refuelrequisition;
 use App\Models\Historyofrefuelreq;
@@ -78,6 +79,10 @@ class VehiclesRepository implements VehiclesInterface {
 
         }
         return;
+    }
+
+    public function addNewMinstartions( array $reqdata ) {
+        Ministration::create($reqdata);
     }
 
 }
