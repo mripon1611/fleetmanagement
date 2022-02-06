@@ -7,6 +7,7 @@ use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\RefuelrequisitionController;
 use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\WeeklycheckreportController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,27 +20,26 @@ use App\Http\Controllers\WeeklycheckreportController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/modals', function () {
-    return view('pages.modals');
-});
+
+// Home page
+Route::get('/', [HomeController::class, 'index']);
 
 
 
-Route::get('/managevehicle', [TblvechileController::class, 'managevehicle']);
+// Route::get('/modals', function () {
+//     return view('pages.modals');
+// });
+// Route::get('/managevehicle', [TblvechileController::class, 'managevehicle']);
 
 // Manage Driver
-Route::get('/driverlist', [DriverController::class, 'driverList']);
+Route::get('/driverlist', [DriverController::class, 'index']);
 Route::post('/addnewdriver', [DriverController::class, 'addNewDriver']);
 Route::post('/driverupdate', [DriverController::class, 'driverUpdate']);
 Route::post('/drivinghistory', [DriverController::class, 'drivingHistory']);
 // Route::get('/{dlicense}', [DriverController::class, 'drivingHistory']);
-Route::get('/unique', [DriverController::class, 'unique']);
 
 // Manage Vehicle
-Route::get('/vehicle', [VehicleController::class, 'vehicleList']);
+Route::get('/vehicle', [VehicleController::class, 'index']);
 Route::post('/addnewvehicle', [VehicleController::class, 'addNewVehicle']);
 Route::post('/vehicleupdates', [VehicleController::class, 'vehicleUpdates']);
 Route::post('/vehicledocuments', [VehicleController::class, 'vehicleDocuments']);

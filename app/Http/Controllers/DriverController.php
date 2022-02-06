@@ -20,7 +20,7 @@ class DriverController extends Controller
         $this->data = $data;
     }
 
-    public function driverList() {
+    public function index() {
         $datas = Driver::all();
         $freevehicles = DriverController::freeVehicle();
         $assignvehicletodrivers = DriverController::assignVehicleToDriver();

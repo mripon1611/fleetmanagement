@@ -10,8 +10,8 @@
                                                     <div class="card-block">
                                                         <div class="row align-items-end">
                                                             <div class="col-8">
-                                                                <h4 class="text-white">$30200</h4>
-                                                                <h6 class="text-white m-b-0">All Earnings</h6>
+                                                                <h4 class="text-white">{{$v_counts}}</h4>
+                                                                <h6 class="text-white m-b-0"><a href="/vehicle">Total Vehicles</a></h6>
                                                             </div>
                                                             <div class="col-4 text-right">
                                                                 <canvas id="update-chart-1" height="50"></canvas>
@@ -20,8 +20,8 @@
                                                     </div>
                                                     <div class="card-footer">
                                                         <p class="text-white m-b-0"><i
-                                                                class="feather icon-clock text-white f-14 m-r-10"></i>update
-                                                            : 2:15 am</p>
+                                                                class="feather icon-clock text-white f-14 m-r-10"></i>Last Update
+                                                            : {{$v_last_updates}}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -30,8 +30,8 @@
                                                     <div class="card-block">
                                                         <div class="row align-items-end">
                                                             <div class="col-8">
-                                                                <h4 class="text-white">290+</h4>
-                                                                <h6 class="text-white m-b-0">Page Views</h6>
+                                                                <h4 class="text-white">{{$d_counts}}</h4>
+                                                                <h6 class="text-white m-b-0"><a href="/driverlist">Total Drivers</a></h6>
                                                             </div>
                                                             <div class="col-4 text-right">
                                                                 <canvas id="update-chart-2" height="50"></canvas>
@@ -40,8 +40,8 @@
                                                     </div>
                                                     <div class="card-footer">
                                                         <p class="text-white m-b-0"><i
-                                                                class="feather icon-clock text-white f-14 m-r-10"></i>update
-                                                            : 2:15 am</p>
+                                                                class="feather icon-clock text-white f-14 m-r-10"></i>Last Update
+                                                            : {{$d_last_updates}}</p>
                                                     </div>
                                                 </div>
                                             </div>

@@ -24,7 +24,7 @@ class VehicleController extends Controller
     }
 
 
-    public function vehicleList() {
+    public function index() {
         $datas = Vehicle::all();
         $freedrivers = VehicleController::freeDriver();
         $assignvehicletodrivers = DriverController::assignVehicleToDriver();
