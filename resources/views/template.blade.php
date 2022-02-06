@@ -45,23 +45,23 @@
 
 <body>
     <!-- Pre-loader -->
-    {{View::make('mytemp.preloader')}}
+    @include('mytemp.preloader')
     
     <div id="pcoded" class="pcoded">
         <div class="pcoded-overlay-box"></div>
         <div class="pcoded-container navbar-wrapper">
 
             <!-- Navbar -->
-            {{View::make('mytemp.navbar')}}
+            @include('mytemp.navbar')
 
             <!-- Sidebar chat -->
-            {{View::make('mytemp.sidebarchat')}}
+            @include('mytemp.sidebarchat')
             
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
 
                     <!-- Sidebar nav -->
-                    {{View::make('mytemp.sidebarnav')}}
+                    @include('mytemp.sidebarnav')
 
                     <div class="pcoded-content">
                         <div class="pcoded-inner-content">
@@ -183,7 +183,7 @@
     <script src="files/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script type="text/javascript" src="files/assets/js/script.js"></script>
 
-     <script type="text/javascript" src="files/assets/pages/chart/chartjs/chartjs-custom.js"></script>
+    <script type="text/javascript" src="files/assets/pages/chart/chartjs/chartjs-custom.js"></script>
     
 </body>
 

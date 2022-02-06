@@ -86,8 +86,9 @@
                                                 </div>
                                             </div>
                                             <!-- task, page, download counter  end -->
+                                        </div>
 
-                                            <!-- Page-header start -->
+                                        <!-- Page-header start -->
                                             <div class="page-header">
                                                 <div class="row align-items-end">
                                                     <div class="col-lg-8">
@@ -225,6 +226,8 @@
                                                 </div>
                                             </div>
 
+
+                                        <div class="row">
                                             <!-- social download  start -->
                                             <div class="col-xl-4 col-md-6">
                                                 <div class="card social-card bg-simple-c-blue">
@@ -287,7 +290,6 @@
                                                 </div>
                                             </div>
                                             <!-- social download  end -->
-
                                         </div>
                                     </div>
 

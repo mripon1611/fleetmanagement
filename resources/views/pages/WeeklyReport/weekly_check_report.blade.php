@@ -42,44 +42,17 @@
                             <tbody>
                                 <!-- foreach start for $datas -->
                                 <tr>
-                                    <!-- <th colspan="14" style="color:red;">Date: {{$datas[0]->date}}</th> -->
-                                    <th style="color:red;">Date: {{$datas[0]->date}}</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <th colspan="14" style="color:red;">Date: {{$datas[0]->date}}</th>
                                 </tr>
                                 @foreach($datas as $data)
-                                    <!-- @if($date != $data->date)
+                                    @if($date != $data->date)
                                         @php
                                             $date = $data->date
                                         @endphp
                                         <tr>
-                                            <th style="color:red;">Date: {{$date}}</th>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <th colspan="14" style="color:red;">Date: {{$date}}</th>
                                         </tr>
-                                    @endif -->
+                                    @endif
                                 <tr>
                                     <td>{{$data->vregno}}</td>
                                     <td>{{$data->staffname==''?'NULL':$data->staffname}}</td>

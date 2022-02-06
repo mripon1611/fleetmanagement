@@ -17,11 +17,11 @@
                                             </div>
                                         </div>
                                         <div class="checklist" style="display:none;">
-                                            <div class="row m-t-15">
+                                            <div class="row m-t-15 ">
 
-                                                 <label class="col-sm-2 col-form-label">Sanitizer
-                                                     <span style="color: red;">*</span>
-                                                 </label>
+                                                <label class="col-sm-2 col-form-label">Sanitizer
+                                                    <span style="color: red;">*</span>
+                                                </label>
                                                 <div class="col-sm-2">
                                                     <div class="form-check form-check-inline">
                                                         <label class="form-check-label">
@@ -377,7 +377,7 @@
                                                     <div class="j-unit">
                                                         <label class="remarks">Remarks<span style="color: red;">*</span></label>
                                                         <div class="j-input">
-                                                            <textarea spellcheck="false"
+                                                            <textarea spellcheck="false" style="width:100%;"
                                                                 name="remarks"></textarea>
                                                         </div>
                                                     </div>
