@@ -174,6 +174,7 @@
 
     <!-- custom js -->
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/another.js"></script>
 
 
     <script src="files/assets/js/vartical-layout.min.js"></script>

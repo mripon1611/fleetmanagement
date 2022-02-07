@@ -18,6 +18,8 @@ $(document).ready(function() {
             $("#insurance").show();
         }
     });
+
+
     $( ".ministration_type" ).click(function() {
         var val = $( ".ministration_type" ).val();
         console.log(val);
@@ -52,8 +54,6 @@ $(document).ready(function() {
         $(".input_show").hide();
        
     });
-
-    // var table =$('#simpletable').DataTable();
 
 
     // check box select for weekly check report
