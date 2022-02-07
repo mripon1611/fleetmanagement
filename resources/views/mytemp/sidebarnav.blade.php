@@ -3,30 +3,6 @@
         <div class="pcoded-navigatio-lavel">Navigation</div>
         <ul class="pcoded-item pcoded-left-item">
 
-            <!-- <li class="pcoded-hasmenu {{ url()->current() == url('user/create') ? 'active pcoded-trigger':'' }} {{ url()->current() == url('user') ? 'active pcoded-trigger':'' }} {{ url()->current() == url('assign') ? 'active pcoded-trigger':'' }}">
-                <a href="javascript:void(0)">
-                    <span class="pcoded-micon"><i class="fa fa-users" aria-hidden="true"></i></span>
-                    <span class="pcoded-mtext">User Management</span>
-                </a>
-                <ul class="pcoded-submenu">
-                    <li class="{{ url()->current() == url('user/create') ? 'active':'' }}">
-                        <a href="{{ url('user/create') }}">
-                            <span class="pcoded-mtext">Registration</span>
-                        </a>
-                    </li>
-                    <li class="{{ url()->current() == url('user') ? 'active':'' }}">
-                        <a href="{{url('user')}}">
-                            <span class="pcoded-mtext">Manage Users</span>
-                        </a>
-                     </li>
-                    <li class="{{ url()->current() == url('assign') ? 'active':'' }}">
-                        <a href="{{ url('assign') }}">
-                            <span class="pcoded-mtext">Assign User</span>
-                        </a>
-                    </li>
-                </ul>
-            </li> -->
-
             <li class="pcoded-hasmenu {{ url()->current() == url('driverlist') ? 'active pcoded-trigger':'' }}
                         {{ url()->current() == url('vehicle') ? 'active pcoded-trigger':'' }}
                         {{ url()->current() == url('refuel-requisition') ? 'active pcoded-trigger':'' }}">

@@ -62,3 +62,8 @@ Route::post('/store-report', [WeeklycheckreportController::class ,'storeReport']
 Route::get('/weekly-check-report', [WeeklycheckreportController::class, 'weeklyCheckReport']);
 
 
+// notifications generation
+
+Route::get('/date', [HomeController::class, 'calculateDate']);
+
+
