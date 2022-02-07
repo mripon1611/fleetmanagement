@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\NotificationsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Driver;
@@ -26,7 +27,11 @@ class RefuelrequisitionController extends Controller
         $datas = Refuelrequisition::all();
         $vehicleslists = RefuelrequisitionController::vehiclesList();
         $addedvehicles = RefuelrequisitionController::addedVehicles();
-        return view('pages.Fuel.refuel-requisition',['datas'=>$datas,'vehicleslists'=>$vehicleslists,'addedvehicles'=>$addedvehicles,'sl'=>1,'t'=>0]);
+
+        $totalNotifications = NotificationsController::expireDocuments();
+
+        return view('pages.Fuel.refuel-requisition',['datas'=>$datas,'vehicleslists'=>$vehicleslists,'addedvehicles'=>$addedvehicles,
+                    'sl'=>1,'t'=>0,'notification_count'=>$totalNotifications]);
         // return $datas;
     }
 
@@ -61,7 +66,10 @@ class RefuelrequisitionController extends Controller
         ->where('vregno', $req->vregno)
         ->get();
 
-        return view('pages.Fuel.refuelreqhistory',['datas'=>$refuelreqlists,'vregno'=>$req->vregno,'sl'=>1]);
+        $totalNotifications = NotificationsController::expireDocuments();
+
+        return view('pages.Fuel.refuelreqhistory',['datas'=>$refuelreqlists,'vregno'=>$req->vregno,
+                    'sl'=>1,'notification_count'=>$totalNotifications]);
         // return $drivinglists;
     }
 

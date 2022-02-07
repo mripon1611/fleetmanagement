@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\NotificationsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Driver;
@@ -28,7 +29,11 @@ class VehicleController extends Controller
         $datas = Vehicle::all();
         $freedrivers = VehicleController::freeDriver();
         $assignvehicletodrivers = DriverController::assignVehicleToDriver();
-        return view('pages.Vehicle.vehicles',['datas'=>$datas,'freedrivers'=>$freedrivers,'assignvehicletodrivers'=>$assignvehicletodrivers,'sl'=>1]);
+
+        $totalNotifications = NotificationsController::expireDocuments();
+
+        return view('pages.Vehicle.vehicles',['datas'=>$datas,'freedrivers'=>$freedrivers,'assignvehicletodrivers'=>$assignvehicletodrivers,
+                        'sl'=>1,'notification_count'=>$totalNotifications]);
     }
 
     public function addNewVehicle( Request $req ) {
@@ -74,8 +79,10 @@ class VehicleController extends Controller
         ->select('*')
         ->where('vehicleregno', $req->regno)
         ->get();
-        // return $documents;
-        return view('pages.Vehicle.vehicledocuments',['datas'=>$documents, 'regno'=>$req->regno]);
+
+        $totalNotifications = NotificationsController::expireDocuments();
+
+        return view('pages.Vehicle.vehicledocuments',['datas'=>$documents, 'regno'=>$req->regno,'notification_count'=>$totalNotifications]);
     }
     public function addNewDocuments ( Request $req ) {
         $reqdata = $req->input();
@@ -88,8 +95,10 @@ class VehicleController extends Controller
         ->select('*')
         ->where('vehicleregno', $req->regno)
         ->get();
-        // return $documents;
-        return view('pages.Vehicle.vehicle_ministrations',['datas'=>$documents, 'regno'=>$req->regno]);
+
+        $totalNotifications = NotificationsController::expireDocuments();
+        
+        return view('pages.Vehicle.vehicle_ministrations',['datas'=>$documents, 'regno'=>$req->regno,'notification_count'=>$totalNotifications]);
     }
 
     public function addMinstartions( Request $req ) {

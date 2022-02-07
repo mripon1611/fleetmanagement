@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\NotificationsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Driver;
@@ -31,25 +32,11 @@ class HomeController extends Controller
         $d_counts = Driver::all()->count();
         $v_counts = Vehicle::all()->count();
 
-        // $mytime = Carbon::now();
-        // $c = 0;
-        // $ttokenexpiredates = DB::table('vpapers')
-        //                     ->select('ttokenexpiredate')
-        //                     ->where('ttokenexpiredate', ">", $mytime)
-        //                     ->get();
-        // if(count($ttokenexpiredates)>0) {
-        //     foreach( $ttokenexpiredates as $ttokenexpiredate) {
-        //         $date = $ttokenexpiredate->ttokenexpiredate;
-        //         $dateDis =  $mytime->diffInDays($date);
-        //         if($dateDis <= 15) {
-        //             $c += 1;
-        //         }
-        //     }
-        // }
+        $totalNotifications = NotificationsController::expireDocuments();
 
         return view('index',['v_last_updates'=>$v_last_updates[0]->updated_at,
                                     'd_last_updates'=>$d_last_updates[0]->updated_at,
-                                    'v_counts'=>$v_counts,'d_counts'=>$d_counts]);
+                                    'v_counts'=>$v_counts,'d_counts'=>$d_counts,'notification_count'=>$totalNotifications]);
     }
 
     public function calculateDate() {

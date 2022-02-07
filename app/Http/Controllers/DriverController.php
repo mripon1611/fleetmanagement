@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\NotificationsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Driver;
@@ -24,7 +25,11 @@ class DriverController extends Controller
         $datas = Driver::all();
         $freevehicles = DriverController::freeVehicle();
         $assignvehicletodrivers = DriverController::assignVehicleToDriver();
-        return view('pages.Driver.driverlist',['datas'=>$datas,'freevehicles'=>$freevehicles,'assignvehicletodrivers'=>$assignvehicletodrivers,'sl'=>1]);
+
+        $totalNotifications = NotificationsController::expireDocuments();
+
+        return view('pages.Driver.driverlist',['datas'=>$datas,'freevehicles'=>$freevehicles,'assignvehicletodrivers'=>$assignvehicletodrivers,
+                        'sl'=>1,'notification_count'=>$totalNotifications]);
     }
 
     public function addNewDriver( Request $req ) {
@@ -106,7 +111,9 @@ class DriverController extends Controller
         ->where('dlicensenumber', $req->license)
         ->get();
 
-        return view('pages.Driver.drivinghistory',['datas'=>$drivinglists]);
+        $totalNotifications = NotificationsController::expireDocuments();
+
+        return view('pages.Driver.drivinghistory',['datas'=>$drivinglists,'notification_count'=>$totalNotifications]);
 
     }
 }

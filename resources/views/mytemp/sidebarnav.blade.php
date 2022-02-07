@@ -5,23 +5,31 @@
 
             <li class="pcoded-hasmenu {{ url()->current() == url('driverlist') ? 'active pcoded-trigger':'' }}
                         {{ url()->current() == url('vehicle') ? 'active pcoded-trigger':'' }}
-                        {{ url()->current() == url('refuel-requisition') ? 'active pcoded-trigger':'' }}">
+                        {{ url()->current() == url('refuel-requisition') ? 'active pcoded-trigger':'' }}
+                        {{ url()->current() == url('vehicledocuments') ? 'active pcoded-trigger':'' }}
+                        {{ url()->current() == url('vehicleministrations') ? 'active pcoded-trigger':'' }}
+                        {{ url()->current() == url('drivinghistory') ? 'active pcoded-trigger':'' }}
+                        {{ url()->current() == url('refuelreqhistory') ? 'active pcoded-trigger':'' }}">
                 <a href="javascript:void(0)">
                     <span class="pcoded-micon"><i class="fas fa-truck-monster"></i></span>
                     <span class="pcoded-mtext">Vehicle Management</span>
                 </a>
                 <ul class="pcoded-submenu">
-                    <li class="{{ url()->current() == url('driverlist') ? 'active':'' }}">
+                    <li class="{{ url()->current() == url('driverlist') ? 'active':'' }}
+                                {{ url()->current() == url('drivinghistory') ? 'active':'' }}">
                         <a href="/driverlist">
                             <span class="pcoded-mtext">Manage Driver</span>
                         </a>
                     </li>
-                    <li class="{{ url()->current() == url('vehicle') ? 'active':'' }}">
+                    <li class="{{ url()->current() == url('vehicle') ? 'active':'' }}
+                                {{ url()->current() == url('vehicledocuments') ? 'active':'' }}
+                                {{ url()->current() == url('vehicleministrations') ? 'active':'' }}">
                         <a href="/vehicle">
                             <span class="pcoded-mtext">Manage Vehicle</span>
                         </a>
                     </li>
-                    <li class="{{ url()->current() == url('refuel-requisition') ? 'active':'' }}">
+                    <li class="{{ url()->current() == url('refuel-requisition') ? 'active':'' }}
+                                {{ url()->current() == url('refuelreqhistory') ? 'active':'' }}">
                         <a href="/refuel-requisition">
                             <span class="pcoded-mtext">Refuel Requisition</span>
                         </a>

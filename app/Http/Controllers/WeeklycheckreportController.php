@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\NotificationsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Vehicle;
@@ -18,7 +19,10 @@ class WeeklycheckreportController extends Controller
 
     public function generateReport() {
         $vehicles = Queue::all();
-        return view('pages.WeeklyReport.createWeeklyReport',['vehicles'=>$vehicles]);
+
+        $totalNotifications = NotificationsController::expireDocuments();
+
+        return view('pages.WeeklyReport.createWeeklyReport',['vehicles'=>$vehicles,'notification_count'=>$totalNotifications]);
     }
 
     public function selectDate( Request $req ) {
@@ -70,7 +74,9 @@ class WeeklycheckreportController extends Controller
 
         $date = $reports[0]->date;
 
+        $totalNotifications = NotificationsController::expireDocuments();
+
         // return $reports;
-        return view('pages.WeeklyReport.weekly_check_report',['datas'=>$reports,'date'=>$date]);
+        return view('pages.WeeklyReport.weekly_check_report',['datas'=>$reports,'date'=>$date,'notification_count'=>$totalNotifications]);
     }
 }
