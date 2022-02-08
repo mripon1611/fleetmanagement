@@ -13,7 +13,7 @@
             <!-- Zero config.table start -->
             <div class="card">
                 <div class="card-header mb-3">
-                    <div class="d-flex justify-content-xl-between">
+                    <div class="d-flex justify-content-between">
                         <h3>Driver List</h3>
                         <button class="btn btn-primary" data-toggle="modal" data-target="#addnewdriver">Add New Driver</button>
                     </div>

@@ -12,13 +12,13 @@
         <div class="col-sm-12">
             <!-- Zero config.table start -->
             <div class="card">
-                <div class="card-header">
-                    <h3>Refuel Requisition</h3>
-                </div>
-                <div class="card-block">
-                    <div class="d-flex justify-content-end mb-2">
+                <div class="card-header mb-3">
+                    <div class="d-flex justify-content-between">
+                         <h3>Refuel Requisition</h3>
                         <button class="btn btn-primary" data-toggle="modal" data-target="#addnew">Add New</button>
                     </div>
+                </div>
+                <div class="card-block">
                     <div class="dt-responsive table-responsive">
                         <table id="simpletable"
                             class="table table-hover table-bordered nowrap text-center">

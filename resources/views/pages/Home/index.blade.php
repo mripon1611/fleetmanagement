@@ -2,6 +2,16 @@
 @section('title','home')
 @section('maincontents')
 
+<input type="hidden" id="service_cost" value="{{$ministration_cost['servicing_cost']}}">
+<input type="hidden" id="tyre_cost" value="{{$ministration_cost['tyre_change_cost']}}">
+<input type="hidden" id="battery_cost" value="{{$ministration_cost['battery_change_cost']}}">
+<input type="hidden" id="normal_cost" value="{{$ministration_cost['normal_works_cost']}}">
+<input type="hidden" id="major_cost" value="{{$ministration_cost['major_works_cost']}}">
+
+<input type="hidden" id="octane_cost" value="{{$fuel_cost['octane_cost']}}">
+<input type="hidden" id="petrol_cost" value="{{$fuel_cost['petrol_cost']}}">
+<input type="hidden" id="diesel_cost" value="{{$fuel_cost['diesel_cost']}}">
+
                                     <div class="page-body">
                                         <div class="row">
                                             <!-- task, page, download counter  start -->
@@ -122,9 +132,8 @@
                                                     <div class="col-md-12 col-lg-4">
                                                         <div class="card">
                                                             <div class="card-header">
-                                                                <h5>Doughnut chart</h5>
-                                                                <span>lorem ipsum dolor sit amet, consectetur adipisicing
-                                                                    elit</span>
+                                                                <h5>Ministrations Cost</h5>
+                                                                <span id="ministration_cost"></span>
 
                                                             </div>
                                                             <div class="card-block">
@@ -133,6 +142,30 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12 col-lg-4">
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h5>In Total Cost</h5>
+                                                                <span id="in_total"></span>
+
+                                                            </div>
+                                                            <div class="card-block">
+                                                                <canvas id="allCostChart" width="400" height="400"></canvas>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 col-lg-4">
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h5>Fuel Cost</h5>
+                                                                <span id="fuel_cost"></span>
+
+                                                            </div>
+                                                            <div class="card-block">
+                                                                <canvas id="fuelCostChart" width="400" height="400"></canvas>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="col-md-12 col-lg-4">
                                                         <div class="card">
                                                             <div class="card-header">
                                                                 <h5>Radar chart</h5>
@@ -183,46 +216,9 @@
                                                                 <canvas id="barChart" width="400" height="400"></canvas>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-12 col-lg-4">
-                                                        <div class="card">
-                                                            <div class="card-header">
-                                                                <h5>Bubble Chart</h5>
-                                                                <span>lorem ipsum dolor sit amet, consectetur adipisicing
-                                                                    elit</span>
-
-                                                            </div>
-                                                            <div class="card-block">
-                                                                <canvas id="bubblechart" width="400" height="400"></canvas>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12 col-lg-4">
-                                                        <div class="card">
-                                                            <div class="card-header">
-                                                                <h5>Scales chart</h5>
-                                                                <span>lorem ipsum dolor sit amet, consectetur adipisicing
-                                                                    elit</span>
-
-                                                            </div>
-                                                            <div class="card-block">
-                                                                <canvas id="stancechart" width="400" height="400"></canvas>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12 col-lg-4">
-                                                        <div class="card">
-                                                            <div class="card-header">
-                                                                <h5>Time Scale chart</h5>
-                                                                <span>lorem ipsum dolor sit amet, consectetur adipisicing
-                                                                    elit</span>
-
-                                                            </div>
-                                                            <div class="card-block">
-                                                                <canvas id="timescalechart" width="400" height="400"></canvas>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    </div> -->
+                                                    
+                                                    
                                                 </div>
                                             </div>
 

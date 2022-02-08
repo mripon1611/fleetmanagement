@@ -13,51 +13,72 @@
                         @csrf()
                         @if(count($vehicleslists)>0)
                             <div class="row">
-                            
                                 @if(count($addedvehicles)>0)
-                                    @foreach($vehicleslists as $vehicleslist)
-                                        @foreach($addedvehicles as $addedvehicle)
-                                            @if($vehicleslist->vregno == $addedvehicle->vregno)
-                                                @php
-                                                    $t = 0
-                                                @endphp
-                                                @break
-                                            @else
-                                                @php
-                                                    $t = 1
-                                                @endphp
-                                            @endif
-                                        @endforeach
-                                        @if($t == 1)
-                                            <div class="form-group col-md-6">
-                                                <label for="vregno">Vehicle Reg No<span style="color: red;">*</span></label>
-                                                <select id="vregno" class="form-control" name="vregno">
-                                                    <option>Select Vehicle</option>
+                                    <div class="form-group col-md-6">
+                                        <label for="vregno">Vehicle Reg No<span style="color: red;">*</span></label>
+                                        <select id="vregno" class="form-control" name="vregno">
+                                            <option>Select Vehicle</option>
+                                            @foreach($vehicleslists as $vehicleslist)
+                                                @foreach($addedvehicles as $addedvehicle)
+                                                    @if($vehicleslist->vregno == $addedvehicle->vregno)
+                                                        @php
+                                                            $t = 0
+                                                        @endphp
+                                                        @break
+                                                    @else
+                                                        @php
+                                                            $t = 1
+                                                        @endphp
+                                                    @endif
+                                                @endforeach
+                                                @if($t == 1)
                                                     <option value="{{$vehicleslist->vregno}}">{{$vehicleslist->vregno}}</option>
-                                                </select>
-                                                <span class="md-line"></span>
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="staffname">Staff Name<span style="color: red;">*</span></label>
-                                                <select id="staffname" class="form-control" name="staffname">
-                                                    <option>Select Staff</option>
+                                                @else
+                                                    @php
+                                                        $t = 0
+                                                    @endphp
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                        <span class="md-line"></span>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="staffname">Staff Name<span style="color: red;">*</span></label>
+                                        <select id="staffname" class="form-control" name="staffname">
+                                            <option>Select Staff</option>
+                                            @foreach($vehicleslists as $vehicleslist)
+                                                @foreach($addedvehicles as $addedvehicle)
+                                                    @if($vehicleslist->vregno == $addedvehicle->vregno)
+                                                        @php
+                                                            $t = 0
+                                                        @endphp
+                                                        @break
+                                                    @else
+                                                        @php
+                                                            $t = 1
+                                                        @endphp
+                                                    @endif
+                                                @endforeach
+                                                @if($t == 1)
                                                     <option value="{{$vehicleslist->drivername}}">{{$vehicleslist->drivername}}</option>
-                                                </select>
-                                                <span class="md-line"></span>
-                                            </div>
-                                        @else
-                                            @php
-                                                $t = 0
-                                            @endphp
-                                        @endif
-                                    @endforeach
+                                                @else
+                                                    @php
+                                                        $t = 0
+                                                    @endphp
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                        <span class="md-line"></span>
+                                    </div>
                                 @else
-                                    @foreach($vehicleslists as $vehicleslist)
+                                    
                                         <div class="form-group col-md-6">
                                             <label for="vregno">Vehicle Reg No<span style="color: red;">*</span></label>
                                             <select id="vregno" class="form-control" name="vregno">
                                                 <option>Select Vehicle</option>
+                                                @foreach($vehicleslists as $vehicleslist)
                                                 <option value="{{$vehicleslist->vregno}}">{{$vehicleslist->vregno}}</option>
+                                                @endforeach
                                             </select>
                                             <span class="md-line"></span>
                                         </div>
@@ -65,11 +86,13 @@
                                             <label for="staffname">Staff Name<span style="color: red;">*</span></label>
                                             <select id="staffname" class="form-control" name="staffname">
                                                 <option>Select Staff</option>
+                                                @foreach($vehicleslists as $vehicleslist)
                                                 <option value="{{$vehicleslist->drivername}}">{{$vehicleslist->drivername}}</option>
+                                                @endforeach
                                             </select>
                                             <span class="md-line"></span>
                                         </div>
-                                    @endforeach
+                                    
                                 @endif
 
                                 <div class="form-group col-md-6">

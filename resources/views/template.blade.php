@@ -39,6 +39,7 @@
     <link rel="stylesheet" type="text/css" href="files/bower_components/chartist/dist/chartist.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="files/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="files/assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="files/assets/css/linearicons.css">
     <link rel="stylesheet" type="text/css" href="files/assets/css/jquery.mCustomScrollbar.css">
 </head>

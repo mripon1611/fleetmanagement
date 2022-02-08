@@ -11,16 +11,16 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="card">
-                <div class="card-header">
-                    <p>Documents : <span style="color:#1684c5;">
-                            {{$regno}}
-                        </span>
-                    </p>
-                </div>
-                <div class="card-block">
-                    <div class="d-flex justify-content-end mb-2">
+                <div class="card-header mb-3">
+                    <div class="d-flex justify-content-between">
+                        <p>Documents : <span style="color:#1684c5;">
+                                {{$regno}}
+                            </span>
+                        </p>
                         <button class="btn btn-primary" data-toggle="modal" data-target="#addnewdocuments">Add New Documents</button>
                     </div>
+                </div>
+                <div class="card-block">
                     <div class="dt-responsive table-responsive">
                         <table id="vehicledocuments" class="table table-hover table-bordered nowrap text-center">
                             <thead>

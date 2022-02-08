@@ -19,239 +19,280 @@
                                         <div class="checklist" style="display:none;">
                                             <div class="row m-t-15 ">
 
-                                                <label class="col-sm-2 col-form-label">Sanitizer
-                                                    <span style="color: red;">*</span>
-                                                </label>
-                                                <div class="col-sm-2">
-                                                    <div class="form-check form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="sanitizer" id="sanitizer-1"
-                                                                value="1"> Okay
+                                                <div class="form-control col-md-4 check-report-form" style="border:none">
+                                                    <div class="row">
+                                                        <label class="col-sm-6 col-form-label">Sanitizer
+                                                            <span style="color: red;">*</span>
                                                         </label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="sanitizer" id="sanitizer-1"
+                                                                        value="1"> Okay
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="sanitizer" id="sanitizer-2"
+                                                                        value="0"> Problem
+                                                                </label>
+                                                            </div>
+                                                            <span class="messages"></span>
+                                                        </div>
                                                     </div>
-                                                    <div class="form-check form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="sanitizer" id="sanitizer-2"
-                                                                value="0"> Problem
-                                                        </label>
-                                                    </div>
-                                                    <span class="messages"></span>
                                                 </div>
 
-                                                <label class="col-sm-2 col-form-label">Wheel
-                                                     <span style="color: red;">*</span>
-                                                 </label>
-                                                <div class="col-sm-2">
-                                                    <div class="form-check form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="wheel" id="wheel-1"
-                                                                value="1"> Okay
+                                                <div class="form-control col-md-4 check-report-form" style="border:none">
+                                                    <div class="row">
+                                                        <label class="col-sm-6 col-form-label">Wheel
+                                                            <span style="color: red;">*</span>
                                                         </label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="wheel" id="wheel-1"
+                                                                        value="1"> Okay
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="wheel" id="wheel-2"
+                                                                        value="0"> Stop
+                                                                </label>
+                                                            </div>
+                                                            <span class="messages"></span>
+                                                        </div>
                                                     </div>
-                                                    <div class="form-check form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="wheel" id="wheel-2"
-                                                                value="0"> Stop
-                                                        </label>
-                                                    </div>
-                                                    <span class="messages"></span>
                                                 </div>
 
-                                                <label class="col-sm-2 col-form-label">Light
-                                                     <span style="color: red;">*</span>
-                                                 </label>
-                                                <div class="col-sm-2">
-                                                    <div class="form-check form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="light" id="light-1"
-                                                                value="1"> Okay
+                                                <div class="form-control col-md-4 check-report-form" style="border:none">
+                                                    <div class="row">
+                                                        <label class="col-sm-6 col-form-label">Light
+                                                            <span style="color: red;">*</span>
                                                         </label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="light" id="light-1"
+                                                                        value="1"> Okay
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="light" id="light-2"
+                                                                        value="0"> Problem
+                                                                </label>
+                                                            </div>
+                                                            <span class="messages"></span>
+                                                        </div>
                                                     </div>
-                                                    <div class="form-check form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="light" id="light-2"
-                                                                value="0"> Problem
-                                                        </label>
-                                                    </div>
-                                                    <span class="messages"></span>
                                                 </div>
 
-                                                <label class="col-sm-2 col-form-label">Horn
-                                                     <span style="color: red;">*</span>
-                                                 </label>
-                                                <div class="col-sm-2">
-                                                    <div class="form-check form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="horn" id="horn-1"
-                                                                value="1"> Okay
+                                                <div class="form-control col-md-4 check-report-form" style="border:none">
+                                                    <div class="row">
+                                                        <label class="col-sm-6 col-form-label">Horn
+                                                            <span style="color: red;">*</span>
                                                         </label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="horn" id="horn-1"
+                                                                        value="1"> Okay
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="horn" id="horn-2"
+                                                                        value="0"> Problem
+                                                                </label>
+                                                            </div>
+                                                            <span class="messages"></span>
+                                                        </div>
                                                     </div>
-                                                    <div class="form-check form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="horn" id="horn-2"
-                                                                value="0"> Problem
-                                                        </label>
-                                                    </div>
-                                                    <span class="messages"></span>
                                                 </div>
 
-                                                <label class="col-sm-2 col-form-label">Mobil
-                                                     <span style="color: red;">*</span>
-                                                 </label>
-                                                <div class="col-sm-2">
-                                                    <div class="form-check form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="mobil" id="mobil-1"
-                                                                value="1"> Okay
+                                                <div class="form-control col-md-4 check-report-form" style="border:none">
+                                                    <div class="row">
+                                                        <label class="col-sm-6 col-form-label">Mobil
+                                                            <span style="color: red;">*</span>
                                                         </label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="mobil" id="mobil-1"
+                                                                        value="1"> Okay
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="mobil" id="mobil-2"
+                                                                        value="0"> Problem
+                                                                </label>
+                                                            </div>
+                                                            <span class="messages"></span>
+                                                        </div>
                                                     </div>
-                                                    <div class="form-check form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="mobil" id="mobil-2"
-                                                                value="0"> Problem
+                                                </div>
+                                                
+                                                <div class="form-control col-md-4 check-report-form" style="border:none">
+                                                    <div class="row">
+                                                        <label class="col-sm-6 col-form-label">AC
+                                                            <span style="color: red;">*</span>
                                                         </label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="ac" id="ac-1"
+                                                                        value="1"> Okay
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="ac" id="ac-2"
+                                                                        value="0"> Stop
+                                                                </label>
+                                                            </div>
+                                                            <span class="messages"></span>
+                                                        </div>
                                                     </div>
-                                                    <span class="messages"></span>
+                                                </div> 
+                                                
+                                                <div class="form-control col-md-4 check-report-form" style="border:none">
+                                                    <div class="row">
+                                                        <label class="col-sm-6 col-form-label">Engine
+                                                            <span style="color: red;">*</span>
+                                                        </label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="engine" id="engine-1"
+                                                                        value="1"> Okay
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="engine" id="engine-2"
+                                                                        value="0"> Problem
+                                                                </label>
+                                                            </div>
+                                                            <span class="messages"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="form-control col-md-4 check-report-form" style="border:none">
+                                                    <div class="row">
+                                                        <label class="col-sm-6 col-form-label">Looking Glass
+                                                            <span style="color: red;">*</span>
+                                                        </label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="looking_glass" id="looking_glass-1"
+                                                                        value="1"> Okay
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="looking_glass" id="looking_glass-2"
+                                                                        value="0"> Problem
+                                                                </label>
+                                                            </div>
+                                                            <span class="messages"></span>
+                                                        </div>
+                                                    </div>
                                                 </div>
 
-                                                <label class="col-sm-2 col-form-label">AC
-                                                     <span style="color: red;">*</span>
-                                                 </label>
-                                                <div class="col-sm-2">
-                                                    <div class="form-check form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="ac" id="ac-1"
-                                                                value="1"> Okay
+                                                <div class="form-control col-md-4 check-report-form" style="border:none">
+                                                    <div class="row">
+                                                        <label class="col-sm-6 col-form-label">Clean Indoor $ Outdoor
+                                                            <span style="color: red;">*</span>
                                                         </label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="clean_indoor_outdoor" id="clean_indoor_outdoor-1"
+                                                                        value="1"> Okay
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="clean_indoor_outdoor" id="clean_indoor_outdoor-2"
+                                                                        value="0"> Needs Clean
+                                                                </label>
+                                                            </div>
+                                                            <span class="messages"></span>
+                                                        </div>
                                                     </div>
-                                                    <div class="form-check form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="ac" id="ac-2"
-                                                                value="0"> Stop
-                                                        </label>
-                                                    </div>
-                                                    <span class="messages"></span>
                                                 </div>
 
-                                                <label class="col-sm-2 col-form-label">Engine
-                                                     <span style="color: red;">*</span>
-                                                 </label>
-                                                <div class="col-sm-2">
-                                                    <div class="form-check form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="engine" id="engine-1"
-                                                                value="1"> Okay
+                                                <div class="form-control col-md-4 check-report-form" style="border:none">
+                                                    <div class="row">
+                                                        <label class="col-sm-6 col-form-label">Oil
+                                                            <span style="color: red;">*</span>
                                                         </label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="oil" id="oil-1"
+                                                                        value="0"> Need
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="oil" id="oil-2"
+                                                                        value="1"> No Need
+                                                                </label>
+                                                            </div>
+                                                            <span class="messages"></span>
+                                                        </div>
                                                     </div>
-                                                    <div class="form-check form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="engine" id="engine-2"
-                                                                value="0"> Problem
-                                                        </label>
-                                                    </div>
-                                                    <span class="messages"></span>
                                                 </div>
 
-                                                <label class="col-sm-2 col-form-label">Looking Glass
-                                                     <span style="color: red;">*</span>
-                                                 </label>
-                                                <div class="col-sm-2">
-                                                    <div class="form-check form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="looking_glass" id="looking_glass-1"
-                                                                value="1"> Okay
+                                                <div class="form-control col-md-4 check-report-form" style="border:none">
+                                                    <div class="row">
+                                                        <label class="col-sm-6 col-form-label">Papers
+                                                            <span style="color: red;">*</span>
                                                         </label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="papers" id="papers-1"
+                                                                        value="1"> Okay
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="papers" id="papers-2"
+                                                                        value="0"> Problem
+                                                                </label>
+                                                            </div>
+                                                            <span class="messages"></span>
+                                                        </div>
                                                     </div>
-                                                    <div class="form-check form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="looking_glass" id="looking_glass-2"
-                                                                value="0"> Problem
-                                                        </label>
-                                                    </div>
-                                                    <span class="messages"></span>
                                                 </div>
-
-                                                <label class="col-sm-2 col-form-label">Clean Indoor $ Outdoor
-                                                     <span style="color: red;">*</span>
-                                                 </label>
-                                                <div class="col-sm-2">
-                                                    <div class="form-check form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="clean_indoor_outdoor" id="clean_indoor_outdoor-1"
-                                                                value="1"> Okay
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="clean_indoor_outdoor" id="clean_indoor_outdoor-2"
-                                                                value="0"> Needs Clean
-                                                        </label>
-                                                    </div>
-                                                    <span class="messages"></span>
-                                                </div>
-
-                                                <label class="col-sm-2 col-form-label">Oil
-                                                     <span style="color: red;">*</span>
-                                                 </label>
-                                                <div class="col-sm-2">
-                                                    <div class="form-check form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="oil" id="oil-1"
-                                                                value="0"> Need
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="oil" id="oil-2"
-                                                                value="1"> No Need
-                                                        </label>
-                                                    </div>
-                                                    <span class="messages"></span>
-                                                </div>
-
-                                                <label class="col-sm-2 col-form-label">Papers
-                                                     <span style="color: red;">*</span>
-                                                 </label>
-                                                <div class="col-sm-2">
-                                                    <div class="form-check form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="papers" id="papers-1"
-                                                                value="1"> Okay
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="papers" id="papers-2"
-                                                                value="0"> Problem
-                                                        </label>
-                                                    </div>
-                                                    <span class="messages"></span>
-                                                </div>
-
-
-
                                                 <!-- <div class="form-group col-md-3">
                                                     <label for="sanitizer">Sanitizer<span style="color: red;">*</span></label><br>
                                                     <label class="pl-2 pr-2">

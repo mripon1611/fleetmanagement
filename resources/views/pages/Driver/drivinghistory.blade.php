@@ -13,8 +13,9 @@
             <!-- Zero config.table start -->
             <div class="card">
                 <div class="card-header">
-                    <h3>Driving History</h3>
-
+                    <div class="d-flex justify-content-between">
+                        <h3>Driving History</h3>
+                    </div>
                 </div>
                 <div class="card-block">
                     <div class="dt-responsive table-responsive">

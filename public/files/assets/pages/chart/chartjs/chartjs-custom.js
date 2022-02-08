@@ -1,30 +1,55 @@
 "use strict";
 $(document).ready(function(){
+    var serviceCost = $( "#service_cost" ).val();
+    var tyreCost = $( "#tyre_cost" ).val();
+    var batteryCost = $( "#battery_cost" ).val();
+    var normalCost = $( "#normal_cost" ).val();
+    var majorCost = $( "#major_cost" ).val();
+    var ministration_cost = parseInt(serviceCost) + parseInt(tyreCost) + parseInt(batteryCost) + parseInt(normalCost) + parseInt(majorCost);
+    var mTotal = "Total : " + ministration_cost;
+    $("#ministration_cost").text(mTotal);
+
+    var octaneCost = $( "#octane_cost" ).val();
+    var petrolCost = $( "#petrol_cost" ).val();
+    var dieselCost = $( "#diesel_cost" ).val();
+    var fuel_cost = parseInt(octaneCost) + parseInt(petrolCost) + parseInt(dieselCost);
+    var fTotal = "Total : " + fuel_cost;
+    $("#fuel_cost").text(fTotal);
+
+    var inTotal = ministration_cost + fuel_cost;
+    inTotal = "Total : "+ inTotal;
+    $("#in_total").text(inTotal);
+
+
+
     /*Doughnut chart*/
     var ctx = document.getElementById("myChart");
     var data = {
         labels: [
-            "A", "B", "C", "D "
+            "Servecing", "Tyre Change", "Battery Change", "Normal Works", "Major Works"
         ],
         datasets: [{
-            data: [40, 10, 40, 10],
+            data: [serviceCost, tyreCost, batteryCost, normalCost,majorCost],
             backgroundColor: [
+                "#7E81CB",
                 "#1ABC9C",
-                "#FCC9BA",
                 "#B8EDF0",
-                "#B4C1D7"
+                "#B4C1D7",
+                "#01C0C8"
             ],
             borderWidth: [
+                "0px",
                 "0px",
                 "0px",
                 "0px",
                 "0px"
             ],
             borderColor: [
-                "#1ABC9C",
-                "#FCC9BA",
-                "#B8EDF0",
-                "#B4C1D7"
+                "#a1a4ec",
+                "#2adab7",
+                "#a7e7ea",
+                "#a5b0c3",
+                "#10e6ef"
 
             ]
         }]
@@ -33,6 +58,62 @@ $(document).ready(function(){
     var myDoughnutChart = new Chart(ctx, {
         type: 'doughnut',
         data: data
+    });
+
+    /*All cost chart*/
+    var pieElem = document.getElementById("allCostChart");
+    var data20 = {
+        labels: [
+            "Ministration Cost",
+            "Fuel Cost"
+        ],
+        datasets: [{
+            data: [ministration_cost, fuel_cost],
+            backgroundColor: [
+                "#01C0C8",
+                "#FB9A7D"
+            ],
+            hoverBackgroundColor: [
+                "#0dedf7",
+                "#ffb59f"
+            ]
+        }]
+    };
+    var myAllCostChart = new Chart(pieElem, {
+        type: 'pie',
+        data: data20
+    });
+
+    /*Fuel cost chart*/
+    var ctx = document.getElementById("fuelCostChart");
+    var data21 = {
+        labels: [
+            "Octane", "Petrol", "Diesel"
+        ],
+        datasets: [{
+            data: [octaneCost, petrolCost, dieselCost],
+            backgroundColor: [
+                "#25A6F7",
+                "#FB9A7D",
+                "#B8EDF0"
+            ],
+            borderWidth: [
+                "0px",
+                "0px",
+                "0px"
+            ],
+            borderColor: [
+                "#6cc4fb",
+                "#ffb59f",
+                "#a7e7ea"
+
+            ]
+        }]
+    };
+
+    var myFuelCostChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: data21
     });
 
 

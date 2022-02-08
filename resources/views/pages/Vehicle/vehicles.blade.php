@@ -11,8 +11,11 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="card">
-                <div class="card-header">
-                    <h5>Vehicle List</h5>
+                <div class="card-header mb-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>Vehicle List</h3>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#addnewvehicle">Add New Vehicle</button>
+                    </div>
                 </div>
                     @if(Session::has('success'))
 						<div class="alert alert-success">
@@ -20,9 +23,6 @@
 						</div>
 					@endif
                 <div class="card-block">
-                    <div class="d-flex justify-content-end mb-2">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#addnewvehicle">Add New Vehicle</button>
-                    </div>
                     <div class="dt-responsive table-responsive">
                         <table id="vehicletable" class="table table-hover table-bordered nowrap text-center">
                             <thead>
