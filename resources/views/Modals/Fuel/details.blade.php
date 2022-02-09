@@ -5,8 +5,14 @@
                                                 <div class="card m-t-15">
                                                     <div class="auth-box card-block">
                                                         <div class="row m-b-20">
-                                                            <div class="col-md-12">
-                                                                <h3 class="text-center txt-primary">Details</h3>
+                                                            <div class="col-md-12 d-flex justify-content-between mb-3">
+                                                                <h5 class="txt-primary">Details</h5>
+                                                                <button type="button" class="close"
+                                                                    data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span
+                                                                        aria-hidden="true">&times;</span>
+                                                                </button>
                                                             </div>
                                                         </div>
                                                         <hr />
@@ -48,7 +54,7 @@
                                                             </div>
                                                             <div class="form-group col-md-6">
                                                                 <label for="file">File</label>
-                                                                <a href="#" class="form-control">{{$data['file']}}</a>
+                                                                <a href="#" class="form-control" style="border:none;">{{$data['file']}}</a>
                                                                 <!-- <input type="file" class="form-control" id="file" name="file"> -->
                                                             </div>
                                                             <div class="form-group col-md-6">

@@ -3,8 +3,14 @@
                                         <div class="login-card login-card-modal modal-content card">
                                             <div class="form-group col-md-12 text-right">
                                                 <div class="row m-t-30 m-b-20">
-                                                    <div class="col-md-12">
-                                                        <h3 class="text-center txt-primary">Driver Details</h3>
+                                                    <div class="col-md-12 d-flex justify-content-between mb-3">
+                                                        <h5 class="txt-primary">Driver Details</h5>
+                                                        <button type="button" class="close"
+                                                            data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span
+                                                                aria-hidden="true">&times;</span>
+                                                        </button>
                                                     </div>
                                                 </div>
                                                 <hr />

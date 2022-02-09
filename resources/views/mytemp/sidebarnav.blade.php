@@ -3,6 +3,13 @@
         <div class="pcoded-navigatio-lavel">Navigation</div>
         <ul class="pcoded-item pcoded-left-item">
 
+            <li class="{{ url()->current() == url('') ? 'active':'' }}">
+                <a href="/">
+                    <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                    <span class="pcoded-mtext">Dashboard</span>
+                </a>
+            </li>
+
             <li class="pcoded-hasmenu {{ url()->current() == url('driverlist') ? 'active pcoded-trigger':'' }}
                         {{ url()->current() == url('vehicle') ? 'active pcoded-trigger':'' }}
                         {{ url()->current() == url('refuel-requisition') ? 'active pcoded-trigger':'' }}
