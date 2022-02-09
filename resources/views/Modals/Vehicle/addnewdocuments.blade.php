@@ -27,31 +27,31 @@
                                     <option value="fitness">Fitness</option>
                                     <option value="insurance">Insurance</option>
                                 </select>
-                            </div>
-                            <div class="col-md-12" id="documents_field" style="display:none;">
-                                <div class="row">
-                                    <div class="form-group col-md-4">
-                                        <label for="issuedate" id="issuedate">Token From<span style="color: red;">*</span></label>
-                                        <input type="date" class="form-control" id="issue_date" name="issue_date">
-                                        <span class="md-line"></span>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="expiredate" id="expiredate">Token To<span style="color: red;">*</span></label>
-                                        <input type="date" class="form-control" id="expire_date" name="expire_date">
-                                        <span class="md-line"></span>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="tokenfile">Documents<span style="color: red;">*</span></label>
-                                        <input type="file" class="form-control" id="documents" name="documents">
-                                        <span class="md-line"></span>
-                                    </div>
-                                </div>
-                            </div>                                                       
+                            </div>                                                    
                         </div>
-                        <div class="row m-t-15">
-                            <div class="col-md-12">
-                                <button type="submit"
-                                    class="btn btn-success btn-md btn-block waves-effect text-center">Save</button>
+                        <div class="col-md-12" id="documents_field" style="display:none;">
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label for="issuedate" id="issuedate">Token From<span style="color: red;">*</span></label>
+                                    <input type="date" class="form-control" id="issue_date" name="issue_date">
+                                    <span class="md-line"></span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="expiredate" id="expiredate">Token To<span style="color: red;">*</span></label>
+                                    <input type="date" class="form-control" id="expire_date" name="expire_date">
+                                    <span class="md-line"></span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="tokenfile">Documents<span style="color: red;">*</span></label>
+                                    <input type="file" class="form-control" id="documents" name="documents">
+                                    <span class="md-line"></span>
+                                </div>
+                            </div>
+                            <div class="row m-t-15">
+                                <div class="col-md-12">
+                                    <button type="submit"
+                                        class="btn btn-success btn-md btn-block waves-effect text-center">Save</button>
+                                </div>
                             </div>
                         </div>
                     </div>

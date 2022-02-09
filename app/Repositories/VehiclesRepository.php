@@ -82,6 +82,18 @@ class VehiclesRepository implements VehiclesInterface {
     }
 
     public function addNewMinstartions( array $reqdata ) {
+        
+        $staffname = DB::table('vehicledrivers')
+                    ->select('drivername')
+                    ->where('vregno', $reqdata['vehicleregno'])
+                    ->where('status', 'present')
+                    ->get();
+        if(count($staffname)>0) {
+            $reqdata['staffname'] = $staffname[0]->drivername;
+        }else {
+            $reqdata['staffname'] = '';
+        }
+
         Ministration::create($reqdata);
     }
 

@@ -36,11 +36,11 @@ class CostController extends Controller
     }
 
     public function ministrationCost() {
-        $servicing_cost = DB::table('ministrations')->sum('servicing_cost');
-        $tyre_change_cost = DB::table('ministrations')->sum('tyre_change_cost');
-        $battery_change_cost = DB::table('ministrations')->sum('battery_change_cost');
-        $normal_works_cost = DB::table('ministrations')->sum('normal_works_cost');
-        $major_works_cost = DB::table('ministrations')->sum('major_works_cost');
+        $servicing_cost = DB::table('ministrations')->where('ministration_type', 'servicing')->sum('ministration_cost');
+        $tyre_change_cost = DB::table('ministrations')->where('ministration_type', 'tyre_change')->sum('ministration_cost');
+        $battery_change_cost = DB::table('ministrations')->where('ministration_type', 'battery_change')->sum('ministration_cost');
+        $normal_works_cost = DB::table('ministrations')->where('ministration_type', 'normal_work')->sum('ministration_cost');
+        $major_works_cost = DB::table('ministrations')->where('ministration_type', 'major_work')->sum('ministration_cost');
 
         $ministration_cost = [];
         $ministration_cost['servicing_cost'] =$servicing_cost;

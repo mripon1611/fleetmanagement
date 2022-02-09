@@ -27,6 +27,37 @@ $(document).ready(function() {
         }
     });
 
+    $( "#ministration_type" ).click(function() {
+        var val = $( "#ministration_type" ).val();
+        console.log(val);
+        if(val === 'servicing') {
+            $("#ministration_date").text('Servicing Date');
+            $("#ministration_cost").text('Servicing Cost');
+            $("#ministration").show();
+        }
+        else if(val === 'tyre_change') {
+            $("#ministration_date").text('Tyre Change Date');
+            $("#ministration_cost").text('Tyre Change Cost');
+            $("#ministration").show();
+        }
+        else if(val === 'battery_change') {
+            $("#ministration_date").text('Battary Change Date');
+            $("#ministration_cost").text('Battary Change Cost');
+            $("#ministration").show();
+        }
+        else if(val === 'normal_work') {
+            $("#ministration_date").text('Normal Work Date');
+            $("#ministration_cost").text('Normal Work Cost');
+            $("#ministration").show();
+        }
+        else if(val === 'major_work') {
+            $("#ministration_date").text('Major Work Date');
+            $("#ministration_cost").text('Major Work Cost');
+            $("#ministration").show();
+        }
+    });
+    
+
 
     $( "#vregno" ).click(function() {
         var val = $("#vregno").val();

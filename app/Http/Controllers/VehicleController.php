@@ -103,43 +103,6 @@ class VehicleController extends Controller
 
     public function addMinstartions( Request $req ) {
         $reqdata = $req->input();
-        $staffname = DB::table('vehicledrivers')
-                    ->select('drivername')
-                    ->where('vregno', $req->vehicleregno)
-                    ->where('status', 'present')
-                    ->get();
-        if(count($staffname)>0) {
-            $reqdata['staffname'] = $staffname[0]->drivername;
-        }else {
-            $reqdata['staffname'] = '';
-        }
-
-        // if($req->service_cost > 0){
-        //     $fileName = time().'-'.$req->servecing_receipt->getClientOriginalName();
-        //     $req->servecing_receipt->move(public_path('uploads'), $fileName);
-        //     $reqdata['servecing_receipt'] = $fileName;
-            
-        // }
-        // if($req->tyre_change_cost > 0){
-        //     $fileName = time().'-'.$req->tyre_change_receipt->getClientOriginalName();
-        //     $req->tyre_change_receipt->move(public_path('uploads'), $fileName);
-        //     $reqdata['tyre_change_receipt'] = $fileName;
-        // }
-        // if($req->battary_change_cost > 0){
-        //     $fileName = time().'-'.$req->battary_change_receipt->getClientOriginalName();
-        //     $req->battary_change_receipt->move(public_path('uploads'), $fileName);
-        //     $reqdata['battary_change_receipt'] = $fileName;
-        // }
-        // if($req->normal_works_cost > 0){
-        //     $fileName = time().'-'.$req->normal_works_receipt->getClientOriginalName();
-        //     $req->normal_works_receipt->move(public_path('uploads'), $fileName);
-        //     $reqdata['normal_works_receipt'] = $fileName;
-        // }
-        // if($req->major_works_cost > 0){
-        //     $fileName = time().'-'.$req->major_works_receipt->getClientOriginalName();
-        //     $req->major_works_receipt->move(public_path('uploads'), $fileName);
-        //     $reqdata['major_works_receipt'] = $fileName;
-        // }
 
         $this->data->addNewMinstartions($reqdata);
 
