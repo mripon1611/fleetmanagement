@@ -33,6 +33,7 @@
                             <thead>
                                 <tr>
                                     <th>SL</th>
+                                    <th>Vehicle Code</th>
                                     <th>Name</th>
                                     <th>Registration Number</th>
                                     <th>Assigned Driver</th>
@@ -46,6 +47,7 @@
                                 @foreach($datas as $data)
                                 <tr>
                                     <td>{{$sl++}}</td>
+                                    <td>{{$data['vcode']}}</td>
                                     <td>{{$data['name']}}</td>
                                     <td>{{$data['regno']}}</td>
                                     @if($data['toassigned'] ==1)
@@ -64,16 +66,16 @@
                                         <form action="/vehicledocuments" class="float-left" method="POST" enctype="multipart/form-data">
                                             @csrf()
                                             <input type="hidden" id="regno" name="regno" value="{{$data['regno']}}">
-                                            <button class="btn btn-success p-1 m-1" type="submit"><i class="fas fa-eye"></i></i>Documents</button>
+                                            <button class="btn btn-success p-0 mr-1" type="submit"><i class="fas fa-eye"></i></i>Documents</button>
                                         </form>
                                         <form action="/vehicleministrations" class="float-left" method="POST" enctype="multipart/form-data">
                                             @csrf()
                                             <input type="hidden" id="regno" name="regno" value="{{$data['regno']}}">
-                                            <button class="btn btn-info p-1 m-1" type="submit"><i class="fas fa-eye"></i></i>Ministrations</button>
+                                            <button class="btn btn-info p-0 mr-1" type="submit"><i class="fas fa-eye"></i></i>Ministrations</button>
                                         </form>
-                                        <button class="btn btn-xs btn-primary float-left p-1 m-1" data-toggle="modal" data-target="#vehicledetails_{{$data['id']}}"><i class="fas fa-eye"></i>Details</button>
-                                        <button class="btn btn-xs btn-success float-left p-1 m-1" data-toggle="modal" data-target="#vehicleupdates_{{$data['id']}}"><i class="fas fa-edit"></i>Update</button>
-                                        <button class="btn btn-xs btn-danger float-left p-1 m-1"><i class="fas fa-trash-alt"></i>Delete</button>
+                                        <button class="btn btn-xs btn-primary float-left p-0 mr-1" data-toggle="modal" data-target="#vehicledetails_{{$data['id']}}"><i class="fas fa-eye"></i>Details</button>
+                                        <button class="btn btn-xs btn-success float-left p-0 mr-1" data-toggle="modal" data-target="#vehicleupdates_{{$data['id']}}"><i class="fas fa-edit"></i>Update</button>
+                                        <button class="btn btn-xs btn-danger float-left p-0"><i class="fas fa-trash-alt"></i>Delete</button>
                                     </td>
                                 </tr>
                                 <!-- Modal  details -->
@@ -90,6 +92,7 @@
                             <tfoot>
                                 <tr>
                                     <th>SL</th>
+                                    <th>Vehicle Code</th>
                                     <th>Name</th>
                                     <th>Registration Number</th>
                                     <th>Assigned Driver</th>

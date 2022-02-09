@@ -19,6 +19,7 @@ class Vehicle extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'vcode',
         'name',
         'regno',
         'regdate',

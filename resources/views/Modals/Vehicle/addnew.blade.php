@@ -19,13 +19,19 @@
                         @csrf()
                         <div class="row">
                             <div class="form-group col-md-6">
+                                <label for="vcode">Vehicle Code<span style="color: red;">*</span></label>
+                                <input type="text" class="form-control" id="vcode" name="vcode">
+                                <span class="md-line"></span>
+                                <span class="md-line text-danger">@error('vcode'){{$message}}@enderror</span>
+                            </div>
+                            <div class="form-group col-md-6">
                                 <label for="name">Name<span style="color: red;">*</span></label>
                                 <input type="text" class="form-control" id="name" name="name" placeholder="TAYOTA">
                                 <span class="md-line"></span>
                                 <span class="md-line text-danger">@error('name'){{$message}}@enderror</span>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="regno">Registration Number</label>
+                                <label for="regno">Registration Number<span style="color: red;">*</span></label>
                                 <input type="text" class="form-control" id="regno" name="regno" placeholder="Dhaka Metro Ha-1234">
                                 <span class="md-line"></span>
                                 <span class="md-line text-danger">@error('regno'){{$message}}@enderror</span>
