@@ -50,7 +50,7 @@
                                                     <tbody>
                                                         <!-- foreach start for $datas -->
                                                         <tr>
-                                                            <th colspan="14" style="color:red;">Date: {{$datas[0]->date}}</th>
+                                                            <th colspan="14" style="color:red;">Date: {{$date}}</th>
                                                         </tr>
                                                         @foreach($datas as $data)
                                                             @if($date != $data->date)

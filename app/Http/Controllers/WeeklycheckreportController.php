@@ -71,8 +71,14 @@ class WeeklycheckreportController extends Controller
                     ->select('*')
                     ->orderBy('date', 'DESC')
                     ->get();
+        $date;
+        if(count($reports)>0){
+            $date = $reports[0]->date;
+        }else {
+            $date = "0000-00-00";
+        }
 
-        $date = $reports[0]->date;
+        
 
         $totalNotifications = NotificationsController::expireDocuments();
 

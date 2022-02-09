@@ -37,9 +37,22 @@ class HomeController extends Controller
 
         $fuel_cost = CostController::fuelCost();
         $ministration_cost = CostController::ministrationCost();
+        if(count($v_last_updates)>0){
+            $vLastUpdate = $v_last_updates[0]->updated_at;
+        }else{
+            $vLastUpdate = "0000-00-00";
+        }
 
-        return view('pages.Home.index',['v_last_updates'=>$v_last_updates[0]->updated_at,
-                                    'd_last_updates'=>$d_last_updates[0]->updated_at,
+        if(count($d_last_updates)>0){
+            $dLastUpdate = $d_last_updates[0]->updated_at;
+        }else{
+            $dLastUpdate = "0000-00-00";
+        }
+
+        $ministration_cost = CostController::ministrationCost();
+        
+
+        return view('pages.Home.index',['v_last_updates'=>$vLastUpdate,'d_last_updates'=>$dLastUpdate,
                                     'v_counts'=>$v_counts,'d_counts'=>$d_counts,'notification_count'=>$totalNotifications,
                                     'fuel_cost'=>$fuel_cost,'ministration_cost'=>$ministration_cost]);
     }
