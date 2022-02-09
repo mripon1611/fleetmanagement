@@ -42,6 +42,8 @@
     <link rel="stylesheet" type="text/css" href="files/assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="files/assets/css/linearicons.css">
     <link rel="stylesheet" type="text/css" href="files/assets/css/jquery.mCustomScrollbar.css">
+
+
 </head>
 
 <body>
@@ -186,6 +188,9 @@
     <script type="text/javascript" src="files/assets/js/script.js"></script>
 
     <script type="text/javascript" src="files/assets/pages/chart/chartjs/chartjs-custom.js"></script>
+
+    <!-- Nav tabs -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     
 </body>
 

@@ -20,70 +20,125 @@
                         <button class="btn btn-primary" data-toggle="modal" data-target="#addnewdocuments">Add New Documents</button>
                     </div>
                 </div>
-                <div class="card-block">
-                    <div class="dt-responsive table-responsive">
-                        <table id="vehicledocuments" class="table table-hover table-bordered nowrap text-center">
-                            <thead>
-                                <tr>
-                                    <th>Token From</th>
-                                    <th>Token To</th>
-                                    <th>Fitness From</th>
-                                    <th>Fitness To</th>
-                                    <th>Insurance From</th>
-                                    <th>Insurance To</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- foreach start for $datas -->
-                                @foreach($datas as $data)
-                                <tr>
-                                    @if($data->ttokenissuedate == '')
-                                    <td>0000-00-00</td>
-                                    <td>0000-00-00</td>
-                                    @else
-                                    <td>{{$data->ttokenissuedate}}</td>
-                                    <td>{{$data->ttokenexpiredate}}</td>
-                                    @endif
 
-                                    @if($data->fitnessissuedate == '')
-                                    <td>0000-00-00</td>
-                                    <td>0000-00-00</td>
-                                    @else
-                                    <td>{{$data->fitnessissuedate}}</td>
-                                    <td>{{$data->fitnessexpiredate}}</td>
-                                    @endif
 
-                                    @if($data->rpermitissuedate == '')
-                                    <td>0000-00-00</td>
-                                    <td>0000-00-00</td>
-                                    @else
-                                    <td>{{$data->rpermitissuedate}}</td>
-                                    <td>{{$data->rpermitexpiredate}}</td>
-                                    @endif
-                                    
-                                </tr>
+                <ul class="nav nav-pills card-block" role="tablist">
+                    <li class="nav-item pr-4">
+                    <a class="nav-link active btn btn-info" data-bs-toggle="pill" href="#tax_token_p">Tax Token</a>
+                    </li>
+                    <li class="nav-item pr-4">
+                    <a class="nav-link btn btn-info" data-bs-toggle="pill" href="#fitness_p">Fitness</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link btn btn-info" data-bs-toggle="pill" href="#insurance_p">Insurance</a>
+                    </li>
+                </ul>
 
-                                @endforeach
-                                <!-- foreach end for $datas -->
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>Token From</th>
-                                    <th>Token To</th>
-                                    <th>Fitness From</th>
-                                    <th>Fitness To</th>
-                                    <th>Insurance From</th>
-                                    <th>Insurance To</th>
-                                </tr>
-                            </tfoot>
-                        </table>
+                <!-- Tab panes -->
+                <div class="tab-content card-block">
+                    <div id="tax_token_p" class=" tab-pane active"><br>
+                            <div class="dt-responsive table-responsive">
+                                <table id="ttoken" class="table table-hover table-bordered nowrap text-center">
+                                    <thead>
+                                        <tr>
+                                            <th>Papers Type</th>
+                                            <th>Issue Date</th>
+                                            <th>Expire Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- foreach start for $datas -->
+                                        @foreach($datas as $data)
+                                            @if($data->papers_type == 'taxtoken')
+                                            <tr>
+                                                <td>Tax Token</td>
+                                                <td>{{$data->issue_date}}</td>
+                                                <td>{{$data->expire_date}}</td>
+                                            </tr>
+                                            @endif
+                                        @endforeach
+                                        <!-- foreach end for $datas -->
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Papers Type</th>
+                                            <th>Issue Date</th>
+                                            <th>Expire Date</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                    </div>
+
+                    <div id="fitness_p" class=" tab-pane fade"><br>
+                            <div class="dt-responsive table-responsive">
+                                <table id="fitness" class="table table-hover table-bordered nowrap text-center">
+                                    <thead>
+                                        <tr>
+                                            <th>Papers Type</th>
+                                            <th>Issue Date</th>
+                                            <th>Expire Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- foreach start for $datas -->
+                                        @foreach($datas as $data)
+                                            @if($data->papers_type == 'fitness')
+                                            <tr>
+                                                <td>Fitness</td>
+                                                <td>{{$data->issue_date}}</td>
+                                                <td>{{$data->expire_date}}</td>
+                                            </tr>
+                                            @endif
+                                        @endforeach
+                                        <!-- foreach end for $datas -->
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Papers Type</th>
+                                            <th>Issue Date</th>
+                                            <th>Expire Date</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                    </div>
+
+                    <div id="insurance_p" class=" tab-pane fade"><br>
+                            <div class="dt-responsive table-responsive">
+                                <table id="insurance" class="table table-hover table-bordered nowrap text-center">
+                                    <thead>
+                                        <tr>
+                                            <th>Papers Type</th>
+                                            <th>Issue Date</th>
+                                            <th>Expire Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- foreach start for $datas -->
+                                        @foreach($datas as $data)
+                                            @if($data->papers_type =='insurance')
+                                            <tr>
+                                                <td>Insurance</td>
+                                                <td>{{$data->issue_date}}</td>
+                                                <td>{{$data->expire_date}}</td>
+                                            </tr>
+                                            @endif
+                                        @endforeach
+                                        <!-- foreach end for $datas -->
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Papers Type</th>
+                                            <th>Issue Date</th>
+                                            <th>Expire Date</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
                     </div>
                 </div>
-                <div class="card-header mb-3">
-                    <div class="d-flex justify-content-end">
-                        <button class="btn btn-info" onClick="window.print()">Print</button>
-                    </div>
-                </div>
+
             </div>
             <!-- Zero config.table end -->                                       
         </div>

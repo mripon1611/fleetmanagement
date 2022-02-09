@@ -1,7 +1,9 @@
 $(document).ready(function() {
 
     $('#vehicletable').DataTable();
-    $('#vehicledocuments').DataTable();
+    $('#ttoken').DataTable();
+    $('#fitness').DataTable();
+    $('#insurance').DataTable();
     $('#vehicleministrations').DataTable();
     $('#weekly_report').DataTable();
 
@@ -9,36 +11,22 @@ $(document).ready(function() {
         var val = $( ".doctype" ).val();
         console.log(val);
         if(val === 'taxtoken') {
-            $("#ttoken").show();
+            $("#issuedate").text('Tax Token From');
+            $("#expiredate").text('Tax Token To');
+            $("#documents_field").show();
         }
         else if(val === 'fitness') {
-            $("#fitness").show();
+            $("#issuedate").text('Fitness From');
+            $("#expiredate").text('Fitness To');
+            $("#documents_field").show();
         }
         else if(val === 'insurance') {
-            $("#insurance").show();
+            $("#issuedate").text('Insurance From');
+            $("#expiredate").text('Insurance To');
+            $("#documents_field").show();
         }
     });
 
-
-    $( ".ministration_type" ).click(function() {
-        var val = $( ".ministration_type" ).val();
-        console.log(val);
-        if(val === 'servicing') {
-            $("#servicing").hide();
-        }
-        // else if(val === 'tyre_change') {
-        //     $("#tyre_change").show();
-        // }
-        // else if(val === 'battery_change') {
-        //     $("#battary_change").show();
-        // }
-        // else if(val === 'normal_work') {
-        //     $("#normal_works").show();
-        // }
-        // else if(val === 'major_work') {
-        //     $("#major_works").show();
-        // }
-    });
 
     $( "#vregno" ).click(function() {
         var val = $("#vregno").val();

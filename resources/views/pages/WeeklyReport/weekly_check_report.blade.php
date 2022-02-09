@@ -23,14 +23,14 @@
 
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12">
-                                    <div class="dataTables_scroll">
-                                        <div class="dataTables_scrollHead" style="overflow: hidden; position: relative; border: 0px; width: 100%;">
-                                            <div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 1537.2px; padding-right: 17px;">
+                                        
+                                           
 
                                                 <table id="weekly_report"
                                                     class="table table-hover table-bordered nowrap text-center">
                                                     <thead>
                                                         <tr>
+                                                            <th>Date</th>
                                                             <th>Car No</th>
                                                             <th>Staff Name</th>
                                                             <th>Sanitizer</th>
@@ -49,19 +49,9 @@
                                                     </thead>
                                                     <tbody>
                                                         <!-- foreach start for $datas -->
-                                                        <tr>
-                                                            <th colspan="14" style="color:red;">Date: {{$date}}</th>
-                                                        </tr>
                                                         @foreach($datas as $data)
-                                                            @if($date != $data->date)
-                                                                @php
-                                                                    $date = $data->date
-                                                                @endphp
-                                                                <tr>
-                                                                    <th colspan="14" style="color:red;">Date: {{$date}}</th>
-                                                                </tr>
-                                                            @endif
                                                         <tr>
+                                                            <td>{{$data->date}}</td>
                                                             <td>{{$data->vregno}}</td>
                                                             <td>{{$data->staffname==''?'NULL':$data->staffname}}</td>
                                                             <td>{{$data->sanitizer==1?'Okay':'Problem'}}</td>
@@ -84,6 +74,7 @@
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
+                                                            <th>Date</th>
                                                             <th>Car No</th>
                                                             <th>Staff Name</th>
                                                             <th>Sanitizer</th>
@@ -101,11 +92,6 @@
                                                         </tr>
                                                     </tfoot>
                                                 </table>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
 

@@ -26,10 +26,10 @@ class DriverController extends Controller
         $freevehicles = DriverController::freeVehicle();
         $assignvehicletodrivers = DriverController::assignVehicleToDriver();
 
-        $totalNotifications = NotificationsController::expireDocuments();
+        // $totalNotifications = NotificationsController::expireDocuments();
 
         return view('pages.Driver.driverlist',['datas'=>$datas,'freevehicles'=>$freevehicles,'assignvehicletodrivers'=>$assignvehicletodrivers,
-                        'sl'=>1,'notification_count'=>$totalNotifications]);
+                        'sl'=>1]);
     }
 
     public function addNewDriver( Request $req ) {
@@ -111,9 +111,9 @@ class DriverController extends Controller
         ->where('dlicensenumber', $req->license)
         ->get();
 
-        $totalNotifications = NotificationsController::expireDocuments();
+        // $totalNotifications = NotificationsController::expireDocuments();
 
-        return view('pages.Driver.drivinghistory',['datas'=>$drivinglists,'notification_count'=>$totalNotifications]);
+        return view('pages.Driver.drivinghistory',['datas'=>$drivinglists]);
 
     }
 }

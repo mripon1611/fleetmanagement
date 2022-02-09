@@ -20,14 +20,9 @@ class Vpaper extends Model
      */
     protected $fillable = [
         'vehicleregno',
-        'ttokenissuedate',
-        'ttokenexpiredate',
-        'tokenfile',
-        'rpermitissuedate',
-        'rpermitexpiredate',
-        'permitfile',
-        'fitnessissuedate',
-        'fitnessexpiredate',
-        'fitnessfile',
+        'papers_type',
+        'issue_date',
+        'expire_date',
+        'documents'
     ];
 }

@@ -18,15 +18,10 @@ class CreateVpapersTable extends Migration
             $table->collation = 'utf8_general_ci';
             $table->id();
             $table->string('vehicleregno',30)->nullable();
-            $table->date('ttokenissuedate')->nullable();
-            $table->date('ttokenexpiredate')->nullable();
-            $table->string('tokenfile',30)->nullable();
-            $table->date('rpermitissuedate')->nullable();
-            $table->date('rpermitexpiredate')->nullable();
-            $table->string('permitfile',30)->nullable();
-            $table->date('fitnessissuedate')->nullable();
-            $table->date('fitnessexpiredate')->nullable();
-            $table->string('fitnessfile',30)->nullable();
+            $table->string('papers_type',30)->nullable();
+            $table->date('issue_date')->nullable();
+            $table->date('expire_date')->nullable();
+            $table->string('documents',50)->nullable();
             $table->timestamps();
         });
     }

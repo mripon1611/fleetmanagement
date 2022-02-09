@@ -20,9 +20,9 @@ class WeeklycheckreportController extends Controller
     public function generateReport() {
         $vehicles = Queue::all();
 
-        $totalNotifications = NotificationsController::expireDocuments();
+        // $totalNotifications = NotificationsController::expireDocuments();
 
-        return view('pages.WeeklyReport.createWeeklyReport',['vehicles'=>$vehicles,'notification_count'=>$totalNotifications]);
+        return view('pages.WeeklyReport.createWeeklyReport',['vehicles'=>$vehicles]);
     }
 
     public function selectDate( Request $req ) {
@@ -80,9 +80,9 @@ class WeeklycheckreportController extends Controller
 
         
 
-        $totalNotifications = NotificationsController::expireDocuments();
+        // $totalNotifications = NotificationsController::expireDocuments();
 
         // return $reports;
-        return view('pages.WeeklyReport.weekly_check_report',['datas'=>$reports,'date'=>$date,'notification_count'=>$totalNotifications]);
+        return view('pages.WeeklyReport.weekly_check_report',['datas'=>$reports,'date'=>$date]);
     }
 }

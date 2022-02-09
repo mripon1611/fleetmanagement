@@ -21,70 +21,32 @@
                             <input type="hidden" class="form-control" id="vehicleregno" name="vehicleregno" value="{{$regno}}">
                             <div class="form-group col-md-6">
                                 <label for="doctype">Select Documents Type</label>
-                                <select id="doctype" class="form-control doctype" name="doctype">
+                                <select id="doctype" class="form-control doctype" name="papers_type">
                                     <option>--select--</option>
                                     <option value="taxtoken">Tax Token</option>
                                     <option value="fitness">Fitness</option>
                                     <option value="insurance">Insurance</option>
                                 </select>
                             </div>
-                            <div class="col-md-12" id="ttoken" style="display:none;">
+                            <div class="col-md-12" id="documents_field" style="display:none;">
                                 <div class="row">
                                     <div class="form-group col-md-4">
-                                        <label for="ttokenissuedate">Token From<span style="color: red;">*</span></label>
-                                        <input type="date" class="form-control" id="ttokenissuedate" name="ttokenissuedate">
+                                        <label for="issuedate" id="issuedate">Token From<span style="color: red;">*</span></label>
+                                        <input type="date" class="form-control" id="issue_date" name="issue_date">
                                         <span class="md-line"></span>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="ttokenexpiredate">Token To<span style="color: red;">*</span></label>
-                                        <input type="date" class="form-control" id="ttokenexpiredate" name="ttokenexpiredate">
+                                        <label for="expiredate" id="expiredate">Token To<span style="color: red;">*</span></label>
+                                        <input type="date" class="form-control" id="expire_date" name="expire_date">
                                         <span class="md-line"></span>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="tokenfile">Image<span style="color: red;">*</span></label>
-                                        <input type="file" class="form-control" id="tokenfile" name="tokenfile">
+                                        <label for="tokenfile">Documents<span style="color: red;">*</span></label>
+                                        <input type="file" class="form-control" id="documents" name="documents">
                                         <span class="md-line"></span>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-12" id="fitness" style="display:none;">
-                                <div class="row">
-                                    <div class="form-group col-md-4">
-                                        <label for="fitnessissuedate">Fitness From<span style="color: red;">*</span></label>
-                                        <input type="date" class="form-control" id="fitnessissuedate" name="fitnessissuedate">
-                                        <span class="md-line"></span>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="fitnessexpiredate">Fitness To<span style="color: red;">*</span></label>
-                                        <input type="date" class="form-control" id="fitnessexpiredate" name="fitnessexpiredate">
-                                        <span class="md-line"></span>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="fitnessfile">Image<span style="color: red;">*</span></label>
-                                        <input type="file" class="form-control" id="fitnessfile" name="fitnessfile">
-                                        <span class="md-line"></span>
-                                    </div>
-                                </div>
-                            </div>
-                                <div class="col-md-12" id="insurance" style="display:none;">
-                                    <div class="row">
-                                        <div class="form-group col-md-4">
-                                            <label for="rpermitissuedate">Insurance From<span style="color: red;">*</span></label>
-                                            <input type="date" class="form-control" id="rpermitissuedate" name="rpermitissuedate">
-                                            <span class="md-line"></span>
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label for="rpermitexpiredate">Insurance To<span style="color: red;">*</span></label>
-                                            <input type="date" class="form-control" id="rpermitexpiredate" name="rpermitexpiredate">
-                                            <span class="md-line"></span>
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label for="permitfile">Image<span style="color: red;">*</span></label>
-                                            <input type="file" class="form-control" id="permitfile" name="permitfile">
-                                            <span class="md-line"></span>
-                                        </div>
-                                    </div>
-                                </div>                                                             
+                            </div>                                                       
                         </div>
                         <div class="row m-t-15">
                             <div class="col-md-12">

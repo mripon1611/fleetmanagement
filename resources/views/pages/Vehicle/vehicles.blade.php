@@ -18,9 +18,14 @@
                     </div>
                 </div>
                     @if(Session::has('success'))
-						<div class="alert alert-success">
-							{{Session::get('success')}}
-						</div>
+						<div class="alert alert-success mt-2 mb-2">
+                            <button type="button" class="close"
+                                data-dismiss="alert" aria-label="Close">
+                                <i
+                                    class="icofont icofont-close-line-circled"></i>
+                            </button>
+                            <strong>{{Session::get('success')}}</strong>
+                        </div>
 					@endif
                 <div class="card-block">
                     <div class="dt-responsive table-responsive">

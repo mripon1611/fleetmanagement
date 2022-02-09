@@ -33,7 +33,7 @@ class HomeController extends Controller
         $d_counts = Driver::all()->count();
         $v_counts = Vehicle::all()->count();
 
-        $totalNotifications = NotificationsController::expireDocuments();
+        // $totalNotifications = NotificationsController::expireDocuments();
 
         $fuel_cost = CostController::fuelCost();
         $ministration_cost = CostController::ministrationCost();
@@ -53,7 +53,7 @@ class HomeController extends Controller
         
 
         return view('pages.Home.index',['v_last_updates'=>$vLastUpdate,'d_last_updates'=>$dLastUpdate,
-                                    'v_counts'=>$v_counts,'d_counts'=>$d_counts,'notification_count'=>$totalNotifications,
+                                    'v_counts'=>$v_counts,'d_counts'=>$d_counts,
                                     'fuel_cost'=>$fuel_cost,'ministration_cost'=>$ministration_cost]);
     }
 
