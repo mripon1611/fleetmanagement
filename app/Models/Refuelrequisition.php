@@ -28,6 +28,7 @@ class Refuelrequisition extends Model
         'costplitter',
         'totalprice',
         'file',
+        'status',
         'created_date',
     ];
 }

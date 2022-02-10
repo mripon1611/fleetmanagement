@@ -18,37 +18,23 @@ class CostController extends Controller
 {
     //
     public function fuelCost() {
-        $petrol_cost = DB::table('refuelrequisitions')->where('fueltype', 'petrol')->sum('totalprice');
-        $petrol_cost += DB::table('historyofrefuelreqs')->where('fueltype', 'petrol')->sum('totalprice');
-
-        $octane_cost = DB::table('refuelrequisitions')->where('fueltype', 'octane')->sum('totalprice');
-        $octane_cost += DB::table('historyofrefuelreqs')->where('fueltype', 'octane')->sum('totalprice');
-
-        $diesel_cost = DB::table('refuelrequisitions')->where('fueltype', 'diesel')->sum('totalprice');
-        $diesel_cost += DB::table('historyofrefuelreqs')->where('fueltype', 'diesel')->sum('totalprice');
-
         $fuel_cost = [];
-        $fuel_cost['petrol_cost'] =$petrol_cost;
-        $fuel_cost['octane_cost'] =$octane_cost;
-        $fuel_cost['diesel_cost'] =$diesel_cost;
+
+        $fuel_cost['petrol_cost'] = DB::table('refuelrequisitions')->where('fueltype', 'petrol')->sum('totalprice');
+        $fuel_cost['octane_cost'] = DB::table('refuelrequisitions')->where('fueltype', 'octane')->sum('totalprice');
+        $fuel_cost['diesel_cost'] = DB::table('refuelrequisitions')->where('fueltype', 'diesel')->sum('totalprice');
 
         return $fuel_cost;
     }
 
     public function ministrationCost() {
-        $servicing_cost = DB::table('ministrations')->where('ministration_type', 'servicing')->sum('ministration_cost');
-        $tyre_change_cost = DB::table('ministrations')->where('ministration_type', 'tyre_change')->sum('ministration_cost');
-        $battery_change_cost = DB::table('ministrations')->where('ministration_type', 'battery_change')->sum('ministration_cost');
-        $normal_works_cost = DB::table('ministrations')->where('ministration_type', 'normal_work')->sum('ministration_cost');
-        $major_works_cost = DB::table('ministrations')->where('ministration_type', 'major_work')->sum('ministration_cost');
-
         $ministration_cost = [];
-        $ministration_cost['servicing_cost'] =$servicing_cost;
-        $ministration_cost['tyre_change_cost'] =$tyre_change_cost;
-        $ministration_cost['battery_change_cost'] =$battery_change_cost;
-        $ministration_cost['normal_works_cost'] =$normal_works_cost;
-        $ministration_cost['major_works_cost'] =$major_works_cost;
 
+        $ministration_cost['servicing_cost'] = DB::table('ministrations')->where('ministration_type', 'servicing')->sum('ministration_cost');
+        $ministration_cost['tyre_change_cost'] = DB::table('ministrations')->where('ministration_type', 'tyre_change')->sum('ministration_cost');
+        $ministration_cost['battery_change_cost'] = DB::table('ministrations')->where('ministration_type', 'battery_change')->sum('ministration_cost');
+        $ministration_cost['normal_works_cost'] = DB::table('ministrations')->where('ministration_type', 'normal_work')->sum('ministration_cost');
+        $ministration_cost['major_works_cost'] = DB::table('ministrations')->where('ministration_type', 'major_work')->sum('ministration_cost');
 
         return $ministration_cost;
     }

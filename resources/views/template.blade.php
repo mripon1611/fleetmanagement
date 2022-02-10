@@ -35,6 +35,9 @@
     <link rel="stylesheet" type="text/css" href="files/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="files/assets/pages/data-table/css/buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="files/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
+
+    <link rel="stylesheet" type="text/css" href="files/assets/pages/data-table/extensions/buttons/css/buttons.dataTables.min.css">
+
      <!-- Chartlist chart css -->
     <link rel="stylesheet" type="text/css" href="files/bower_components/chartist/dist/chartist.css">
     <!-- Style.css -->
@@ -165,6 +168,12 @@
     <script src="files/assets/pages/data-table/js/dataTables.bootstrap4.min.js"></script>
     <script src="files/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
     <script src="files/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+    <script src="files/assets/pages/data-table/extensions/buttons/js/dataTables.buttons.min.js"></script>
+    <script src="files/assets/pages/data-table/extensions/buttons/js/buttons.flash.min.js"></script>
+    <script src="files/assets/pages/data-table/extensions/buttons/js/jszip.min.js"></script>
+    <script src="files/assets/pages/data-table/extensions/buttons/js/vfs_fonts.js"></script>
+    <script src="files/assets/pages/data-table/extensions/buttons/js/buttons.colVis.min.js"></script>
+
     <!-- i18next.min.js -->
     <script type="text/javascript" src="files/bower_components/i18next/i18next.min.js"></script>
     </script>
@@ -179,7 +188,7 @@
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/another.js"></script>
 
-
+    <script src="files/assets/pages/data-table/extensions/buttons/js/extension-btns-custom.js"></script>
     <script src="files/assets/js/vartical-layout.min.js"></script>
     <script type="text/javascript" src="files/assets/js/script.min.js"></script>
     <script src="../files/assets/pages/data-table/js/data-table-custom.js"></script>

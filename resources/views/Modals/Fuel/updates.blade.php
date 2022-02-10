@@ -18,6 +18,8 @@
                                                         <hr />
                                                         @csrf()
                                                         <div class="row">
+
+                                                            <input type="hidden" class="form-control" name="status" value="present">
                                                             
                                                             <div class="form-group col-md-6">
                                                                 <label for="vregno">Vehicle Reg No</label>

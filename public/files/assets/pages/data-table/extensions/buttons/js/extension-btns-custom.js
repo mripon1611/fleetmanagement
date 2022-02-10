@@ -157,6 +157,14 @@ $(document).ready(function() {
         dom: 'Bfrtip',
         buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
     });
+    $('#weekly-report').DataTable({
+        dom: 'Bfrtip',
+        buttons: ['copy', 'csv', 'excel', 'print']
+    });
+    $('#refuel-history').DataTable({
+        dom: 'Bfrtip',
+        buttons: ['csv', 'excel', 'print']
+    });
     $('#custom-btn').DataTable({
         dom: 'Bfrtip',
         buttons: [{

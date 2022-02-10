@@ -85,4 +85,24 @@ class WeeklycheckreportController extends Controller
         // return $reports;
         return view('pages.WeeklyReport.weekly_check_report',['datas'=>$reports,'date'=>$date]);
     }
+
+    public function table() {
+        $reports = DB::table('weeklycheckreports')
+                    ->select('*')
+                    ->orderBy('date', 'DESC')
+                    ->get();
+        $date;
+        if(count($reports)>0){
+            $date = $reports[0]->date;
+        }else {
+            $date = "0000-00-00";
+        }
+
+        
+
+        // $totalNotifications = NotificationsController::expireDocuments();
+
+        // return $reports;
+        return view('table',['datas'=>$reports,'date'=>$date]);
+    }
 }

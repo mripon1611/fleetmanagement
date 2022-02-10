@@ -18,39 +18,42 @@ class FuelsRepository implements FuelsInterface {
     public function updatesRefuel( array $reqdata ){
         $vid = (Refuelrequisition::select('id'))
                 ->where('vregno', $reqdata['vregno'])
+                ->where('status', 'present')
                 ->get();
 
         $vehicle = Refuelrequisition::find($vid[0]->id);
 
         // store $vehicle data as history
-        $hvehicle = new Historyofrefuelreq;
-        $hvehicle->vregno = $vehicle->vregno;
-        $hvehicle->staffname = $vehicle->staffname;
-        $hvehicle->pvsodo = $vehicle->pvsodo;
-        $hvehicle->crodo = $vehicle->crodo;
-        $hvehicle->ttlqty = $vehicle->ttlqty;
-        $hvehicle->fueltype = $vehicle->fueltype;
-        $hvehicle->costplitter = $vehicle->costplitter;
-        $hvehicle->totalprice = $vehicle->totalprice;
-        $hvehicle->file = $vehicle->file;
-        $hvehicle->created_date = $vehicle->created_date;
+        // $hvehicle = new Historyofrefuelreq;
+        // $hvehicle->vregno = $vehicle->vregno;
+        // $hvehicle->staffname = $vehicle->staffname;
+        // $hvehicle->pvsodo = $vehicle->pvsodo;
+        // $hvehicle->crodo = $vehicle->crodo;
+        // $hvehicle->ttlqty = $vehicle->ttlqty;
+        // $hvehicle->fueltype = $vehicle->fueltype;
+        // $hvehicle->costplitter = $vehicle->costplitter;
+        // $hvehicle->totalprice = $vehicle->totalprice;
+        // $hvehicle->file = $vehicle->file;
+        // $hvehicle->created_date = $vehicle->created_date;
         
                 // store update data
+        $vehicle->status = 'past';
         $reqdata['totalprice'] = ($reqdata['ttlqty'] * $reqdata['costplitter']);
-        $vehicle->vregno = $reqdata['vregno'];
-        $vehicle->staffname = $reqdata['staffname'];
-        $vehicle->pvsodo = $reqdata['pvsodo'];
-        $vehicle->crodo = $reqdata['crodo'];
-        $vehicle->ttlqty = $reqdata['ttlqty'];
-        $vehicle->fueltype = $reqdata['fueltype'];
-        $vehicle->costplitter = $reqdata['costplitter'];
-        $vehicle->totalprice = $reqdata['totalprice'];
-        $vehicle->file = $reqdata['file'];
-        $vehicle->created_date = $reqdata['created_date'];
+        // $vehicle->vregno = $reqdata['vregno'];
+        // $vehicle->staffname = $reqdata['staffname'];
+        // $vehicle->pvsodo = $reqdata['pvsodo'];
+        // $vehicle->crodo = $reqdata['crodo'];
+        // $vehicle->ttlqty = $reqdata['ttlqty'];
+        // $vehicle->fueltype = $reqdata['fueltype'];
+        // $vehicle->costplitter = $reqdata['costplitter'];
+        // $vehicle->totalprice = $reqdata['totalprice'];
+        // $vehicle->file = $reqdata['file'];
+        // $vehicle->created_date = $reqdata['created_date'];
 
         // save data
-        $hvehicle->save();
+        // $hvehicle->save();
         $vehicle->save();
+        Refuelrequisition::create($reqdata);
 
         return;
 

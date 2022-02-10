@@ -69,3 +69,6 @@ Route::get('/date', [HomeController::class, 'calculateDate']);
 Route::get('/cost', [HomeController::class, 'costCalculation']);
 
 
+Route::get('/table', [WeeklycheckreportController::class, 'table']);
+
+

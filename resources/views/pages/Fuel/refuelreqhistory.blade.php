@@ -20,16 +20,19 @@
                 </div>
                 <div class="card-block">
                     <div class="dt-responsive table-responsive">
-                        <table id="simpletable"
+                        <table id="refuel-history"
                             class="table table-hover table-bordered nowrap text-center">
                             <thead>
                                 <tr>
                                     <th>SL</th>
                                     <th>Vehicle Reg No</th>
                                     <th>Staff Name</th>
+                                    <th>Previous ODO</th>
+                                    <th>Current ODO</th>
                                     <th>Total Quantity</th>
                                     <th>Total Price</th>
                                     <th>Fuel Type</th>
+                                    <th>Status</th>
                                     <th>Created Date</th>
                                 </tr>
                             </thead>
@@ -40,9 +43,12 @@
                                     <td>{{$sl++}}</td>
                                     <td>{{$data->vregno}}</td>
                                     <td>{{$data->staffname}}</td>
+                                    <td>{{$data->pvsodo}}</td>
+                                    <td>{{$data->crodo}}</td>
                                     <td>{{$data->ttlqty}}</td>
                                     <td>{{$data->totalprice}}</td>
                                     <td>{{$data->fueltype}}</td>
+                                    <td>{{$data->status}}</td>
                                     <td>{{$data->created_date}}</td>
                                 </tr>
                                 
@@ -54,18 +60,16 @@
                                     <th>SL</th>
                                     <th>Vehicle Reg No</th>
                                     <th>Staff Name</th>
+                                    <th>Previous ODO</th>
+                                    <th>Current ODO</th>
                                     <th>Total Quantity</th>
                                     <th>Total Price</th>
                                     <th>Fuel Type</th>
+                                    <th>Status</th>
                                     <th>Created Date</th>
                                 </tr>
                             </tfoot>
                         </table>
-                    </div>
-                </div>
-                <div class="card-header mb-3">
-                    <div class="d-flex justify-content-end">
-                        <button class="btn btn-info" onClick="window.print()">Print</button>
                     </div>
                 </div>
             </div>

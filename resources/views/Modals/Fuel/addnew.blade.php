@@ -19,6 +19,7 @@
                         @csrf()
                         @if(count($vehicleslists)>0)
                             <div class="row">
+                                <input type="hidden" class="form-control" name="status" value="present">
                                 @if(count($addedvehicles)>0)
                                     <div class="form-group col-md-6">
                                         <label for="vregno">Vehicle Reg No<span style="color: red;">*</span></label>

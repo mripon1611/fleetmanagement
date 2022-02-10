@@ -24,7 +24,7 @@ class RefuelrequisitionController extends Controller
     }
 
     public function index() {
-        $datas = Refuelrequisition::all();
+        $datas = Refuelrequisition::all()->where('status', 'present');
         $vehicleslists = RefuelrequisitionController::vehiclesList();
         $addedvehicles = RefuelrequisitionController::addedVehicles();
 
@@ -32,13 +32,12 @@ class RefuelrequisitionController extends Controller
 
         return view('pages.Fuel.refuel-requisition',['datas'=>$datas,'vehicleslists'=>$vehicleslists,'addedvehicles'=>$addedvehicles,
                     'sl'=>1,'t'=>0]);
-        // return $datas;
     }
 
     public function addnewRefuelreq( Request $req ) {
         $datas = $req->input();
         $datas['totalprice'] = ($datas['ttlqty'] * $datas['costplitter']);
-        // return $datas['totalprice'];
+        // return $datas;
         Refuelrequisition::create($datas);
         return redirect('/refuel-requisition');
 
@@ -54,17 +53,15 @@ class RefuelrequisitionController extends Controller
 
         $this->data->updatesRefuel($reqdata);
 
-        // return $reqdata['file'];
+        // return $reqdata;
                 
         return redirect('/refuel-requisition');
 
     }
 
     public function refuelreqHistory( Request $req ) {
-        $refuelreqlists = DB::table('historyofrefuelreqs')
-        ->select('*')
-        ->where('vregno', $req->vregno)
-        ->get();
+        $refuelreqlists = DB::table('refuelrequisitions')->select('*')
+        ->orderBy('created_date', 'DESC')->where('vregno', $req->vregno)->get();
 
         // $totalNotifications = NotificationsController::expireDocuments();
 
