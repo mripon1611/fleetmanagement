@@ -18,35 +18,16 @@ class WeeklycheckreportController extends Controller
     //
 
     public function generateReport() {
-        $vehicles = Queue::all();
+        $vehicles = Vehicle::all();
 
-        // $totalNotifications = NotificationsController::expireDocuments();
+        $totalNotifications = NotificationsController::expireDocuments();
 
-        return view('pages.WeeklyReport.createWeeklyReport',['vehicles'=>$vehicles]);
-    }
-
-    public function selectDate( Request $req ) {
-        $vehicles = DB::table('vehicles')
-        ->select('regno')
-        ->get();
-        foreach($vehicles as $vehicle) {
-            //inser vehicle in queue
-            $qv = new Queue;
-            $qv->date = $req->date;
-            $qv->vregno = $vehicle->regno;
-            $qv->save();
-        }
-
-        return redirect('create-weekly-report');
+        return view('pages.WeeklyReport.createWeeklyReport',['vehicles'=>$vehicles,'totalNotifications'=>$totalNotifications]);
     }
 
     public function storeReport( Request $req ) {
         $reqdata = $req->input();
         
-        $date = DB::table('queues')
-        ->select('date')
-        ->where('vregno', $reqdata['vregno'])
-        ->get();
         $staffname = DB::table('vehicledrivers')
         ->select('drivername')
         ->where('vregno', $reqdata['vregno'])
@@ -58,11 +39,10 @@ class WeeklycheckreportController extends Controller
         }else {
             $reqdata['staffname'] = "";
         }
-        $reqdata['date'] = $date[0]->date;
+
+        // return $reqdata;
 
         Weeklycheckreport::create($reqdata);
-
-        DB::table('queues')->where('vregno', $req->vregno)->delete();
         return redirect('create-weekly-report');
     }
 
@@ -80,10 +60,10 @@ class WeeklycheckreportController extends Controller
 
         
 
-        // $totalNotifications = NotificationsController::expireDocuments();
+        $totalNotifications = NotificationsController::expireDocuments();
 
         // return $reports;
-        return view('pages.WeeklyReport.weekly_check_report',['datas'=>$reports,'date'=>$date]);
+        return view('pages.WeeklyReport.weekly_check_report',['datas'=>$reports,'date'=>$date,'totalNotifications'=>$totalNotifications]);
     }
 
     public function table() {
@@ -100,9 +80,9 @@ class WeeklycheckreportController extends Controller
 
         
 
-        // $totalNotifications = NotificationsController::expireDocuments();
+        $totalNotifications = NotificationsController::expireDocuments();
 
         // return $reports;
-        return view('table',['datas'=>$reports,'date'=>$date]);
+        return view('table',['datas'=>$reports,'date'=>$date,'totalNotifications'=>$totalNotifications]);
     }
 }

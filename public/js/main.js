@@ -59,13 +59,17 @@ $(document).ready(function() {
     
 
 
-    $( "#vregno" ).click(function() {
-        var val = $("#vregno").val();
+    $( "#select-vregno" ).click(function() {
+        var val = $("#select-vregno").val();
         console.log(val);
         if(val !=='select') {
-            $(".checklist").show();
+            $("#check-report-date").show();
         }
     });
+    $("#check-report-date").mouseup(function() {
+        $(".checklist").show();
+    });
+
 
     $( ".driver_edit" ).click(function() {
         

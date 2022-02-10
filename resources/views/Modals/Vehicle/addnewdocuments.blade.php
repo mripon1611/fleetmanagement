@@ -19,6 +19,7 @@
                         @csrf()
                         <div class="row">
                             <input type="hidden" class="form-control" id="vehicleregno" name="vehicleregno" value="{{$regno}}">
+                            <input type="hidden" class="form-control" name="status" value="present">
                             <div class="form-group col-md-6">
                                 <label for="doctype">Select Documents Type</label>
                                 <select id="doctype" class="form-control doctype" name="papers_type">

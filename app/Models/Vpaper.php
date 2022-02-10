@@ -23,6 +23,7 @@ class Vpaper extends Model
         'papers_type',
         'issue_date',
         'expire_date',
-        'documents'
+        'documents',
+        'status'
     ];
 }

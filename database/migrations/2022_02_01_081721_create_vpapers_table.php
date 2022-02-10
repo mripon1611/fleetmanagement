@@ -22,6 +22,7 @@ class CreateVpapersTable extends Migration
             $table->date('issue_date')->nullable();
             $table->date('expire_date')->nullable();
             $table->string('documents',50)->nullable();
+            $table->string('status',10)->nullable();
             $table->timestamps();
         });
     }

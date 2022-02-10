@@ -30,10 +30,10 @@ class VehicleController extends Controller
         $freedrivers = VehicleController::freeDriver();
         $assignvehicletodrivers = DriverController::assignVehicleToDriver();
 
-        // $totalNotifications = NotificationsController::expireDocuments();
+        $totalNotifications = NotificationsController::expireDocuments();
 
         return view('pages.Vehicle.vehicles',['datas'=>$datas,'freedrivers'=>$freedrivers,'assignvehicletodrivers'=>$assignvehicletodrivers,
-                        'sl'=>1]);
+                        'totalNotifications'=>$totalNotifications,'sl'=>1]);
     }
 
     public function addNewVehicle( Request $req ) {
@@ -80,13 +80,14 @@ class VehicleController extends Controller
         ->where('vehicleregno', $req->regno)
         ->get();
 
-        // $totalNotifications = NotificationsController::expireDocuments();
+        $totalNotifications = NotificationsController::expireDocuments();
 
-        return view('pages.Vehicle.vehicledocuments',['datas'=>$documents, 'regno'=>$req->regno]);
+        return view('pages.Vehicle.vehicledocuments',['datas'=>$documents, 'regno'=>$req->regno,'totalNotifications'=>$totalNotifications]);
     }
     public function addNewDocuments ( Request $req ) {
         $reqdata = $req->input();
-        Vpaper::create($reqdata);
+        $this->data->pdateDocuments($reqdata);
+        // Vpaper::create($reqdata);
         return redirect('/vehicle');
     }
 
@@ -96,9 +97,10 @@ class VehicleController extends Controller
         ->where('vehicleregno', $req->regno)
         ->get();
 
-        // $totalNotifications = NotificationsController::expireDocuments();
+        $totalNotifications = NotificationsController::expireDocuments();
         
-        return view('pages.Vehicle.vehicle_ministrations',['datas'=>$documents, 'regno'=>$req->regno]);
+        return view('pages.Vehicle.vehicle_ministrations',['datas'=>$documents, 'regno'=>$req->regno,
+                    'totalNotifications'=>$totalNotifications]);
     }
 
     public function addMinstartions( Request $req ) {

@@ -97,4 +97,22 @@ class VehiclesRepository implements VehiclesInterface {
         Ministration::create($reqdata);
     }
 
+    public function pdateDocuments( array $reqdata ) {
+        $past_papers = DB::table('vpapers')->select('id')
+                            ->where('vehicleregno', $reqdata['vehicleregno'])
+                            ->where('papers_type', $reqdata['papers_type'])
+                            ->where('status', 'present')
+                            ->get();
+
+        if(count($past_papers)>0) {
+            $pPaper = Vpaper::find($past_papers[0]->id);
+            $pPaper->status = 'past';
+            $pPaper->save();
+
+            Vpaper::create($reqdata);
+        }else{
+            Vpaper::create($reqdata);
+        }
+    }
+
 }

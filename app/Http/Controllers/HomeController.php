@@ -33,10 +33,11 @@ class HomeController extends Controller
         $d_counts = Driver::all()->count();
         $v_counts = Vehicle::all()->count();
 
-        // $totalNotifications = NotificationsController::expireDocuments();
+        $totalNotifications = NotificationsController::expireDocuments();
 
         $fuel_cost = CostController::fuelCost();
         $ministration_cost = CostController::ministrationCost();
+
         if(count($v_last_updates)>0){
             $vLastUpdate = $v_last_updates[0]->updated_at;
         }else{
@@ -49,11 +50,8 @@ class HomeController extends Controller
             $dLastUpdate = "0000-00-00";
         }
 
-        $ministration_cost = CostController::ministrationCost();
-        
-
         return view('pages.Home.index',['v_last_updates'=>$vLastUpdate,'d_last_updates'=>$dLastUpdate,
-                                    'v_counts'=>$v_counts,'d_counts'=>$d_counts,
+                                    'v_counts'=>$v_counts,'d_counts'=>$d_counts,'totalNotifications'=>$totalNotifications,
                                     'fuel_cost'=>$fuel_cost,'ministration_cost'=>$ministration_cost]);
     }
 

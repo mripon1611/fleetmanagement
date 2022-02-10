@@ -28,10 +28,10 @@ class RefuelrequisitionController extends Controller
         $vehicleslists = RefuelrequisitionController::vehiclesList();
         $addedvehicles = RefuelrequisitionController::addedVehicles();
 
-        // $totalNotifications = NotificationsController::expireDocuments();
+        $totalNotifications = NotificationsController::expireDocuments();
 
         return view('pages.Fuel.refuel-requisition',['datas'=>$datas,'vehicleslists'=>$vehicleslists,'addedvehicles'=>$addedvehicles,
-                    'sl'=>1,'t'=>0]);
+                    'totalNotifications'=>$totalNotifications,'sl'=>1,'t'=>0]);
     }
 
     public function addnewRefuelreq( Request $req ) {
@@ -63,10 +63,10 @@ class RefuelrequisitionController extends Controller
         $refuelreqlists = DB::table('refuelrequisitions')->select('*')
         ->orderBy('created_date', 'DESC')->where('vregno', $req->vregno)->get();
 
-        // $totalNotifications = NotificationsController::expireDocuments();
+        $totalNotifications = NotificationsController::expireDocuments();
 
         return view('pages.Fuel.refuelreqhistory',['datas'=>$refuelreqlists,'vregno'=>$req->vregno,
-                    'sl'=>1]);
+                    'totalNotifications'=>$totalNotifications,'sl'=>1]);
         // return $drivinglists;
     }
 

@@ -16,71 +16,28 @@ use Carbon\Carbon;
 class NotificationsController extends Controller
 {
     //
+
     public function expireDocuments() {
-        $totalNotifications = 0;
-        $totalNotifications += NotificationsController::tTokenExpire();
-        $totalNotifications += NotificationsController::fitnessExpire();
-        $totalNotifications += NotificationsController::rPermitExpire();
+        $mytime1 = Carbon::now();
+        $mytime2 = Carbon::now();
+        $mytime2 = $mytime2->addDays(10);
+
+        $totalNotifications = DB::table('vpapers')
+            ->select('vehicleregno','papers_type','expire_date')
+            ->where('status', 'present')
+            ->whereBetween('expire_date',[
+                $mytime1,
+                $mytime2,
+        ])->get();
+
+        if(count($totalNotifications)>0) {
+            foreach( $totalNotifications as $totalNotification) {
+                $date = $totalNotification->expire_date;
+                $dateDis =  $mytime1->diffInDays($date);
+                $totalNotification->expire_date = $dateDis;
+            }
+        }
+
         return $totalNotifications;
-        
-    }
-
-    public function tTokenExpire() {
-        $mytime = Carbon::now();
-        $count = 0;
-        $ttokenexpiredates = DB::table('vpapers')
-                            ->select('ttokenexpiredate')
-                            ->where('ttokenexpiredate', ">", $mytime)
-                            ->get();
-        if(count($ttokenexpiredates)>0) {
-            foreach( $ttokenexpiredates as $ttokenexpiredate) {
-                $date = $ttokenexpiredate->ttokenexpiredate;
-                $dateDis =  $mytime->diffInDays($date);
-                if($dateDis <= 15) {
-                    $count += 1;
-                }
-            }
-        }
-
-        return $count;
-    }
-
-    public function fitnessExpire() {
-        $mytime = Carbon::now();
-        $count = 0;
-        $fitnessexpiredates = DB::table('vpapers')
-                            ->select('fitnessexpiredate')
-                            ->where('fitnessexpiredate', ">", $mytime)
-                            ->get();
-        if(count($fitnessexpiredates)>0) {
-            foreach( $fitnessexpiredates as $fitnessexpiredate) {
-                $date = $fitnessexpiredate->fitnessexpiredate;
-                $dateDis =  $mytime->diffInDays($date);
-                if($dateDis <= 15) {
-                    $count += 1;
-                }
-            }
-        }
-
-        return $count;
-    }
-    public function rPermitExpire() {
-        $mytime = Carbon::now();
-        $count = 0;
-        $rpermitexpiredates = DB::table('vpapers')
-                            ->select('rpermitexpiredate')
-                            ->where('rpermitexpiredate', ">", $mytime)
-                            ->get();
-        if(count($rpermitexpiredates)>0) {
-            foreach( $rpermitexpiredates as $rpermitexpiredate) {
-                $date = $rpermitexpiredate->rpermitexpiredate;
-                $dateDis =  $mytime->diffInDays($date);
-                if($dateDis <= 15) {
-                    $count += 1;
-                }
-            }
-        }
-
-        return $count;
     }
 }

@@ -32,9 +32,10 @@
             <ul class="nav-right">
                 <li class="header-notification">
                     <div class="dropdown-primary dropdown">
+                        @if(count($totalNotifications)>0)
                         <div class="dropdown-toggle" data-toggle="dropdown">
                             <i class="feather icon-bell"></i>
-                            <span class="badge bg-c-pink">3</span>
+                            <span class="badge bg-c-pink">{{count($totalNotifications)}}</span>
                         </div>
                         <ul class="show-notification notification-view dropdown-menu"
                             data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
@@ -42,34 +43,30 @@
                                 <h6>Notifications</h6>
                                 <label class="label label-danger">New</label>
                             </li>
+                            @foreach($totalNotifications as $totalNotification)
                             <li>
                                 <div class="media">
                                     <div class="media-body">
-                                        <h5 class="notification-user">John Doe</h5>
-                                        <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                        <span class="notification-time">30 minutes ago</span>
+                                        <h5 class="notification-user">Vehicle : 
+                                            <span class="text-info">{{$totalNotification->vehicleregno}}</span></h5>
+                                        <p class="notification-msg">It's <strong><code>{{$totalNotification->papers_type}}</code></strong> paper
+                                            {{$totalNotification->expire_date}} days left to expired!</p>
                                     </div>
                                 </div>
                             </li>
+                            @endforeach
+                        </ul>
+                        @else
+                        <div class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="feather icon-bell"></i>
+                        </div>
+                        <ul class="show-notification notification-view dropdown-menu"
+                            data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <li>
-                                <div class="media">
-                                    <div class="media-body">
-                                        <h5 class="notification-user">Joseph William</h5>
-                                        <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                        <span class="notification-time">30 minutes ago</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="media">
-                                    <div class="media-body">
-                                        <h5 class="notification-user">Sara Soudein</h5>
-                                        <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                        <span class="notification-time">30 minutes ago</span>
-                                    </div>
-                                 </div>
+                                <h6>Recently You have no notifications!</h6>
                             </li>
                         </ul>
+                        @endif
                     </div>
                 </li>
                 <li class="header-notification">

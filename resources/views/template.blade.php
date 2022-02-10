@@ -30,6 +30,12 @@
     <!-- feather Awesome -->
     <script src="https://kit.fontawesome.com/8293ff3daa.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="files/assets/icon/feather/css/feather.css">
+    <!-- Select 2 css -->
+    <link rel="stylesheet" href="files/bower_components/select2/dist/css/select2.min.css" />
+    <!-- Multi Select css -->
+    <link rel="stylesheet" type="text/css"
+        href="files/bower_components/bootstrap-multiselect/dist/css/bootstrap-multiselect.css" />
+    <link rel="stylesheet" type="text/css" href="files/bower_components/multiselect/css/multi-select.css" />
     <!-- Data Table Css -->
     <!-- <link rel="stylesheet" type="text/css" href="../files/assets/pages/data-table/css/jquery.dataTables.min.css"> -->
     <link rel="stylesheet" type="text/css" href="files/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
@@ -37,6 +43,15 @@
     <link rel="stylesheet" type="text/css" href="files/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
 
     <link rel="stylesheet" type="text/css" href="files/assets/pages/data-table/extensions/buttons/css/buttons.dataTables.min.css">
+
+    <!-- Date-time picker css -->
+    <link rel="stylesheet" type="text/css"
+        href="files/assets/pages/advance-elements/css/bootstrap-datetimepicker.css">
+    <!-- Date-range picker css  -->
+    <link rel="stylesheet" type="text/css"
+        href="files/bower_components/bootstrap-daterangepicker/daterangepicker.css" />
+    <!-- Date-Dropper css -->
+    <link rel="stylesheet" type="text/css" href="files/bower_components/datedropper/datedropper.min.css" />
 
      <!-- Chartlist chart css -->
     <link rel="stylesheet" type="text/css" href="files/bower_components/chartist/dist/chartist.css">
@@ -183,11 +198,11 @@
         src="files/bower_components/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script>
     <script type="text/javascript" src="files/bower_components/jquery-i18next/jquery-i18next.min.js"></script>
 
-
     <!-- custom js -->
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/another.js"></script>
 
+    <script type="text/javascript" src="files/assets/pages/advance-elements/custom-picker.js"></script>
     <script src="files/assets/pages/data-table/extensions/buttons/js/extension-btns-custom.js"></script>
     <script src="files/assets/js/vartical-layout.min.js"></script>
     <script type="text/javascript" src="files/assets/js/script.min.js"></script>
@@ -195,11 +210,24 @@
     <script src="files/assets/js/pcoded.min.js"></script>
     <script src="files/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script type="text/javascript" src="files/assets/js/script.js"></script>
-
+    <script type="text/javascript" src="files/assets/pages/advance-elements/select2-custom.js"></script>
     <script type="text/javascript" src="files/assets/pages/chart/chartjs/chartjs-custom.js"></script>
 
     <!-- Nav tabs -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Select 2 js -->
+    <script type="text/javascript" src="files/bower_components/select2/dist/js/select2.full.min.js"></script>
+    <!-- Multiselect js -->
+    <script type="text/javascript"
+        src="files/bower_components/bootstrap-multiselect/dist/js/bootstrap-multiselect.js">
+    </script>
+    <script type="text/javascript" src="files/bower_components/multiselect/js/jquery.multi-select.js"></script>
+    <script type="text/javascript" src="files/assets/js/jquery.quicksearch.js"></script>
+    <!-- Date-range picker js -->
+    <script type="text/javascript"
+        src="files/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- Date-dropper js -->
+    <script type="text/javascript" src="files/bower_components/datedropper/datedropper.min.js"></script>
     
 </body>
 
