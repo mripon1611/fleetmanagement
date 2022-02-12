@@ -19,6 +19,7 @@ class Vehicledriver extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'vcode',
         'vregno',
         'dlicensenumber',
         'drivername',

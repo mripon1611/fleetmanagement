@@ -65,6 +65,7 @@
                                     <td>
                                         <form action="/vehicledocuments" class="float-left" method="POST" enctype="multipart/form-data">
                                             @csrf()
+                                            <input type="hidden" id="vcode" name="vcode" value="{{$data['vcode']}}">
                                             <input type="hidden" id="regno" name="regno" value="{{$data['regno']}}">
                                             <button class="btn btn-success p-0 mr-1" type="submit"><i class="fas fa-eye"></i></i>Documents</button>
                                         </form>

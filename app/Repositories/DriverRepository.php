@@ -55,15 +55,17 @@ class DriverRepository implements DriverInterface {
 
         $vehicle = Vehicle::find($vid[0]->id);
 
-        $vcldrvr = [];
-        $vcldrvr['vregno'] = $reqdata['vehicle'];
-        $vcldrvr['dlicensenumber'] = $reqdata['license'];
-        $vcldrvr['drivername'] = $reqdata['name'];
-        $vcldrvr['assigndate'] = $reqdata['assigndate'];
-        $vcldrvr['status'] = 'present';
+        $vehicle_driver = [];
+        $vehicle_driver['vcode'] = $vehicle->vcode;
+        $vehicle_driver['vregno'] = $reqdata['vehicle'];
+        $vehicle_driver['dlicensenumber'] = $reqdata['license'];
+        $vehicle_driver['drivername'] = $reqdata['name'];
+        $vehicle_driver['assigndate'] = $reqdata['assigndate'];
+        $vehicle_driver['status'] = 'present';
+
 
         if(count($vdid) > 0) {
-            Vehicledriver::create($vcldrvr);
+            Vehicledriver::create($vehicle_driver);
 
 
             $vehicledriver = Vehicledriver::find($vdid[0]->id);
@@ -88,7 +90,7 @@ class DriverRepository implements DriverInterface {
             return;
 
         } else{
-            Vehicledriver::create($vcldrvr);
+            Vehicledriver::create($vehicle_driver);
 
             $vehicle->toassigned = 1;
             $vehicle->save();

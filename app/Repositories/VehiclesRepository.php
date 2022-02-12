@@ -41,12 +41,13 @@ class VehiclesRepository implements VehiclesInterface {
 
             $driver = Driver::find($driverid[0]->id);
 
-            $vcldrvr = [];
-            $vcldrvr['vregno'] = $reqdata['regno'];
-            $vcldrvr['dlicensenumber'] = $driver->license;
-            $vcldrvr['drivername'] = $driver->name;
-            $vcldrvr['assigndate'] = $reqdata['assigndate'];
-            $vcldrvr['status'] = 'present';
+            $vehicle_driver = [];
+            $vehicle_driver['vcode'] = $reqdata['vcode'];
+            $vehicle_driver['vregno'] = $reqdata['regno'];
+            $vehicle_driver['dlicensenumber'] = $driver->license;
+            $vehicle_driver['drivername'] = $driver->name;
+            $vehicle_driver['assigndate'] = $reqdata['assigndate'];
+            $vehicle_driver['status'] = 'present';
 
             $vdid = Vehicledriver::select('id')
                 ->where('vregno', $reqdata['regno'])
@@ -70,7 +71,7 @@ class VehiclesRepository implements VehiclesInterface {
 
             } 
                 
-            Vehicledriver::create($vcldrvr);
+            Vehicledriver::create($vehicle_driver);
             $vehicle->toassigned = 1;
             $vehicle->save();
 
@@ -97,7 +98,7 @@ class VehiclesRepository implements VehiclesInterface {
         Ministration::create($reqdata);
     }
 
-    public function pdateDocuments( array $reqdata ) {
+    public function updateDocuments( array $reqdata ) {
         $past_papers = DB::table('vpapers')->select('id')
                             ->where('vehicleregno', $reqdata['vehicleregno'])
                             ->where('papers_type', $reqdata['papers_type'])

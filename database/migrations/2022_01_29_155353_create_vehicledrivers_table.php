@@ -17,6 +17,7 @@ class CreateVehicledriversTable extends Migration
             $table->charset = 'utf8';
             $table->collation = 'utf8_general_ci';
             $table->id();
+            $table->string('vcode',30)->unique()->nullable();
             $table->string('vregno',30)->nullable();
             $table->string('dlicensenumber',30)->nullable();
             $table->string('drivername',30)->nullable();

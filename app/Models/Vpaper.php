@@ -19,6 +19,7 @@ class Vpaper extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'vcode',
         'vehicleregno',
         'papers_type',
         'issue_date',

@@ -20,6 +20,11 @@
                                                         <div class="row">
                                                             <input type="hidden" class="form-control" id="id" name="id" value="{{$data['id']}}">
                                                             <div class="form-group col-md-6">
+                                                                <label for="vcode">Vehicle Code</label>
+                                                                <input type="text" class="form-control" id="vcode" name="vcode" value="{{$data['vcode']}}" readonly>
+                                                                <span class="md-line"></span>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
                                                                 <label for="name">Name</label>
                                                                 <input type="text" class="form-control" id="name" name="name" value="{{$data['name']}}" readonly>
                                                                 <span class="md-line"></span>

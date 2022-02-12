@@ -82,11 +82,11 @@ class VehicleController extends Controller
 
         $totalNotifications = NotificationsController::expireDocuments();
 
-        return view('pages.Vehicle.vehicledocuments',['datas'=>$documents, 'regno'=>$req->regno,'totalNotifications'=>$totalNotifications]);
+        return view('pages.Vehicle.vehicledocuments',['datas'=>$documents,'vcode'=>$req->vcode,'regno'=>$req->regno,'totalNotifications'=>$totalNotifications]);
     }
     public function addNewDocuments ( Request $req ) {
         $reqdata = $req->input();
-        $this->data->pdateDocuments($reqdata);
+        $this->data->updateDocuments($reqdata);
         // Vpaper::create($reqdata);
         return redirect('/vehicle');
     }
