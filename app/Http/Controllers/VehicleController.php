@@ -99,7 +99,7 @@ class VehicleController extends Controller
 
         $totalNotifications = NotificationsController::expireDocuments();
         
-        return view('pages.Vehicle.vehicle_ministrations',['datas'=>$documents, 'regno'=>$req->regno,
+        return view('pages.Vehicle.vehicle_ministrations',['datas'=>$documents,'vcode'=>$req->vcode,'regno'=>$req->regno,
                     'totalNotifications'=>$totalNotifications]);
     }
 

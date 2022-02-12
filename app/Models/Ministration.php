@@ -19,6 +19,7 @@ class Ministration extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'vcode',
         'vehicleregno',
         'staffname',
         'ministration_type',

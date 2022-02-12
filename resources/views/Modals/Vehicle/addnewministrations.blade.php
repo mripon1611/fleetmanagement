@@ -18,6 +18,7 @@
                         <hr />
                         @csrf()
                         <div class="row">
+                            <input type="hidden" class="form-control" id="vcode" name="vcode" value="{{$vcode}}">
                             <input type="hidden" class="form-control" id="vehicleregno" name="vehicleregno" value="{{$regno}}">
                             <div class="form-group col-md-6">
                                 <label for="doctype">Select Ministrations Type</label>
