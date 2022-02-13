@@ -58,12 +58,15 @@
                                                             </div>
                                                             <div class="form-group col-md-6">
                                                                 <label for="fueltype">Fuel Type<span style="color: red;">*</span></label>
+                                                                @if($data['fueltype']==='diesel')
+                                                                <input type="text" class="form-control" name="fueltype" value="{{$data['fueltype']}}" readonly>
+                                                                @else
                                                                 <select id="fueltype" class="form-control" name="fueltype">
                                                                     <option>Select Fuel Type</option>
                                                                     <option value="octane">Octane</option>
                                                                     <option value="petrol">Petrol</option>
-                                                                    <option value="diesel">Diesel</option>
                                                                 </select>
+                                                                @endif
                                                             </div>
                                                             <div class="form-group col-md-6">
                                                                 <label for="costplitter">Cost per Litter<span style="color: red;">*</span></label>

@@ -61,11 +61,6 @@
                         </table>
                     </div>
                 </div>
-                <div class="card-header mb-3">
-                    <div class="d-flex justify-content-end">
-                        <button class="btn btn-info" onClick="window.print()">Print</button>
-                    </div>
-                </div>
             </div>
             <!-- Zero config.table end -->
         </div>
