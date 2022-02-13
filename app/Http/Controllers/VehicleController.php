@@ -39,8 +39,10 @@ class VehicleController extends Controller
     public function addNewVehicle( Request $req ) {
 
         $req->validate([
+            'vcode'=>'required|unique:vehicles',
             'name'=>'required',
             'regno'=>'required|unique:vehicles',
+            'regno_bn'=>'required|unique:vehicles',
             'regdate'=>'required',
             'licensedate'=>'required',
             'seatcapacity'=>'required',

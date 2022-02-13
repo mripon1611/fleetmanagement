@@ -23,6 +23,7 @@
                             class="table table-hover table-bordered nowrap text-center">
                             <thead>
                                 <tr>
+                                    <th>Driver Name</th>
                                     <th>Vehicle Reg No</th>
                                     <th>Start Date</th>
                                     <th>End Date</th>
@@ -33,6 +34,7 @@
                                 <!-- foreach start for $datas -->
                                 @foreach($datas as $data)
                                 <tr>
+                                    <td>{{$data->drivername}}</td>
                                     <td>{{$data->vregno}}</td>
                                     <td>{{$data->assigndate}}</td>
                                     @if($data->status =='past')
@@ -49,6 +51,7 @@
                             </tbody>
                             <tfoot>
                                 <tr>
+                                    <th>Driver Name</th>
                                     <th>Vehicle Reg No</th>
                                     <th>Start Date</th>
                                     <th>End Date</th>

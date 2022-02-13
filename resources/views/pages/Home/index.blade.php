@@ -19,9 +19,8 @@
                                                     <div class="col-lg-8">
                                                         <div class="page-header-title">
                                                             <div class="d-inline">
-                                                                <h4>Chart-Js</h4>
-                                                                <span>lorem ipsum dolor sit amet, consectetur adipisicing
-                                                                    elit</span>
+                                                                <h4>Dashboard</h4>
+                                                                <span></span>
                                                             </div>
                                                         </div>
                                                     </div>

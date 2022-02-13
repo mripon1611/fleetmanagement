@@ -19,6 +19,7 @@ class Refuelrequisition extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'vcode',
         'vregno',
         'staffname',
         'pvsodo',

@@ -18,6 +18,11 @@
                                                         <hr />
                                                         <div class="row">
                                                             <div class="form-group col-md-6">
+                                                                <label for="vcode">Name</label>
+                                                                <input type="text" class="form-control" id="vcode" name="vcode" value="{{$data['vcode']}}" readonly>
+                                                                <span class="md-line"></span>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
                                                                 <label for="name">Name</label>
                                                                 <input type="text" class="form-control" id="name" name="name" value="{{$data['name']}}" readonly>
                                                                 <span class="md-line"></span>
@@ -25,6 +30,17 @@
                                                             <div class="form-group col-md-6">
                                                                 <label for="regno">Registration Number</label>
                                                                 <input type="text" class="form-control" id="regno" name="regno" value="{{$data['regno']}}" readonly>
+                                                                <span class="md-line"></span>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="regno_bn">Registration Number BN</label>
+                                                                <input type="text" class="form-control" id="regno_bn" name="regno_bn" value="{{$data['regno_bn']}}" readonly>
+                                                                <span class="md-line"></span>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="vehicleadded">Vehicle Added date</label>
+                                                                <input type="text" class="form-control" id="vehicleadded" name="vehicleadded" 
+                                                                    value="{{$data['vehicleadded']==''?'NULL':$data['vehicleadded']}}" readonly>
                                                                 <span class="md-line"></span>
                                                             </div>
                                                             <div class="form-group col-md-6">

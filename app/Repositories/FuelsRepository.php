@@ -34,5 +34,14 @@ class FuelsRepository implements FuelsInterface {
         return;
 
     }
+    public function newRefuelreq( array $reqdata ){
+        $vcode = DB::table('vehicles')->select('vcode')
+                    ->where('regno', $reqdata['vregno'])
+                    ->get();
+
+        $reqdata['vcode'] = $vcode[0]->vcode;
+        $reqdata['totalprice'] = ($reqdata['ttlqty'] * $reqdata['costplitter']);
+        Refuelrequisition::create($reqdata);
+    }
 
 }

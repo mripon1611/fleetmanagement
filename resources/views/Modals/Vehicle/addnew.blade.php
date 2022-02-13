@@ -32,9 +32,20 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="regno">Registration Number<span style="color: red;">*</span></label>
-                                <input type="text" class="form-control" id="regno" name="regno" placeholder="Dhaka Metro Ha-1234">
+                                <input type="text" class="form-control" id="regno" name="regno" placeholder="Dhaka metro-CA">
                                 <span class="md-line"></span>
                                 <span class="md-line text-danger">@error('regno'){{$message}}@enderror</span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="regno_bn">Registration Number BN<span style="color: red;">*</span></label>
+                                <input type="text" class="form-control" id="regno_bn" name="regno_bn" placeholder="ঢাকা মেট্রো -চ">
+                                <span class="md-line"></span>
+                                <span class="md-line text-danger">@error('regno'){{$message}}@enderror</span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="vehicleadded">Vehicle Added date</label>
+                                <input type="date" class="form-control" id="vehicleadded" name="vehicleadded">
+                                <span class="md-line"></span>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="ownername">Owner Name<span style="color: red;">*</span></label>

@@ -22,6 +22,8 @@ class Vehicle extends Model
         'vcode',
         'name',
         'regno',
+        'regno_bn',
+        'vehicleadded',
         'regdate',
         'licensedate',
         'seatcapacity',

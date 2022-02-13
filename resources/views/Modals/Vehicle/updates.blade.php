@@ -35,6 +35,17 @@
                                                                 <span class="md-line"></span>
                                                             </div>
                                                             <div class="form-group col-md-6">
+                                                                <label for="regno_bn">Registration Number BN</label>
+                                                                <input type="text" class="form-control" id="regno_bn" name="regno_bn" value="{{$data['regno_bn']}}" readonly>
+                                                                <span class="md-line"></span>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="vehicleadded">Vehicle Added date</label>
+                                                                <input type="text" class="form-control" id="vehicleadded" name="vehicleadded" 
+                                                                    value="{{$data['vehicleadded']==''?'NULL':$data['vehicleadded']}}" readonly>
+                                                                <span class="md-line"></span>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
                                                                 <label for="ownername">Owner Name</label>
                                                                 <input type="text" class="form-control" id="ownername" name="ownername" value="{{$data['ownername']}}">
                                                                 <span class="md-line"></span>

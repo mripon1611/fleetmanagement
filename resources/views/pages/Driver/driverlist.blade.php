@@ -69,7 +69,7 @@
                                     <td>{{$data['nid']}}</td>
                                     <td>
                                         @if($data['isassigned'] ==1)
-                                        <button class="btn btn-success edit p-1 m-1" data-toggle="modal" data-target="#driverupdates_{{$data['id']}}">
+                                        <button class="btn btn-success edit p-1 m-1" data-toggle="modal" data-target="#release_{{$data['id']}}">
                                             <i class="fas fa-eye"></i>Assigned
                                         </button>
                                         @else
@@ -94,6 +94,10 @@
                                 <!--start Modal driver updates -->
                                 @include('Modals.Driver.updates')
                                 <!-- End Modal driver updates -->
+
+                                <!--start Modal driver release -->
+                                @include('Modals.Driver.release')
+                                <!-- End Modal driver release -->
 
                                 <!--start Modal driver details -->
                                 @include('Modals.Driver.details')

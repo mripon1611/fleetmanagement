@@ -18,6 +18,7 @@ class CreateWeeklycheckreportsTable extends Migration
             $table->collation = 'utf8_general_ci';
             $table->id();
             $table->date('date')->nullable();
+            $table->string('vcode',30)->nullable();
             $table->string('vregno',30)->nullable();
             $table->string('staffname',30)->nullable();
             $table->string('sanitizer',10)->nullable();

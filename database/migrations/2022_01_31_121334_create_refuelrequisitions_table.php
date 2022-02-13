@@ -17,6 +17,7 @@ class CreateRefuelrequisitionsTable extends Migration
             $table->charset = 'utf8';
             $table->collation = 'utf8_general_ci';
             $table->id();
+            $table->string('vcode',30)->nullable();
             $table->string('vregno',30)->nullable();
             $table->string('staffname',30)->nullable();
             $table->string('pvsodo',10)->nullable();

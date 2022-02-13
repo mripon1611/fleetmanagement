@@ -109,6 +109,7 @@ class DriverController extends Controller
         $drivinglists = DB::table('vehicledrivers')
         ->select('*')
         ->where('dlicensenumber', $req->license)
+        ->orderBy('assigndate', 'DESC')
         ->get();
 
         $totalNotifications = NotificationsController::expireDocuments();

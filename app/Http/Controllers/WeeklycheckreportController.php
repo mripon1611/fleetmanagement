@@ -40,6 +40,12 @@ class WeeklycheckreportController extends Controller
             $reqdata['staffname'] = "";
         }
 
+        $vcode = DB::table('vehicles')->select('vcode')
+                    ->where('regno', $reqdata['vregno'])
+                    ->get();
+
+        $reqdata['vcode'] = $vcode[0]->vcode;
+
         // return $reqdata;
 
         Weeklycheckreport::create($reqdata);

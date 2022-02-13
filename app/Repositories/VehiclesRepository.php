@@ -107,7 +107,7 @@ class VehiclesRepository implements VehiclesInterface {
 
         if(count($past_papers)>0) {
             $pPaper = Vpaper::find($past_papers[0]->id);
-            $pPaper->status = 'past';
+            $pPaper->status = 'expired';
             $pPaper->save();
 
             Vpaper::create($reqdata);

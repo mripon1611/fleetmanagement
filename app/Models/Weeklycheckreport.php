@@ -20,6 +20,7 @@ class Weeklycheckreport extends Model
      */
     protected $fillable = [
         'date',
+        'vcode',
         'vregno',
         'staffname',
         'sanitizer',

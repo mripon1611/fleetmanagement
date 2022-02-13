@@ -20,6 +20,8 @@ class CreateVehiclesTable extends Migration
             $table->string('vcode',30)->unique()->nullable();
             $table->string('name',30)->nullable();
             $table->string('regno',30)->unique()->nullable();
+            $table->string('regno_bn',30)->unique()->nullable();
+            $table->date('vehicleadded')->nullable();
             $table->date('regdate')->nullable();
             $table->date('licensedate')->nullable();
             $table->string('seatcapacity',5)->nullable();

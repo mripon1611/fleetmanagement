@@ -36,9 +36,13 @@ class RefuelrequisitionController extends Controller
 
     public function addnewRefuelreq( Request $req ) {
         $datas = $req->input();
-        $datas['totalprice'] = ($datas['ttlqty'] * $datas['costplitter']);
-        // return $datas;
-        Refuelrequisition::create($datas);
+
+        $fileName = date('Y-m-d_H-i-s').'-'.$req->file->getClientOriginalName();
+            
+        $req->file->move(public_path('uploads'), $fileName);
+        $datas['file'] = $fileName;
+
+        $this->data->newRefuelreq($datas);
         return redirect('/refuel-requisition');
 
     }
@@ -46,7 +50,7 @@ class RefuelrequisitionController extends Controller
     public function updatesRefuelreq( Request $req ) {
         $reqdata = $req->input();
 
-        $fileName = time().'-'.$req->file->getClientOriginalName();
+        $fileName = date('Y-m-d_H-i-s').'-'.$req->file->getClientOriginalName();
             
         $req->file->move(public_path('uploads'), $fileName);
         $reqdata['file'] = $fileName;
