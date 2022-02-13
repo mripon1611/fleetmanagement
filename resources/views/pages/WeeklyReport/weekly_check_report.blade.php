@@ -13,9 +13,20 @@
             <!-- Zero config.table start -->
             <div class="card">
                 <div class="card-header mb-3">
-                    <div class="d-flex justify-content-xl-between">
+                    <div class="d-flex justify-content-between">
                         <h3>Weekly Check Report</h3>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#addnewreport">Add New Report</button>
                     </div>
+                    @if(Session::has('success'))
+						<div class="alert alert-success mt-2 mb-2">
+                            <button type="button" class="close"
+                                data-dismiss="alert" aria-label="Close">
+                                <i
+                                    class="icofont icofont-close-line-circled"></i>
+                            </button>
+                            <strong>{{Session::get('success')}}</strong>
+                        </div>
+					@endif
                 </div>
                 <div class="card-block">
                                                         <div class="dt-responsive table-responsive">
@@ -95,5 +106,8 @@
 </div>
 <!-- Page-body end -->
 
+<!-- Add new Report Modal start-->
+@include('Modals.checkReport.addnewreport')
+<!-- Add new Report Modal end-->
 
 @endsection

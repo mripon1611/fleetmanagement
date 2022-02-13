@@ -52,11 +52,11 @@
                     <span class="pcoded-mtext">Weekly Check Report</span>
                 </a>
                 <ul class="pcoded-submenu">
-                    <li class="{{ url()->current() == url('create-weekly-report') ? 'active':'' }}">
+                    <!-- <li class="{{ url()->current() == url('create-weekly-report') ? 'active':'' }}">
                         <a href="/create-weekly-report">
                             <span class="pcoded-mtext">Create Report</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="{{ url()->current() == url('weekly-check-report') ? 'active pcoded-trigger':'' }}">
                         <a href="/weekly-check-report">
                             <span class="pcoded-mtext">View Report</span>

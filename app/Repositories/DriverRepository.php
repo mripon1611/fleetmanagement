@@ -11,6 +11,7 @@ use App\Models\Refuelrequisition;
 use App\Models\Historyofrefuelreq;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class DriverRepository implements DriverInterface {
     // New driver input validation
@@ -101,6 +102,32 @@ class DriverRepository implements DriverInterface {
             return;
         }
 
+    }
+
+    public function releasingDriver( array $reqdata ) {
+        $driver = Driver::find($reqdata['id']);
+
+        $driver['isassigned'] = 0;
+        $driver->save();
+
+        $vehicle_drivers = DB::table('vehicledrivers')
+                            ->select('*')
+                            ->where('dlicensenumber',$driver->license)
+                            ->where('status', 'present')
+                            ->get();
+        $vehicle_driver = Vehicledriver::find($vehicle_drivers[0]->id);
+        $release_date = Carbon::now()->format('Y-m-d');
+        $vehicle_driver->status = 'past';
+        $vehicle_driver->releasedate = $release_date;
+        $vehicle_driver->save();
+
+        $vehicles = DB::table('vehicles')
+                        ->select('*')
+                        ->where('vcode', $vehicle_driver->vcode)
+                        ->get();
+        $vehicle = Vehicle::find($vehicles[0]->id);
+        $vehicle->toassigned = 0;
+        $vehicle->save();
     }
 
 }

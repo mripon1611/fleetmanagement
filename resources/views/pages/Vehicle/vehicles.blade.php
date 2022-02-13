@@ -58,7 +58,7 @@
                                             @endif
                                         @endforeach
                                     @else
-                                    <td>Not Assigned</td>
+                                    <td>NULL</td>
                                     @endif
                                     <td>{{$data['seatcapacity']}}</td>
                                     <td>{{$data['ownername']}}</td>

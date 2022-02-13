@@ -51,7 +51,7 @@ class DriverController extends Controller
 
         $data = $req->input();
 
-        $fileName = time().'-'.$req->photograph->getClientOriginalName();
+        $fileName = date('Y-m-d_H-i-s').'-'.$req->photograph->getClientOriginalName();
             
         $req->photograph->move(public_path('uploads'), $fileName);
         $data['photograph'] = $fileName;
@@ -102,6 +102,15 @@ class DriverController extends Controller
         $this->data->editDriverDetails($reqdata);
 
         return redirect('/driverlist');
+
+    }
+
+    public function releaseDriver( Request $req ) {
+        $reqdata = $req->input();
+
+        $this->data->releasingDriver($reqdata);
+
+        return redirect('/driverlist')->with('success', 'Driver is successfully released from assigned!!');;
 
     }
 

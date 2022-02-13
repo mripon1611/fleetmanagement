@@ -35,6 +35,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/driverlist', [DriverController::class, 'index']);
 Route::post('/addnewdriver', [DriverController::class, 'addNewDriver']);
 Route::post('/driverupdate', [DriverController::class, 'driverUpdate']);
+Route::post('/release', [DriverController::class, 'releaseDriver']);
 Route::post('/drivinghistory', [DriverController::class, 'drivingHistory']);
 // Route::get('/{dlicense}', [DriverController::class, 'drivingHistory']);
 

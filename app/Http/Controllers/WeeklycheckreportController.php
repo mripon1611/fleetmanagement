@@ -49,7 +49,8 @@ class WeeklycheckreportController extends Controller
         // return $reqdata;
 
         Weeklycheckreport::create($reqdata);
-        return redirect('create-weekly-report');
+        // return redirect('create-weekly-report');
+        return redirect('/weekly-check-report')->with('success', 'Successfully your report is sotored in dasabase!');;
     }
 
     public function weeklyCheckReport() {
@@ -64,12 +65,14 @@ class WeeklycheckreportController extends Controller
             $date = "0000-00-00";
         }
 
+        $vehicles = Vehicle::all();
+
         
 
         $totalNotifications = NotificationsController::expireDocuments();
 
         // return $reports;
-        return view('pages.WeeklyReport.weekly_check_report',['datas'=>$reports,'date'=>$date,'totalNotifications'=>$totalNotifications]);
+        return view('pages.WeeklyReport.weekly_check_report',['datas'=>$reports,'vehicles'=>$vehicles,'date'=>$date,'totalNotifications'=>$totalNotifications]);
     }
 
     public function table() {

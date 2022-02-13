@@ -54,7 +54,7 @@ class VehicleController extends Controller
         $data = $req->input();
         $vehicle = $this->data->newVehicle($data);
         return redirect('/vehicle')
-                    ->with('success', 'Successfully added a new vehicle in vehicle list!');;
+                    ->with('success', 'Successfully added a new vehicle in vehicle list!');
 
     }
 
@@ -88,6 +88,12 @@ class VehicleController extends Controller
     }
     public function addNewDocuments ( Request $req ) {
         $reqdata = $req->input();
+
+        $fileName = date('Y-m-d_H-i-s').'-'.$req->documents->getClientOriginalName();
+            
+        $req->documents->move(public_path('uploads'), $fileName);
+        $reqdata['documents'] = $fileName;
+
         $this->data->updateDocuments($reqdata);
         // Vpaper::create($reqdata);
         return redirect('/vehicle');
@@ -107,6 +113,11 @@ class VehicleController extends Controller
 
     public function addMinstartions( Request $req ) {
         $reqdata = $req->input();
+
+        $fileName = date('Y-m-d_H-i-s').'-'.$req->ministration_receipt->getClientOriginalName();
+            
+        $req->ministration_receipt->move(public_path('uploads'), $fileName);
+        $reqdata['ministration_receipt'] = $fileName;
 
         $this->data->addNewMinstartions($reqdata);
 

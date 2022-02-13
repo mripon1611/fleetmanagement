@@ -63,14 +63,14 @@
                                             @endif
                                         @endforeach
                                     @else
-                                    <td>Not Assigned</td>
+                                    <td>NULL</td>
                                     @endif
                                     <td>{{$data['blood']}}</td>
                                     <td>{{$data['nid']}}</td>
                                     <td>
                                         @if($data['isassigned'] ==1)
                                         <button class="btn btn-success edit p-1 m-1" data-toggle="modal" data-target="#release_{{$data['id']}}">
-                                            <i class="fas fa-eye"></i>Assigned
+                                            <i class="fas fa-trash-alt"></i>Assigned
                                         </button>
                                         @else
                                         <button class="btn btn-primary edit p-1 m-1" data-toggle="modal" data-target="#driverupdates_{{$data['id']}}">
