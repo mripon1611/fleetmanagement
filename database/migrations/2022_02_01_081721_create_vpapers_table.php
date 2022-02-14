@@ -16,7 +16,7 @@ class CreateVpapersTable extends Migration
         Schema::create('vpapers', function (Blueprint $table) {
             $table->charset = 'utf8';
             $table->collation = 'utf8_general_ci';
-            $table->id();
+            $table->increments('id');
             $table->string('vcode',30)->nullable();
             $table->string('vehicleregno',30)->nullable();
             $table->string('papers_type',30)->nullable();
@@ -25,6 +25,8 @@ class CreateVpapersTable extends Migration
             $table->string('documents',50)->nullable();
             $table->string('status',10)->nullable();
             $table->timestamps();
+
+            $table->index(['vcode']);
         });
     }
 

@@ -16,7 +16,7 @@ class CreateDriversTable extends Migration
         Schema::create('drivers', function (Blueprint $table) {
             $table->charset = 'utf8';
             $table->collation = 'utf8_general_ci';
-            $table->id();
+            $table->increments('id');
             $table->string('name',50)->nullable();
             $table->string('name_bn',50)->nullable();
             $table->string('nid',20)->unique()->nullable();

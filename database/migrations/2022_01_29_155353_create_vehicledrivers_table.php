@@ -16,7 +16,7 @@ class CreateVehicledriversTable extends Migration
         Schema::create('vehicledrivers', function (Blueprint $table) {
             $table->charset = 'utf8';
             $table->collation = 'utf8_general_ci';
-            $table->id();
+            $table->increments('id');
             $table->string('vcode',30)->unique()->nullable();
             $table->string('vregno',30)->nullable();
             $table->string('dlicensenumber',30)->nullable();
@@ -25,6 +25,8 @@ class CreateVehicledriversTable extends Migration
             $table->date('releasedate')->nullable();
             $table->string('status',15)->nullable();
             $table->timestamps();
+
+            $table->index(['vcode','vregno']);
         });
     }
 

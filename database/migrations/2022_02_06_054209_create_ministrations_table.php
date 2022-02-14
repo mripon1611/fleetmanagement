@@ -16,7 +16,7 @@ class CreateMinistrationsTable extends Migration
         Schema::create('ministrations', function (Blueprint $table) {
             $table->charset = 'utf8';
             $table->collation = 'utf8_general_ci';
-            $table->id();
+            $table->increments('id');
             $table->string('vcode',30)->nullable();
             $table->string('vehicleregno',30)->nullable();
             $table->string('staffname',30)->nullable();
@@ -25,6 +25,8 @@ class CreateMinistrationsTable extends Migration
             $table->string('ministration_cost',10)->nullable();
             $table->string('ministration_receipt',50)->nullable();
             $table->timestamps();
+
+            $table->index(['vcode','vehicleregno']);
         });
     }
 

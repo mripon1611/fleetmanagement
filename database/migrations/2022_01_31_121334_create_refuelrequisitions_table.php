@@ -16,7 +16,7 @@ class CreateRefuelrequisitionsTable extends Migration
         Schema::create('refuelrequisitions', function (Blueprint $table) {
             $table->charset = 'utf8';
             $table->collation = 'utf8_general_ci';
-            $table->id();
+            $table->increments('id');
             $table->string('vcode',30)->nullable();
             $table->string('vregno',30)->nullable();
             $table->string('staffname',30)->nullable();
@@ -30,6 +30,8 @@ class CreateRefuelrequisitionsTable extends Migration
             $table->string('status',10)->nullable();
             $table->date('created_date')->nullable();
             $table->timestamps();
+
+            $table->index(['vcode','vregno']);
         });
     }
 

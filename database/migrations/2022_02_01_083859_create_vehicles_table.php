@@ -16,7 +16,7 @@ class CreateVehiclesTable extends Migration
         Schema::create('vehicles', function (Blueprint $table) {
             $table->charset = 'utf8';
             $table->collation = 'utf8_general_ci';
-            $table->id();
+            $table->increments('id');
             $table->string('vcode',30)->unique()->nullable();
             $table->string('name',30)->nullable();
             $table->string('regno',30)->unique()->nullable();
