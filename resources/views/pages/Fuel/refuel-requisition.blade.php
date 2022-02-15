@@ -25,6 +25,7 @@
                             <thead>
                                 <tr>
                                     <th>SL</th>
+                                    <th>Vehicle Code</th>
                                     <th>Vehicle Reg No</th>
                                     <th>Staff Name</th>
                                     <th>Total Quantity</th>
@@ -39,6 +40,7 @@
                                 @foreach($datas as $data)
                                 <tr>
                                     <td>{{$sl++}}</td>
+                                    <td>{{$data['vcode']}}</td>
                                     <td>{{$data['vregno']}}</td>
                                     <td>{{$data['staffname']}}</td>
                                     <td>{{$data['ttlqty']}}</td>
@@ -70,6 +72,7 @@
                             <tfoot>
                                 <tr>
                                     <th>SL</th>
+                                    <th>Vehicle Code</th>
                                     <th>Vehicle Reg No</th>
                                     <th>Staff Name</th>
                                     <th>Total Quantity</th>
@@ -91,7 +94,6 @@
 
 <!-- Modal  add new  -->
 @include('Modals.Fuel.addnew')
-</div>
 <!--End Modal  add new  -->
 
 @endsection

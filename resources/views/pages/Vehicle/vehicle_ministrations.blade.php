@@ -37,7 +37,17 @@
                                 @foreach($datas as $data)
                                 <tr>
                                     <td>{{$data->staffname}}</td>
-                                    <td>{{$data->ministration_type}}</td>
+                                    @if($data->ministration_type === 'tyre_change')
+                                    <td>Tyre Change</td>
+                                    @elseif($data->ministration_type === 'servicing')
+                                    <td>Servicing</td>
+                                    @elseif($data->ministration_type === 'battery_change')
+                                    <td>Battery Change</td>
+                                    @elseif($data->ministration_type === 'normal_work')
+                                    <td>Normal Works</td>
+                                    @elseif($data->ministration_type === 'major_work')
+                                    <td>Major Works</td>
+                                    @endif
                                     <td>{{$data->ministration_date}}</td>
                                     <td>{{$data->ministration_cost}}</td>
                                     <td>{{$data->ministration_receipt}}</td>

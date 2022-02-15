@@ -124,4 +124,54 @@ class VehicleController extends Controller
         // return $req;
         return redirect('/vehicle'); 
     }
+
+    public function justVeiw( $id ) {
+
+        $vehicle = Vehicle::find($id);
+
+        $vehicle_driver = DB::table('vehicledrivers')->select('drivername')
+                                ->where('vcode',$vehicle['vcode'])
+                                ->where('status','present')
+                                ->get();
+        if(count($vehicle_driver)>0){
+            $vehicle['driver'] = $vehicle_driver[0]->drivername;
+        } else {
+            $vehicle['driver'] = "NULL";
+        }
+
+        $vehicle_papers =DB::table('vpapers')->select('*')
+                            ->where('vcode',$vehicle['vcode'])
+                            ->where('status','present')
+                            ->get();
+
+        $refuel =DB::table('refuelrequisitions')->select('*')
+                            ->where('vcode',$vehicle['vcode'])
+                            ->where('status','present')
+                            ->get();
+        $refuel_arr = [];
+        if(count($refuel)>0){
+            $refuel_arr['pvsodo'] = $refuel[0]->pvsodo;
+            $refuel_arr['crodo'] = $refuel[0]->crodo;
+            $refuel_arr['ttlqty'] = $refuel[0]->ttlqty;
+            $refuel_arr['fueltype'] = $refuel[0]->fueltype;
+            $refuel_arr['costplitter'] = $refuel[0]->costplitter;
+            $refuel_arr['totalprice'] = $refuel[0]->totalprice;
+            $refuel_arr['created_date'] = $refuel[0]->created_date;
+            $refuel_arr['staffname'] = $refuel[0]->staffname;
+        } else {
+            $refuel_arr['pvsodo'] = "NULL";
+            $refuel_arr['crodo'] = "NULL";
+            $refuel_arr['ttlqty'] = "NULL";
+            $refuel_arr['fueltype'] = "NULL";
+            $refuel_arr['costplitter'] = "NULL";
+            $refuel_arr['totalprice'] = "NULL";
+            $refuel_arr['created_date'] = "NULL";
+            $refuel_arr['staffname'] = "NULL";
+        }
+
+        $totalNotifications = NotificationsController::expireDocuments();
+        
+        return view('pages.Vehicle.vehicle_overview',['vehicle'=>$vehicle,'vehicle_papers'=>$vehicle_papers,
+                    'refuel'=>$refuel_arr,'totalNotifications'=>$totalNotifications]);
+    }
 }

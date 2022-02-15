@@ -18,6 +18,11 @@
                                                         <hr />
                                                         <div class="row">
                                                             <div class="form-group col-md-6">
+                                                                <label for="vcode">Vehicle Code</label>
+                                                                <input type="text" class="form-control" id="vcode" name="vcode" value="{{$data['vcode']}}" readonly>
+                                                                <span class="md-line"></span>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
                                                                 <label for="vregno">Vehicle Reg No</label>
                                                                 <input type="text" class="form-control" id="vregno" name="vregno" value="{{$data['vregno']}}" readonly>
                                                                 <span class="md-line"></span>

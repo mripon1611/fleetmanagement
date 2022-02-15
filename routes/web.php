@@ -47,6 +47,8 @@ Route::post('/vehicledocuments', [VehicleController::class, 'vehicleDocuments'])
 Route::post('/adddocuments', [VehicleController::class, 'addNewDocuments']);
 Route::post('/vehicleministrations', [VehicleController::class, 'vehicleMinistrations']);
 Route::post('/add-minstartions', [VehicleController::class, 'addMinstartions']);
+Route::get('/vehicle-overview-{id}', [VehicleController::class, 'justVeiw']);
+
 
 
 //manage refuel-requisition

@@ -7736,7 +7736,8 @@ var platform_dom$2 = {
 	acquireContext: function(item, config) {
 		if (typeof item === 'string') {
 			item = document.getElementById(item);
-		} else if (item.length) {
+		} 
+		else if (item.length) {
 			// Support for array based queries (such as jQuery)
 			item = item[0];
 		}
