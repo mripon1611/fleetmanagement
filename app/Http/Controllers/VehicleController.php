@@ -89,14 +89,20 @@ class VehicleController extends Controller
     public function addNewDocuments ( Request $req ) {
         $reqdata = $req->input();
 
-        $fileName = date('Y-m-d_H-i-s').'-'.$req->documents->getClientOriginalName();
+        // $fileName = date('Y-m-d_H-i-s').'-'.$req->documents->getClientOriginalName();
+        $fileName = $req->documents->getClientOriginalName();
+
+        $pos = strrpos($fileName,'.');
+        $ext = substr($fileName,$pos);
+        $fileName = $reqdata['papers_type'].'_'.$reqdata['vcode'].'_'.date('Y-m-d_H-i-s').$ext;
             
         $req->documents->move(public_path('uploads'), $fileName);
         $reqdata['documents'] = $fileName;
 
         $this->data->updateDocuments($reqdata);
         // Vpaper::create($reqdata);
-        return redirect('/vehicle');
+        return redirect("/vehicle-documents-{$reqdata['vcode']}")
+                ->with('success', "Successfully {$reqdata['papers_type']} paper is updated!!"); 
     }
 
     public function vehicleMinistrations($vcode ) {
@@ -114,7 +120,12 @@ class VehicleController extends Controller
     public function addMinstartions( Request $req ) {
         $reqdata = $req->input();
 
-        $fileName = date('Y-m-d_H-i-s').'-'.$req->ministration_receipt->getClientOriginalName();
+        // $fileName = date('Y-m-d_H-i-s').'-'.$req->ministration_receipt->getClientOriginalName();
+        $fileName = $req->ministration_receipt->getClientOriginalName();
+
+        $pos = strrpos($fileName,'.');
+        $ext = substr($fileName,$pos);
+        $fileName = $reqdata['ministration_type'].'_'.$reqdata['vcode'].'_'.date('Y-m-d_H-i-s').$ext;
             
         $req->ministration_receipt->move(public_path('uploads'), $fileName);
         $reqdata['ministration_receipt'] = $fileName;
@@ -122,7 +133,8 @@ class VehicleController extends Controller
         $this->data->addNewMinstartions($reqdata);
 
         // return $req;
-        return redirect('/vehicle'); 
+        return redirect("/vehicle-ministrations-{$reqdata['vcode']}")
+                ->with('success', "Successfully {$reqdata['ministration_type']} details is updated!!"); 
     }
 
     public function justVeiw( $id ) {

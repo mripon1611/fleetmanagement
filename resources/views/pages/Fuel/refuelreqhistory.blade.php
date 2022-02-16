@@ -43,7 +43,7 @@
                                     <td>{{$sl++}}</td>
                                     <td>{{$data->vregno}}</td>
                                     <td>{{$data->staffname}}</td>
-                                    <td>{{$data->pvsodo}}</td>
+                                    <td>{{$data->pvsodo == ''?'NULL':$data->pvsodo}}</td>
                                     <td>{{$data->crodo}}</td>
                                     <td>{{$data->ttlqty}}</td>
                                     <td>{{$data->totalprice}}</td>

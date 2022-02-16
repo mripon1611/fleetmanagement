@@ -20,6 +20,16 @@
                         <button class="btn btn-primary" data-toggle="modal" data-target="#addnewminstrations">Add Ministrations</button>
                     </div>
                 </div>
+                    @if(Session::has('success'))
+						<div class="alert alert-success mt-2 mb-2">
+                            <button type="button" class="close"
+                                data-dismiss="alert" aria-label="Close">
+                                <i
+                                    class="icofont icofont-close-line-circled"></i>
+                            </button>
+                            <strong>{{Session::get('success')}}</strong>
+                        </div>
+					@endif
                 <div class="card-block">
                     <div class="dt-responsive table-responsive">
                         <table id="vehicleministrations" class="table table-hover table-bordered nowrap text-center">
@@ -50,8 +60,15 @@
                                     @endif
                                     <td>{{$data->ministration_date}}</td>
                                     <td>{{$data->ministration_cost}}</td>
-                                    <td>{{$data->ministration_receipt}}</td>
+                                    <td>
+                                        <a href="#" data-toggle="modal" data-target="#receipt_{{$data->id}}"><img src="uploads/{{$data->ministration_receipt}}" alt="" width="40px"></a>
+                                    </td>
                                 </tr>
+
+                                <!-- Modal  receipt -->
+                                @include('Modals.Vehicle.ministration_receipt')
+                                <!--End Modal  receipt -->
+
                                 @endforeach
                                 <!-- foreach end for $datas -->
                             </tbody>
@@ -65,11 +82,6 @@
                                 </tr>
                             </tfoot>
                         </table>
-                    </div>
-                </div>
-                <div class="card-header mb-3">
-                    <div class="d-flex justify-content-end">
-                        <button class="btn btn-info" onClick="window.print()">Print</button>
                     </div>
                 </div>
             </div>

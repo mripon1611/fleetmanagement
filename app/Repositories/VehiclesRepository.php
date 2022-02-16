@@ -86,9 +86,16 @@ class VehiclesRepository implements VehiclesInterface {
         
         $staffname = DB::table('vehicledrivers')
                     ->select('drivername')
-                    ->where('vregno', $reqdata['vehicleregno'])
+                    ->where('vcode', $reqdata['vcode'])
                     ->where('status', 'present')
                     ->get();
+
+        $vregno = DB::table('vehicles')
+                    ->select('regno')
+                    ->where('vcode', $reqdata['vcode'])
+                    ->get();
+        $reqdata['vehicleregno'] = $vregno[0]->regno;
+
         if(count($staffname)>0) {
             $reqdata['staffname'] = $staffname[0]->drivername;
         }else {
@@ -100,10 +107,16 @@ class VehiclesRepository implements VehiclesInterface {
 
     public function updateDocuments( array $reqdata ) {
         $past_papers = DB::table('vpapers')->select('id')
-                            ->where('vehicleregno', $reqdata['vehicleregno'])
+                            ->where('vcode', $reqdata['vcode'])
                             ->where('papers_type', $reqdata['papers_type'])
                             ->where('status', 'present')
                             ->get();
+
+        $vregno = DB::table('vehicles')
+                    ->select('regno')
+                    ->where('vcode', $reqdata['vcode'])
+                    ->get();
+        $reqdata['vehicleregno'] = $vregno[0]->regno;
 
         if(count($past_papers)>0) {
             $pPaper = Vpaper::find($past_papers[0]->id);

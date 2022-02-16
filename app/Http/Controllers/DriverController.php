@@ -101,7 +101,7 @@ class DriverController extends Controller
 
         $this->data->editDriverDetails($reqdata);
 
-        return redirect('/driverlist');
+        return redirect('/drivers');
 
     }
 
@@ -110,7 +110,7 @@ class DriverController extends Controller
 
         $this->data->releasingDriver($reqdata);
 
-        return redirect('/driverlist')->with('success', 'Driver is successfully released from assigned!!');;
+        return redirect('/drivers')->with('success', 'Driver is successfully released from assigned!!');;
 
     }
 

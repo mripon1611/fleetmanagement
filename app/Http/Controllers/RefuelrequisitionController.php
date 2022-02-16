@@ -50,11 +50,16 @@ class RefuelrequisitionController extends Controller
     public function updatesRefuelreq( Request $req ) {
         $reqdata = $req->input();
 
-        $fileName = date('Y-m-d_H-i-s').'-'.$req->file->getClientOriginalName();
+        // $fileName = date('Y-m-d_H-i-s').'-'.$req->file->getClientOriginalName();
+        $fileName = $req->file->getClientOriginalName();
+
+        $pos = strrpos($fileName,'.');
+        $ext = substr($fileName,$pos);
+        $fileName = 'Refuel_'.$reqdata['vcode'].'_'.date('Y-m-d_H-i-s').$ext;
             
         $req->file->move(public_path('uploads'), $fileName);
         $reqdata['file'] = $fileName;
-
+        
         $this->data->updatesRefuel($reqdata);
 
         // return $reqdata;
@@ -65,7 +70,7 @@ class RefuelrequisitionController extends Controller
 
     public function refuelreqHistory( $vcode ) {
         $refuelreqlists = DB::table('refuelrequisitions')->select('*')
-        ->orderBy('created_date', 'DESC')->where('vregno', $vcode)->get();
+        ->orderBy('created_date', 'DESC')->where('vcode', $vcode)->get();
 
         $totalNotifications = NotificationsController::expireDocuments();
 

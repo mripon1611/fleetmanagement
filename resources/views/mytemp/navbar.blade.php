@@ -32,9 +32,10 @@
                                 <div class="media">
                                     <div class="media-body">
                                         <h5 class="notification-user">Vehicle : 
-                                            <span class="text-info">{{$totalNotification->vcode}}</span></h5>
+                                            <span class="text-info">{{$totalNotification->vehicleregno}}</span></h5>
                                         <p class="notification-msg">It's <strong><code>{{$totalNotification->papers_type}}</code></strong> paper
                                             {{$totalNotification->expire_date}} days left to expired!</p>
+                                        <a href="/vehicle-documents-{{$totalNotification->vcode}}" ><i class="fas fa-eye"></i></a>
                                     </div>
                                 </div>
                             </li>
