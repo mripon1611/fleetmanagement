@@ -7,10 +7,10 @@
                         <a href="/"> <i class="feather icon-home"></i> </a>
                     </li>
                     <li class="breadcrumb-item" style="float: left;">
-                        <a href="/drivers">Manage Driver</a>
+                        <a href="/vehicle">Manage Vehicle</a>
                     </li>
                     <li class="breadcrumb-item" style="float: left;">
-                        Driving History
+                        Vehicle Overview
                     </li>
                 </ul>
             </div>

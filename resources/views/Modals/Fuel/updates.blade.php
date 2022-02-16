@@ -93,7 +93,7 @@
                                                         <div class="row m-t-15">
                                                             <div class="col-md-12">
                                                                 <button type="submit"
-                                                                    class="btn btn-success btn-md btn-block waves-effect text-center">Update</button>
+                                                                    class="btn btn-success btn-md btn-block waves-effect text-center">Re-Fuel</button>
                                                             </div>
                                                         </div>
                                                     </div>

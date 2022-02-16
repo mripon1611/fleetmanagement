@@ -14,7 +14,7 @@
             <div class="card">
                 <div class="card-header">
                     <p>Refuel Requisition History : <span style="color:#1684c5;">
-                            {{$vregno}}
+                            {{$vcode}}
                         </span>
                     </p>
                 </div>

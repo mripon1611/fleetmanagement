@@ -82,12 +82,12 @@
                                         <button class="btn btn-warning float-left p-1 m-1" data-toggle="modal" data-target="#details_{{$data['id']}}">
                                             <i class="fas fa-eye"></i>Details
                                         </button>
-                                        <form action="/drivinghistory" class="float-left" method="POST" enctype="multipart/form-data">
+                                        <!-- <form action="/drivinghistory" class="float-left" method="POST" enctype="multipart/form-data">
                                             @csrf()
                                             <input type="hidden" id="license" name="license" value="{{$data['license']}}">
                                             <button class="btn btn-success p-1 m-1" type="submit"><i class="fas fa-biking"></i>History</button>
-                                        </form>
-                                        <!-- <a href="/{{$data['license']}}" class="btn btn-success"><i class="fas fa-biking"></i>History</a> -->
+                                        </form> -->
+                                        <a href="/drivers-driving-history-{{$data['license']}}" class="btn btn-success p-1 m-1"><i class="fas fa-biking"></i>History</a>
                                     </td>
                                 </tr>
 

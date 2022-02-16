@@ -114,10 +114,10 @@ class DriverController extends Controller
 
     }
 
-    public function drivingHistory(Request $req) {
+    public function drivingHistory($license) {
         $drivinglists = DB::table('vehicledrivers')
         ->select('*')
-        ->where('dlicensenumber', $req->license)
+        ->where('dlicensenumber', $license)
         ->orderBy('assigndate', 'DESC')
         ->get();
 

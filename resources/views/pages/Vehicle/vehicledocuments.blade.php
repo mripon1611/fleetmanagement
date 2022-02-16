@@ -14,7 +14,7 @@
                 <div class="card-header mb-3">
                     <div class="d-flex justify-content-between">
                         <p>Documents : <span style="color:#1684c5;">
-                                {{$regno}}
+                                {{$vcode}}
                             </span>
                         </p>
                         <button class="btn btn-primary" data-toggle="modal" data-target="#addnewdocuments">Add New Documents</button>

@@ -2,6 +2,10 @@
 @section('title','vehicle ministartions')
 @section('maincontents')
 
+<!-- Page-header start -->
+@include('pages.Vehicle.vehicle_overview_header')
+<!-- Page-header end -->
+
 <!-- Page-body start -->
 <div class="page-body">
     <div class="row">
@@ -57,7 +61,7 @@
                 <div class="card-header mb-3">
                     <div class="d-flex justify-content-between">
                         <h3>Papers</h3>
-                        <a href="#" class="btn btn-primary">Add New</a>
+                        <a href="vehicle-documents-{{$vehicle['vcode']}}" class="btn btn-primary">Add New</a>
                     </div>
                 </div>
                 <div class="card-block">

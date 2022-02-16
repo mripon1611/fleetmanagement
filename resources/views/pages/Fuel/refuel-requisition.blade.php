@@ -49,13 +49,16 @@
                                     <td>{{$data['created_date']}}</td>
                                     <td>
                                         <button class="btn btn-xs btn-success float-left p-1 m-1" data-toggle="modal" data-target="#details_{{$data['id']}}"><i class="fas fa-eye"></i>Details</button>
-                                        <button class="btn btn-xs btn-primary float-left p-1 m-1" data-toggle="modal" data-target="#updates_{{$data['id']}}"><i class="fas fa-edit"></i>Updates</button>
-                                        <form action="/refuelreqhistory" class="float-left" method="POST" enctype="multipart/form-data">
+                                        <button class="btn btn-xs btn-primary float-left p-1 m-1" data-toggle="modal" data-target="#updates_{{$data['id']}}"><i class="fas fa-edit"></i>Re-Fuel</button>
+                                        <!-- <form action="/refuelreqhistory" class="float-left" method="POST" enctype="multipart/form-data">
                                             @csrf()
                                             <input type="hidden" id="vregno" name="vregno" value="{{$data['vregno']}}">
                                             <button class="btn btn-success p-1 m-1" type="submit"><i class="fas fa-history"></i>History</button>
-                                        </form>
-                                        <button class="btn btn-xs btn-danger float-left p-1 m-1"><i class="fas fa-trash-alt"></i>Delete</button>
+                                        </form> -->
+                                        <a href="/refuel-requisition-history-{{$data['vcode']}}" 
+                                            class="btn btn-info float-left p-1 m-1"><i class="fas fa-history"></i>History
+                                        </a>
+                                        <!-- <button class="btn btn-xs btn-danger float-left p-1 m-1"><i class="fas fa-trash-alt"></i>Delete</button> -->
                                     </td>
                                 </tr>
                                 <!-- Modal  details  -->

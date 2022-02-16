@@ -63,13 +63,13 @@ class RefuelrequisitionController extends Controller
 
     }
 
-    public function refuelreqHistory( Request $req ) {
+    public function refuelreqHistory( $vcode ) {
         $refuelreqlists = DB::table('refuelrequisitions')->select('*')
-        ->orderBy('created_date', 'DESC')->where('vregno', $req->vregno)->get();
+        ->orderBy('created_date', 'DESC')->where('vregno', $vcode)->get();
 
         $totalNotifications = NotificationsController::expireDocuments();
 
-        return view('pages.Fuel.refuelreqhistory',['datas'=>$refuelreqlists,'vregno'=>$req->vregno,
+        return view('pages.Fuel.refuelreqhistory',['datas'=>$refuelreqlists,'vcode'=>$vcode,
                     'totalNotifications'=>$totalNotifications,'sl'=>1]);
         // return $drivinglists;
     }

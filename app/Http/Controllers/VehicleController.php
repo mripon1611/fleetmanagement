@@ -76,15 +76,15 @@ class VehicleController extends Controller
         
     }
 
-    public function vehicleDocuments (Request $req) {
+    public function vehicleDocuments ($vcode) {
         $documents = DB::table('vpapers')
         ->select('*')
-        ->where('vehicleregno', $req->regno)
+        ->where('vcode', $vcode)
         ->get();
 
         $totalNotifications = NotificationsController::expireDocuments();
 
-        return view('pages.Vehicle.vehicledocuments',['datas'=>$documents,'vcode'=>$req->vcode,'regno'=>$req->regno,'totalNotifications'=>$totalNotifications]);
+        return view('pages.Vehicle.vehicledocuments',['datas'=>$documents,'vcode'=>$vcode,'totalNotifications'=>$totalNotifications]);
     }
     public function addNewDocuments ( Request $req ) {
         $reqdata = $req->input();
@@ -99,15 +99,15 @@ class VehicleController extends Controller
         return redirect('/vehicle');
     }
 
-    public function vehicleMinistrations( Request $req ) {
+    public function vehicleMinistrations($vcode ) {
         $documents = DB::table('ministrations')
         ->select('*')
-        ->where('vehicleregno', $req->regno)
+        ->where('vcode', $vcode)
         ->get();
 
         $totalNotifications = NotificationsController::expireDocuments();
         
-        return view('pages.Vehicle.vehicle_ministrations',['datas'=>$documents,'vcode'=>$req->vcode,'regno'=>$req->regno,
+        return view('pages.Vehicle.vehicle_ministrations',['datas'=>$documents,'vcode'=>$vcode,
                     'totalNotifications'=>$totalNotifications]);
     }
 

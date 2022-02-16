@@ -63,18 +63,8 @@
                                     <td>{{$data['seatcapacity']}}</td>
                                     <td>{{$data['ownername']}}</td>
                                     <td>
-                                        <form action="/vehicledocuments" class="float-left" method="POST" enctype="multipart/form-data">
-                                            @csrf()
-                                            <input type="hidden" id="vcode" name="vcode" value="{{$data['vcode']}}">
-                                            <input type="hidden" id="regno" name="regno" value="{{$data['regno']}}">
-                                            <button class="btn btn-success p-1 mr-1" type="submit"><i class="fas fa-eye"></i></i>Documents</button>
-                                        </form>
-                                        <form action="/vehicleministrations" class="float-left" method="POST" enctype="multipart/form-data">
-                                            @csrf()
-                                            <input type="hidden" id="vcode" name="vcode" value="{{$data['vcode']}}">
-                                            <input type="hidden" id="regno" name="regno" value="{{$data['regno']}}">
-                                            <button class="btn btn-info p-1 mr-1" type="submit"><i class="fas fa-eye"></i></i>Ministrations</button>
-                                        </form>
+                                        <a href="/vehicle-documents-{{$data['vcode']}}" class="btn btn-success float-left p-1 mr-1"><i class="fas fa-eye"></i>Documents</a>
+                                        <a href="/vehicle-ministrations-{{$data['vcode']}}" class="btn btn-info float-left p-1 mr-1"><i class="fas fa-eye"></i>Ministrations</a>
                                         <a href="/vehicle-overview-{{$data['id']}}" class="btn btn-success float-left p-1 mr-1"><i class="fas fa-eye"></i>Overview</a>
                                         <button class="btn btn-xs btn-primary float-left p-1 mr-1" data-toggle="modal" data-target="#vehicledetails_{{$data['id']}}"><i class="fas fa-eye"></i>Details</button>
                                         <button class="btn btn-xs btn-success float-left p-1 mt-1 mr-1" data-toggle="modal" data-target="#vehicleupdates_{{$data['id']}}"><i class="fas fa-edit"></i>Update</button>

@@ -23,7 +23,7 @@ class NotificationsController extends Controller
         $mytime2 = $mytime2->addDays(10);
 
         $totalNotifications = DB::table('vpapers')
-            ->select('vehicleregno','papers_type','expire_date')
+            ->select('vcode','papers_type','expire_date')
             ->where('status', 'present')
             ->whereBetween('expire_date',[
                 $mytime1,
