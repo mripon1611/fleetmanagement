@@ -33,7 +33,7 @@ class WeeklycheckreportController extends Controller
         ->where('vregno', $reqdata['vregno'])
         ->where('status','present')
         ->get();
-
+        
         if(count($staffname)>0) {
             $reqdata['staffname'] = $staffname[0]->drivername;
         }else {
@@ -93,5 +93,12 @@ class WeeklycheckreportController extends Controller
 
         // return $reports;
         return view('table',['datas'=>$reports,'date'=>$date,'totalNotifications'=>$totalNotifications]);
+    }
+    public function test() {
+
+        $totalNotifications = NotificationsController::expireDocuments();
+
+        // return $reports;
+        return view('pages.WeeklyReport.w_test',['totalNotifications'=>$totalNotifications]);
     }
 }

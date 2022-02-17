@@ -65,7 +65,7 @@
                                     <td>
                                         <a href="/vehicle-documents-{{$data['vcode']}}" class="btn btn-success float-left p-1 mr-1"><i class="fas fa-eye"></i>Documents</a>
                                         <a href="/vehicle-ministrations-{{$data['vcode']}}" class="btn btn-info float-left p-1 mr-1"><i class="fas fa-eye"></i>Ministrations</a>
-                                        <a href="/vehicle-overview-{{$data['id']}}" class="btn btn-success float-left p-1 mr-1"><i class="fas fa-eye"></i>Overview</a>
+                                        <a href="/vehicle-overview-{{$data['vcode']}}" class="btn btn-success float-left p-1 mr-1"><i class="fas fa-eye"></i>Overview</a>
                                         <button class="btn btn-xs btn-primary float-left p-1 mr-1" data-toggle="modal" data-target="#vehicledetails_{{$data['id']}}"><i class="fas fa-eye"></i>Details</button>
                                         <button class="btn btn-xs btn-success float-left p-1 mt-1 mr-1" data-toggle="modal" data-target="#vehicleupdates_{{$data['id']}}"><i class="fas fa-edit"></i>Update</button>
                                         <button class="btn btn-xs btn-danger float-left mt-1 p-1"><i class="fas fa-trash-alt"></i>Delete</button>

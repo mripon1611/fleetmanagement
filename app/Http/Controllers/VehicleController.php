@@ -137,12 +137,13 @@ class VehicleController extends Controller
                 ->with('success', "Successfully {$reqdata['ministration_type']} details is updated!!"); 
     }
 
-    public function justVeiw( $id ) {
+    public function vehicleOverVeiw( $vcode ) {
 
-        $vehicle = Vehicle::find($id);
+        $find_id = DB::table('vehicles')->select('id')->where('vcode',$vcode)->get();
+        $vehicle = Vehicle::find($find_id[0]->id);
 
         $vehicle_driver = DB::table('vehicledrivers')->select('drivername')
-                                ->where('vcode',$vehicle['vcode'])
+                                ->where('vcode',$vcode)
                                 ->where('status','present')
                                 ->get();
         if(count($vehicle_driver)>0){

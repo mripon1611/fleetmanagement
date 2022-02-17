@@ -7,7 +7,7 @@
                         <a href="/"> <i class="feather icon-home"></i> </a>
                     </li>
                     <li class="breadcrumb-item" style="float: left;">
-                        <a href="/driverlist">Manage Driver</a>
+                        <a href="/drivers">Manage Driver</a>
                     </li>
                 </ul>
             </div>

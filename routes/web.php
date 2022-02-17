@@ -49,7 +49,7 @@ Route::post('/adddocuments', [VehicleController::class, 'addNewDocuments']);
 // Route::post('/vehicleministrations', [VehicleController::class, 'vehicleMinistrations']);
 Route::get('/vehicle-ministrations-{vcode}', [VehicleController::class, 'vehicleMinistrations']);
 Route::post('/add-minstartions', [VehicleController::class, 'addMinstartions']);
-Route::get('/vehicle-overview-{id}', [VehicleController::class, 'justVeiw']);
+Route::get('/vehicle-overview-{vcode}', [VehicleController::class, 'vehicleOverVeiw']);
 
 
 
@@ -67,6 +67,7 @@ Route::get('/create-weekly-report', [WeeklycheckreportController::class ,'genera
 Route::post('/wselectdate', [WeeklycheckreportController::class ,'selectDate']);
 Route::post('/store-report', [WeeklycheckreportController::class ,'storeReport']);
 Route::get('/weekly-check-report', [WeeklycheckreportController::class, 'weeklyCheckReport']);
+Route::get('/wtest', [WeeklycheckreportController::class, 'test']);
 
 
 // notifications generation
