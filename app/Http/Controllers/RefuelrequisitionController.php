@@ -72,6 +72,21 @@ class RefuelrequisitionController extends Controller
         return redirect('/refuel-requisition');
 
     }
+    public function editRefuelreq( Request $req ) {
+        $reqdata = $req->input();
+        $fileName = $req->file->getClientOriginalName();
+
+        $pos = strrpos($fileName,'.');
+        $ext = substr($fileName,$pos);
+        $fileName = 'Refuel_'.$reqdata['vcode'].'_'.date('Y-m-d_H-i-s').$ext;
+            
+        $req->file->move(public_path('uploads'), $fileName);
+        $reqdata['file'] = $fileName;
+
+        $this->data->editRefuel($reqdata);
+
+        return redirect("/refuel-requisition-history-{$reqdata['vcode']}");
+    }
 
     public function refuelreqHistory( $vcode ) {
         $refuelreqlists = DB::table('refuelrequisitions')->select('*')

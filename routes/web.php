@@ -57,8 +57,9 @@ Route::get('/vehicle-overview-{id}', [VehicleController::class, 'justVeiw']);
 Route::get('/refuel-requisition', [RefuelrequisitionController::class ,'index']);
 Route::post('/addnew-refuelreq', [RefuelrequisitionController::class ,'addnewRefuelreq']);
 Route::post('/updates-refuelreq', [RefuelrequisitionController::class ,'updatesRefuelreq']);
+Route::post('/edit-refuelreq', [RefuelrequisitionController::class ,'editRefuelreq']);
 // Route::post('/refuelreqhistory', [RefuelrequisitionController::class ,'refuelreqHistory']);
-Route::get('//refuel-requisition-history-{vcode}', [RefuelrequisitionController::class ,'refuelreqHistory']);
+Route::get('/refuel-requisition-history-{vcode}', [RefuelrequisitionController::class ,'refuelreqHistory']);
 
 
 // Weekly check report

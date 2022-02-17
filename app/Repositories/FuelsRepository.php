@@ -44,4 +44,17 @@ class FuelsRepository implements FuelsInterface {
         Refuelrequisition::create($reqdata);
     }
 
+    public function editRefuel( array $reqdata ) {
+        $refuel = Refuelrequisition::find($reqdata['id']);
+
+        $refuel['crodo'] = $reqdata['crodo'];
+        $refuel['fueltype'] = $reqdata['fueltype'];
+        $refuel['ttlqty'] = $reqdata['ttlqty'];
+        $refuel['costplitter'] = $reqdata['costplitter'];
+        $refuel['totalprice'] = ($reqdata['ttlqty'] * $reqdata['costplitter']);
+        $refuel['file'] = $reqdata['file'];
+        $refuel['created_date'] = $reqdata['created_date'];
+        $refuel->save();
+    }
+
 }

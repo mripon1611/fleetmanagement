@@ -11,7 +11,7 @@
             </li>
 
             <li class="pcoded-hasmenu {{ url()->current() == url('drivers') ? 'active pcoded-trigger':'' }}
-                        {{ url()->current() == url('vehicle') ? 'active pcoded-trigger':'' }}
+                        {{ url()->current() == url('vehicles') ? 'active pcoded-trigger':'' }}
                         {{ url()->current() == url('refuel-requisition') ? 'active pcoded-trigger':'' }}">
                 <a href="javascript:void(0)">
                     <span class="pcoded-micon"><i class="fas fa-truck-monster"></i></span>
@@ -23,7 +23,7 @@
                             <span class="pcoded-mtext">Manage Driver</span>
                         </a>
                     </li>
-                    <li class="{{ url()->current() == url('vehicle') ? 'active':'' }}">
+                    <li class="{{ url()->current() == url('vehicles') ? 'active':'' }}">
                         <a href="/vehicles">
                             <span class="pcoded-mtext">Manage Vehicle</span>
                         </a>
