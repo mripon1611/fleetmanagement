@@ -40,7 +40,7 @@ Route::post('/release', [DriverController::class, 'releaseDriver']);
 Route::get('/drivers-driving-history-{license}', [DriverController::class, 'drivingHistory']);
 
 // Manage Vehicle
-Route::get('/vehicle', [VehicleController::class, 'index']);
+Route::get('/vehicles', [VehicleController::class, 'index']);
 Route::post('/addnewvehicle', [VehicleController::class, 'addNewVehicle']);
 Route::post('/vehicleupdates', [VehicleController::class, 'vehicleUpdates']);
 // Route::post('/vehicledocuments', [VehicleController::class, 'vehicleDocuments']);

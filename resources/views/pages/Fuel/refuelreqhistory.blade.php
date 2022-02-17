@@ -34,6 +34,7 @@
                                     <th>Fuel Type</th>
                                     <th>Status</th>
                                     <th>Created Date</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -50,7 +51,15 @@
                                     <td>{{$data->fueltype}}</td>
                                     <td>{{$data->status}}</td>
                                     <td>{{$data->created_date}}</td>
+                                    <td>
+                                        <button class="btn btn-info p-1" data-toggle="modal" data-target="#refueledit_{{$data->id}}"><i class="fas fa-edit"></i>Edit</button>
+                                        <a href="#" class="btn btn-danger p-1"><i class="fas fa-trash-alt"></i>Delete</a>
+                                    </td>
                                 </tr>
+
+                                <!-- Modal  edit -->
+                                @include('Modals.Fuel.edit')
+                                <!--End Modal  edit -->
                                 
                                 @endforeach
                                 <!-- foreach end for $datas -->
@@ -67,6 +76,7 @@
                                     <th>Fuel Type</th>
                                     <th>Status</th>
                                     <th>Created Date</th>
+                                    <th>Actions</th>
                                 </tr>
                             </tfoot>
                         </table>

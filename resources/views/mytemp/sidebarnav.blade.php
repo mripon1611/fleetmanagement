@@ -24,7 +24,7 @@
                         </a>
                     </li>
                     <li class="{{ url()->current() == url('vehicle') ? 'active':'' }}">
-                        <a href="/vehicle">
+                        <a href="/vehicles">
                             <span class="pcoded-mtext">Manage Vehicle</span>
                         </a>
                     </li>

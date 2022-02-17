@@ -51,9 +51,11 @@
                                 <table id="ttoken" class="table table-hover table-bordered nowrap text-center">
                                     <thead>
                                         <tr>
+                                            <th>Vehicle Registration</th>
                                             <th>Papers Type</th>
                                             <th>Issue Date</th>
                                             <th>Expire Date</th>
+                                            <th>Document</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -61,19 +63,30 @@
                                         @foreach($datas as $data)
                                             @if($data->papers_type == 'taxtoken')
                                             <tr>
+                                                <td>{{$data->vehicleregno}}</td>
                                                 <td>Tax Token</td>
                                                 <td>{{$data->issue_date}}</td>
                                                 <td>{{$data->expire_date}}</td>
+                                                <td>
+                                                    <a href="#" data-toggle="modal" data-target="#document_tax_{{$data->id}}"><img src="uploads/{{$data->documents}}" alt="" width="40px"></a>
+                                                </td>
                                             </tr>
                                             @endif
+
+                                        <!-- Modal  document -->
+                                        @include('Modals.Vehicle.document_tax_file')
+                                        <!--End Modal  document -->
+
                                         @endforeach
                                         <!-- foreach end for $datas -->
                                     </tbody>
                                     <tfoot>
                                         <tr>
+                                            <th>Vehicle Registration</th>
                                             <th>Papers Type</th>
                                             <th>Issue Date</th>
                                             <th>Expire Date</th>
+                                            <th>Document</th>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -85,9 +98,11 @@
                                 <table id="fitness" class="table table-hover table-bordered nowrap text-center">
                                     <thead>
                                         <tr>
+                                            <th>Vehicle Registration</th>
                                             <th>Papers Type</th>
                                             <th>Issue Date</th>
                                             <th>Expire Date</th>
+                                            <th>Document</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -95,19 +110,30 @@
                                         @foreach($datas as $data)
                                             @if($data->papers_type == 'fitness')
                                             <tr>
+                                                <td>{{$data->vehicleregno}}</td>
                                                 <td>Fitness</td>
                                                 <td>{{$data->issue_date}}</td>
                                                 <td>{{$data->expire_date}}</td>
+                                                <td>
+                                                    <a href="#" data-toggle="modal" data-target="#document_fitness_{{$data->id}}"><img src="uploads/{{$data->documents}}" alt="" width="40px"></a>
+                                                </td>
                                             </tr>
                                             @endif
+
+                                        <!-- Modal  document -->
+                                        @include('Modals.Vehicle.document_fitness_file')
+                                        <!--End Modal  document -->
+
                                         @endforeach
                                         <!-- foreach end for $datas -->
                                     </tbody>
                                     <tfoot>
                                         <tr>
+                                            <th>Vehicle Registration</th>
                                             <th>Papers Type</th>
                                             <th>Issue Date</th>
                                             <th>Expire Date</th>
+                                            <th>Document</th>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -119,9 +145,11 @@
                                 <table id="insurance" class="table table-hover table-bordered nowrap text-center">
                                     <thead>
                                         <tr>
+                                            <th>Vehicle Registration</th>
                                             <th>Papers Type</th>
                                             <th>Issue Date</th>
                                             <th>Expire Date</th>
+                                            <th>Document</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -129,19 +157,30 @@
                                         @foreach($datas as $data)
                                             @if($data->papers_type =='insurance')
                                             <tr>
+                                                <td>{{$data->vehicleregno}}</td>
                                                 <td>Insurance</td>
                                                 <td>{{$data->issue_date}}</td>
                                                 <td>{{$data->expire_date}}</td>
+                                                <td>
+                                                    <a href="#" data-toggle="modal" data-target="#document_insurance_{{$data->id}}"><img src="uploads/{{$data->documents}}" alt="" width="40px"></a>
+                                                </td>
                                             </tr>
                                             @endif
+
+                                        <!-- Modal  document -->
+                                        @include('Modals.Vehicle.document_insurance_file')
+                                        <!--End Modal  document -->
+                                        
                                         @endforeach
                                         <!-- foreach end for $datas -->
                                     </tbody>
                                     <tfoot>
                                         <tr>
+                                            <th>Vehicle Registration</th>
                                             <th>Papers Type</th>
                                             <th>Issue Date</th>
                                             <th>Expire Date</th>
+                                            <th>Document</th>
                                         </tr>
                                     </tfoot>
                                 </table>

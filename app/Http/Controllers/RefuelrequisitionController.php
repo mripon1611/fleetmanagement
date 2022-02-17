@@ -37,7 +37,12 @@ class RefuelrequisitionController extends Controller
     public function addnewRefuelreq( Request $req ) {
         $datas = $req->input();
 
-        $fileName = date('Y-m-d_H-i-s').'-'.$req->file->getClientOriginalName();
+        // $fileName = date('Y-m-d_H-i-s').'-'.$req->file->getClientOriginalName();
+        $fileName = $req->file->getClientOriginalName();
+
+        $pos = strrpos($fileName,'.');
+        $ext = substr($fileName,$pos);
+        $fileName = 'Refuel_'.$datas['vregno'].'_'.date('Y-m-d_H-i-s').$ext;
             
         $req->file->move(public_path('uploads'), $fileName);
         $datas['file'] = $fileName;

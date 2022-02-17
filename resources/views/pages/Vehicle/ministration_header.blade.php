@@ -7,7 +7,7 @@
                         <a href="/"> <i class="feather icon-home"></i> </a>
                     </li>
                     <li class="breadcrumb-item" style="float: left;">
-                        <a href="/vehicle">Manage Vehicle</a>
+                        <a href="/vehicles">Manage Vehicle</a>
                     </li>
                     <li class="breadcrumb-item" style="float: left;">
                         Vehicle Ministrations
