@@ -57,8 +57,6 @@ $(document).ready(function() {
         }
     });
     
-
-
     $( "#select-vregno" ).click(function() {
         var val = $("#select-vregno").val();
         console.log(val);

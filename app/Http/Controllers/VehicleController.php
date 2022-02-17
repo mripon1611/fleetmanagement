@@ -53,7 +53,7 @@ class VehicleController extends Controller
 
         $data = $req->input();
         $vehicle = $this->data->newVehicle($data);
-        return redirect('/vehicle')
+        return redirect('/vehicles')
                     ->with('success', 'Successfully added a new vehicle in vehicle list!');
 
     }
@@ -61,7 +61,7 @@ class VehicleController extends Controller
     public function vehicleUpdates( Request $req ) {
         $reqdata = $req->input();
         $this->data->detailUpdates($reqdata);
-        return redirect('/vehicle');
+        return redirect('/vehicles');
     }
 
 
