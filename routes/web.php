@@ -8,6 +8,7 @@ use App\Http\Controllers\RefuelrequisitionController;
 use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\WeeklycheckreportController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MinistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,5 +79,11 @@ Route::get('/cost', [HomeController::class, 'costCalculation']);
 
 
 Route::get('/table', [WeeklycheckreportController::class, 'table']);
+
+// ministartion
+Route::get('/ministrations', [MinistrationController::class, 'index']);
+Route::get('/ministration-overview-{vcode}', [MinistrationController::class, 'vehicleOverVeiw']);
+Route::post('/addnewservice', [MinistrationController::class ,'addNewService']);
+Route::get('/delete-{id}', [MinistrationController::class, 'deleteService']);
 
 
