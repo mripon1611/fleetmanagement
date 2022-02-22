@@ -55,8 +55,8 @@
                                                                 <span class="md-line text-danger">@error('crodo'){{$message}}@enderror</span>
                                                             </div>
                                                             <div class="form-group col-md-6">
-                                                                <label for="ttlqty">Total Quntity<span style="color: red;">*</span></label>
-                                                                <input type="text" class="form-control" id="ttlqty" name="ttlqty" placeholder="Total Quntity">
+                                                                <label for="ttlqty">Total Quantity<span style="color: red;">*</span></label>
+                                                                <input type="text" class="form-control" id="ttlqty" name="ttlqty" placeholder="Total Quantity">
                                                                 <span class="md-line"></span>
                                                                 <span class="md-line text-danger">@error('ttlqty'){{$message}}@enderror</span>
                                                             </div>

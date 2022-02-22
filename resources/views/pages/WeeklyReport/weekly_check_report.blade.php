@@ -76,25 +76,6 @@
                                                                     @endforeach
                                                                     <!-- foreach end for $datas -->
                                                                 </tbody>
-                                                                <tfoot>
-                                                                    <tr>
-                                                                        <th>Date</th>
-                                                                        <th>Car No</th>
-                                                                        <th>Staff Name</th>
-                                                                        <th>Sanitizer</th>
-                                                                        <th>Wheel</th>
-                                                                        <th>Light</th>
-                                                                        <th>Horn</th>
-                                                                        <th>Mobil</th>
-                                                                        <th>AC</th>
-                                                                        <th>Engine</th>
-                                                                        <th>Looking Glass</th>
-                                                                        <th>Clean Indoor & Outdoor</th>
-                                                                        <th>Oil</th>
-                                                                        <th>Papers</th>
-                                                                        <th>Remarks</th>
-                                                                    </tr>
-                                                                </tfoot>
                                                             </table>
                                                         </div>
                     

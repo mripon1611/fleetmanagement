@@ -15,7 +15,7 @@
                 <div class="card-header mb-3">
                     <div class="d-flex justify-content-between">
                         <h3>Vehicle Overview</h3>
-                        <a href="/vehicle" class="btn btn-info">Update</a>
+                        <a href="/vehicles" class="btn btn-info">Update</a>
                     </div>
                 </div>
                 <div class="card-block">
@@ -88,13 +88,6 @@
                                         </tr>
                                         @endforeach
                                     </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Paper Type</th>
-                                            <th>Issue Date</th>
-                                            <th>Expire Date</th>
-                                        </tr>
-                                    </tfoot>
                                 </table>
                             </div>
                         </div>

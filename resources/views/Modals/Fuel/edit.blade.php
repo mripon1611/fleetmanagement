@@ -45,7 +45,7 @@
                                                                 <span class="md-line"></span>
                                                             </div>
                                                             <div class="form-group col-md-6">
-                                                                <label for="ttlqty">Total Quntity</label>
+                                                                <label for="ttlqty">Total Quantity</label>
                                                                 <input type="text" class="form-control" id="ttlqty" name="ttlqty" value="{{$data->ttlqty}}">
                                                                 <span class="md-line"></span>
                                                             </div>

@@ -80,15 +80,6 @@
                                         @endforeach
                                         <!-- foreach end for $datas -->
                                     </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Vehicle Registration</th>
-                                            <th>Papers Type</th>
-                                            <th>Issue Date</th>
-                                            <th>Expire Date</th>
-                                            <th>Document</th>
-                                        </tr>
-                                    </tfoot>
                                 </table>
                             </div>
                     </div>
@@ -127,15 +118,6 @@
                                         @endforeach
                                         <!-- foreach end for $datas -->
                                     </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Vehicle Registration</th>
-                                            <th>Papers Type</th>
-                                            <th>Issue Date</th>
-                                            <th>Expire Date</th>
-                                            <th>Document</th>
-                                        </tr>
-                                    </tfoot>
                                 </table>
                             </div>
                     </div>
@@ -174,15 +156,6 @@
                                         @endforeach
                                         <!-- foreach end for $datas -->
                                     </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Vehicle Registration</th>
-                                            <th>Papers Type</th>
-                                            <th>Issue Date</th>
-                                            <th>Expire Date</th>
-                                            <th>Document</th>
-                                        </tr>
-                                    </tfoot>
                                 </table>
                             </div>
                     </div>

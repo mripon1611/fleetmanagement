@@ -106,20 +106,6 @@
                                 @endforeach
                                 <!-- foreach end for $datas -->
                             </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>SL</th>
-                                    <th>Name</th>
-                                    <th>Name BN</th>
-                                    <th>Contact</th>
-                                    <th>Emergency</th>
-                                    <th>Assigned Vehicle</th>
-                                    <th>Blood Group</th>
-                                    <th>NID</th>
-                                    <th>Assign Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </tfoot>
                         </table>
                     </div>
                 </div>

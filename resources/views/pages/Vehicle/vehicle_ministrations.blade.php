@@ -72,15 +72,6 @@
                                 @endforeach
                                 <!-- foreach end for $datas -->
                             </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>Staff Name</th>
-                                    <th>Ministartion Type</th>
-                                    <th>Date</th>
-                                    <th>Cost</th>
-                                    <th>Receipt</th>
-                                </tr>
-                            </tfoot>
                         </table>
                     </div>
                 </div>

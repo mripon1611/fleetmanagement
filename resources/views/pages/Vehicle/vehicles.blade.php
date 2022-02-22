@@ -82,18 +82,6 @@
                                 @endforeach
                                 <!-- foreach end for $datas -->
                             </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>SL</th>
-                                    <th>Vehicle Code</th>
-                                    <th>Name</th>
-                                    <th>Registration Number</th>
-                                    <th>Assigned Driver</th>
-                                    <th>Seat capacity</th>
-                                    <th>Owner Name</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </tfoot>
                         </table>
                     </div>
                 </div>

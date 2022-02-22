@@ -28,6 +28,7 @@
     <!-- ico font -->
     <link rel="stylesheet" type="text/css" href="files/assets/icon/icofont/css/icofont.css">
     <!-- feather Awesome -->
+    <script src="https://kit.fontawesome.com/0d8d64e94a.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/8293ff3daa.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="files/assets/icon/feather/css/feather.css">
     <!-- Select 2 css -->

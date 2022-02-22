@@ -76,17 +76,6 @@
                                                                     </tr>
                                                                     @endforeach
                                                                 </tbody>
-                                                                <tfoot>
-                                                                    <tr>
-                                                                        <th>SL</th>
-                                                                        <th>Reg NO</th>
-                                                                        <th>Vehicle Code</th>
-                                                                        <th>Vehicle Name</th>
-                                                                        <th>Driver Name</th>
-                                                                        <th>Owner Name</th>
-                                                                        <th>Actions</th>
-                                                                    </tr>
-                                                                </tfoot>
                                                             </table>
                                                         </div>
                                                     </div>

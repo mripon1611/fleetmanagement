@@ -49,15 +49,6 @@
                                 @endforeach
                                 <!-- foreach end for $datas -->
                             </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>Driver Name</th>
-                                    <th>Vehicle Reg No</th>
-                                    <th>Start Date</th>
-                                    <th>End Date</th>
-                                    <th>Present Status</th>
-                                </tr>
-                            </tfoot>
                         </table>
                     </div>
                 </div>
