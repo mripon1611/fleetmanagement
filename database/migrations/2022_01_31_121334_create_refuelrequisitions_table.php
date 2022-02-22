@@ -26,7 +26,7 @@ class CreateRefuelrequisitionsTable extends Migration
             $table->string('fueltype',10)->nullable();
             $table->string('costplitter',5)->nullable();
             $table->string('totalprice',10)->nullable();
-            $table->string('file',50)->nullable();
+            $table->string('file',70)->nullable();
             $table->string('status',10)->nullable();
             $table->date('created_date')->nullable();
             $table->timestamps();

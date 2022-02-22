@@ -156,7 +156,7 @@
                             <div class="form-group col-md-12">
                                 <p>
                                     No vehicles to add. If you want to add, you need to add new 
-                                    <a href="/vehicle" class="btn btn-warning p-1">vehicle</a> first.
+                                    <a href="/vehicles" class="btn btn-warning p-1">vehicle</a> first.
                                 </p>
                             </div>
                         @endif 
