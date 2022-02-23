@@ -139,15 +139,15 @@ class VehicleController extends Controller
 
     public function vehicleOverVeiw( $vcode ) {
 
-        $find_id = DB::table('vehicles')->select('id')->where('vcode',$vcode)->get();
-        $vehicle = Vehicle::find($find_id[0]->id);
+        $find_id = DB::table('vehicles')->select('id')->where('vcode',$vcode)->first();
+        $vehicle = Vehicle::find($find_id->id);
 
         $vehicle_driver = DB::table('vehicledrivers')->select('drivername')
                                 ->where('vcode',$vcode)
                                 ->where('status','present')
-                                ->get();
-        if(count($vehicle_driver)>0){
-            $vehicle['driver'] = $vehicle_driver[0]->drivername;
+                                ->first();
+        if($vehicle_driver){
+            $vehicle['driver'] = $vehicle_driver->drivername;
         } else {
             $vehicle['driver'] = "NULL";
         }
@@ -160,17 +160,17 @@ class VehicleController extends Controller
         $refuel =DB::table('refuelrequisitions')->select('*')
                             ->where('vcode',$vehicle['vcode'])
                             ->where('status','present')
-                            ->get();
+                            ->first();
         $refuel_arr = [];
-        if(count($refuel)>0){
-            $refuel_arr['pvsodo'] = $refuel[0]->pvsodo;
-            $refuel_arr['crodo'] = $refuel[0]->crodo;
-            $refuel_arr['ttlqty'] = $refuel[0]->ttlqty;
-            $refuel_arr['fueltype'] = $refuel[0]->fueltype;
-            $refuel_arr['costplitter'] = $refuel[0]->costplitter;
-            $refuel_arr['totalprice'] = $refuel[0]->totalprice;
-            $refuel_arr['created_date'] = $refuel[0]->created_date;
-            $refuel_arr['staffname'] = $refuel[0]->staffname;
+        if($refuel){
+            $refuel_arr['pvsodo'] = $refuel->pvsodo;
+            $refuel_arr['crodo'] = $refuel->crodo;
+            $refuel_arr['ttlqty'] = $refuel->ttlqty;
+            $refuel_arr['fueltype'] = $refuel->fueltype;
+            $refuel_arr['costplitter'] = $refuel->costplitter;
+            $refuel_arr['totalprice'] = $refuel->totalprice;
+            $refuel_arr['created_date'] = $refuel->created_date;
+            $refuel_arr['staffname'] = $refuel->staffname;
         } else {
             $refuel_arr['pvsodo'] = "NULL";
             $refuel_arr['crodo'] = "NULL";

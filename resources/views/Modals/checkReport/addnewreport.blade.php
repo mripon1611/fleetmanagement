@@ -1,4 +1,4 @@
-<div id="addnewreport" class="modal fade mixed-form" role="dialog">
+<div id="addnewreport" class="modal fade mixed-form overflow-auto" style="height:720px;" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="login-card login-card-modal modal-content card">
             <form class="md-float-material" action="/store-report" method="POST" enctype="multipart/form-data">

@@ -26,15 +26,15 @@ class MinistrationController extends Controller
 
     public function vehicleOverVeiw( $vcode ) {
 
-        $find_id = DB::table('vehicles')->select('id')->where('vcode',$vcode)->get();
-        $vehicle = Vehicle::find($find_id[0]->id);
+        $find_id = DB::table('vehicles')->select('id')->where('vcode',$vcode)->first();
+        $vehicle = Vehicle::find($find_id->id);
 
         $vehicle_driver = DB::table('vehicledrivers')->select('drivername')
                                 ->where('vcode',$vcode)
                                 ->where('status','present')
-                                ->get();
-        if(count($vehicle_driver)>0){
-            $vehicle['driver'] = $vehicle_driver[0]->drivername;
+                                ->first();
+        if($vehicle_driver){
+            $vehicle['driver'] = $vehicle_driver->drivername;
         } else {
             $vehicle['driver'] = "NULL";
         }
@@ -51,10 +51,11 @@ class MinistrationController extends Controller
 
     public function addNewService( Request $req) {
         $reqdata = $req->input();
-        $vcode_staff = DB::table('services')->select('*')->where('ministration_code', $req->ministration_code)->get();
-        $reqdata['vcode'] = $vcode_staff[0]->vcode;
-        $reqdata['vehicleregno']= $vcode_staff[0]->vehicleregno;
-        $reqdata['staffname'] = $vcode_staff[0]->staffname;
+        $vcode_staff = DB::table('services')->select('*')->where('ministration_code', $req->ministration_code)->first();
+
+        $reqdata['vcode'] = $vcode_staff->vcode;
+        $reqdata['vehicleregno']= $vcode_staff->vehicleregno;
+        $reqdata['staffname'] = $vcode_staff->staffname;
         $reqdata['status'] = "requested";
         
         Service::create($reqdata);

@@ -63,11 +63,11 @@
             </li>
             <!-- Weekly Check Report ends here -->
 
-            <!--  Weekly Check Report start here -->
+            <!--  Maintenance-1 start here -->
             <li class="pcoded-hasmenu {{ url()->current() == url('ministrations') ? 'active pcoded-trigger':'' }}">
                 <a href="javascript:void(0)">
                     <span class="pcoded-micon"><i class="fa fa-gamepad"></i></span>
-                    <span class="pcoded-mtext">Ministrations</span>
+                    <span class="pcoded-mtext">Maintenance-1</span>
                 </a>
                 <ul class="pcoded-submenu">
                     <!-- <li class="{{ url()->current() == url('create-weekly-report') ? 'active':'' }}">
@@ -77,17 +77,28 @@
                     </li> -->
                     <li class="{{ url()->current() == url('ministrations') ? 'active pcoded-trigger':'' }}">
                         <a href="/ministrations">
-                            <span class="pcoded-mtext">View Ministration</span>
+                            <span class="pcoded-mtext">View Maintenance</span>
                         </a>
                     </li>
-                    <!-- <li class="Disabled">
-                        <a href="/modals">
-                            <span class="pcoded-mtext">Modals</span>
-                        </a>
-                    </li> -->
                 </ul>
             </li>
-            <!-- Weekly Check Report ends here -->
+            <!-- Maintenance-1 ends here -->
+
+            <!--  Maintenance start here -->
+            <li class="pcoded-hasmenu {{ url()->current() == url('maintenanceview') ? 'active pcoded-trigger':'' }}">
+                <a href="javascript:void(0)">
+                    <span class="pcoded-micon"><i class="fa fa-gamepad"></i></span>
+                    <span class="pcoded-mtext">Maintenance</span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li class="{{ url()->current() == url('maintenanceview') ? 'active':'' }}">
+                        <a href="/maintenanceview">
+                            <span class="pcoded-mtext">Maintenance Requisition</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- Maintenance ends here -->
         </ul>
                             
     </div>
