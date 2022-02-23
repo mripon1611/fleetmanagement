@@ -24,6 +24,7 @@ class Maintenance extends Model
         'vregno',
         'maintenance_type',
         'requested_date',
+        'service_date',
         'status',
         'estimate_cost',
         'remarks',

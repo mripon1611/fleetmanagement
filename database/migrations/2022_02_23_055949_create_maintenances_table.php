@@ -22,6 +22,7 @@ class CreateMaintenancesTable extends Migration
             $table->string('vregno',30)->nullable();
             $table->string('maintenance_type',30)->nullable();
             $table->date('requested_date')->nullable();
+            $table->date('service_date')->nullable();
             $table->string('status',15)->nullable();
             $table->string('estimate_cost',10)->nullable();
             $table->string('remarks',250)->nullable();

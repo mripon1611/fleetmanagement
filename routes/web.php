@@ -89,5 +89,7 @@ Route::get('/delete-{id}', [MinistrationController::class, 'deleteService']);
 
 // Maintenance
 Route::get('/maintenanceview', [MaintenanceController::class, 'viewMaintenance']);
-
+Route::get('/add_maintenance', [MaintenanceController::class, 'addMaintenance']);
+Route::get('/edit_maintenance-{id}', [MaintenanceController::class, 'editMaintenance']);
+Route::post('/save_maintenance', [MaintenanceController::class, 'saveMaintenance']);
 

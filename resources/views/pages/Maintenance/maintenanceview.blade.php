@@ -15,7 +15,7 @@
                 <div class="card-header mb-3">
                     <div class="d-flex justify-content-between">
                         <h3>Maintenance Requisition List</h3>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#addnewdriver"><i class="fa fa-plus"></i>Add Maintenance</button>
+                        <a href="/add_maintenance" class="btn btn-primary"><i class="fa fa-plus"></i>Add Maintenance</a>
                     </div>
                     @if(Session::has('success'))
                         <div class="alert alert-success mt-2 mb-2">
@@ -48,17 +48,22 @@
                                 @foreach($maintenances as $maintenance)
                                 <tr>
                                     <td>{{$sl++}}</td>
-                                    <td>{{$maintenance['requested_date']}}</td>
+                                    <td>{{$maintenance['service_date']}}</td>
                                     <td>{{$maintenance['vregno']}}</td>
                                     <td>{{$maintenance['maintenance_type']}}</td>
                                     <td>{{$maintenance['requested_by']}}</td>
                                     <td>{{$maintenance['status']}}</td>
                                     <td>
-                                        <a href="#" class="btn btn-success"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="btn btn-info"><i class="far fa-eye"></i></a>
+                                        <a href="/edit_maintenance-{{$maintenance['id']}}" class="btn btn-success"><i class="fa fa-pencil"></i></a>
+                                        <a href="#" class="btn btn-info" data-toggle="modal" data-target="#viewdetails_{{$maintenance['id']}}"><i class="far fa-eye"></i></a>
                                         <a href="#" class="btn btn-danger"><i class="ti-trash"></i></a>
                                     </td>
                                 </tr>
+
+                                <!-- view Details start-->
+                                @include('Modals.Maintenance.viewdetails')
+                                <!-- view details end -->
+
                                 @endforeach
                                 <!-- foreach end for $datas -->
                             </tbody>
