@@ -86,10 +86,10 @@
                             </div>
 
                         </div>
-                        <div class="row mt-3">
+                        <div class="row mt-3 w-100">
                             <h4>Requisition Item Information</h4>
                                 <table
-                                    class="table text-center table-bordered nowrap">
+                                    class="table text-center table-bordered nowrap table-responsive">
                                     <thead>
                                         <tr>
                                             <th>Item Type Name<span style="color: red;">*</span></th>
@@ -100,31 +100,32 @@
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
+                                    <tbody id="wrapper">
+                                        <tr class="content">
                                             <td>
-                                                <input type="text" class="form-control" name="item_type">
+                                                <input type="text" class="form-control" name="item_type[]">
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" name="item_name">
+                                                <input type="text" class="form-control" name="item_name[]">
                                             </td>
                                             <td>
-                                                <input type="number" class="form-control" name="unit">
+                                                <input type="number"  class="unit form-control" name="unit[]" value=0>
                                             </td>
                                             <td>
-                                                <input type="number" class="form-control" name="unite_price">
+                                                <input type="number" class="unit_price form-control" name="unit_price[]" value=0.00>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" name="total_amount" readonly>
+                                                <input type="text" class="total_amount form-control" name="total_amount[]" value=0.00 readonly>
                                             </td>
                                             <td>
-                                                <a href="#" class="btn btn-danger"><i class="ti-trash"></i></a>
+                                                <a href="#" class="btn btn-danger delete"><i class="ti-trash"></i></a>
                                             </td>
                                         </tr>
-                                        <tr>
+                                       
+                                        <tr class="content">
                                             <td colspan="3">
                                                 <div class="d-flex justify-content-start">
-                                                    <a href="#" class="btn btn-success">Add More Item</a>
+                                                    <a href="#" class="btn btn-success" id="addMoreItem">Add More Item</a>
                                                 </div>
                                             </td>
                                             <td>
@@ -133,7 +134,7 @@
                                                 </h6>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" readonly>
+                                                <input type="text" class="form-control" id="grandTotal" readonly>
                                             </td>
                                             <td>
                                             </td>

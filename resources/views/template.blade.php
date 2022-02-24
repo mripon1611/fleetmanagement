@@ -202,6 +202,7 @@
     <!-- custom js -->
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/another.js"></script>
+    <script src="files/assets/js/main.js"></script>
 
     <script type="text/javascript" src="files/assets/pages/advance-elements/custom-picker.js"></script>
     <script src="files/assets/pages/data-table/extensions/buttons/js/extension-btns-custom.js"></script>

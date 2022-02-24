@@ -95,26 +95,28 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach($maintenance_items as $maintenance_item)
                                         <tr>
                                             <td>
-                                                <input type="text" class="form-control" name="item_type">
+                                                <input type="text" class="form-control" name="item_type[]" value="{{$maintenance_item->item_type}}">
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" name="item_name">
+                                                <input type="text" class="form-control" name="item_name[]" value="{{$maintenance_item->item_name}}">
                                             </td>
                                             <td>
-                                                <input type="number" class="form-control" name="unit">
+                                                <input type="number" class="form-control" name="unit[]" value="{{$maintenance_item->unit}}">
                                             </td>
                                             <td>
-                                                <input type="number" class="form-control" name="unite_price">
+                                                <input type="number" class="form-control" name="unit_price[]" value="{{$maintenance_item->unit_price}}">
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" name="total_amount" readonly>
+                                                <input type="text" class="form-control" name="total_amount[]" value="{{$maintenance_item->total_price}}" readonly>
                                             </td>
                                             <td>
                                                 <a href="#" class="btn btn-danger"><i class="ti-trash"></i></a>
                                             </td>
                                         </tr>
+                                        @endforeach
                                         <tr>
                                             <td colspan="3">
                                                 <div class="d-flex justify-content-start">

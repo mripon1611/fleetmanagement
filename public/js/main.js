@@ -91,5 +91,25 @@ $(document).ready(function() {
         }
     });
 
+    $("#unit").change(function(){
+        var unit = $('#unit').val();
+        var unit_price = $('#unit_price').val();
+
+        var total = unit * unit_price;
+        console.log(total);
+
+        $('#total_amount').val(total);
+      });
+
+      $("#unit_price").change(function(){
+        var unit = $('#unit').val();
+        var unit_price = $('#unit_price').val();
+
+        var total = unit * unit_price;
+        console.log(total);
+
+        $('#total_amount').val(total);
+      });
+
 
 })
