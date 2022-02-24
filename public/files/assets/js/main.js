@@ -66,6 +66,13 @@ let createRow = function() {
     return tr;
 }
 
+let grandTotal = 0;
+let totalClassLength = document.getElementsByClassName("total_amount").length;
+for(let i = 0; i < totalClassLength; i++) {
+    grandTotal += Number(document.getElementsByClassName("total_amount")[i].value);
+}
+document.getElementById("grandTotal").value = grandTotal;
+
 
 addMoreItem.addEventListener('click', function() {
     event.preventDefault();
@@ -74,8 +81,6 @@ addMoreItem.addEventListener('click', function() {
     bindRow(newRow, deleteRow);
     calculateTotalforUnit(newRow,getTotalforUnit);
     calculateTotalforUnitPrice(newRow,getTotalforUnitPrice);
-    let tt = document.getElementsByClassName("total_amount");
-    console.log(tt.length);
 })
 
 

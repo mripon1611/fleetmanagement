@@ -94,33 +94,33 @@
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="wrapper">
                                         @foreach($maintenance_items as $maintenance_item)
-                                        <tr>
+                                        <tr  class="content">
                                             <td>
-                                                <input type="text" class="form-control" name="item_type[]" value="{{$maintenance_item->item_type}}">
+                                                <input type="text" class="item_type form-control" name="item_type[]" value="{{$maintenance_item->item_type}}">
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" name="item_name[]" value="{{$maintenance_item->item_name}}">
+                                                <input type="text" class="item_name form-control" name="item_name[]" value="{{$maintenance_item->item_name}}">
                                             </td>
                                             <td>
-                                                <input type="number" class="form-control" name="unit[]" value="{{$maintenance_item->unit}}">
+                                                <input type="number" class="unit form-control" name="unit[]" value={{$maintenance_item->unit}}>
                                             </td>
                                             <td>
-                                                <input type="number" class="form-control" name="unit_price[]" value="{{$maintenance_item->unit_price}}">
+                                                <input type="number" class="unit_price form-control" name="unit_price[]" value={{$maintenance_item->unit_price}}>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" name="total_amount[]" value="{{$maintenance_item->total_price}}" readonly>
+                                                <input type="text" class="total_amount form-control" name="total_amount[]" value={{$maintenance_item->total_price}} readonly>
                                             </td>
                                             <td>
                                                 <a href="#" class="btn btn-danger"><i class="ti-trash"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach
-                                        <tr>
+                                        <tr  class="content">
                                             <td colspan="3">
                                                 <div class="d-flex justify-content-start">
-                                                    <a href="#" class="btn btn-success">Add More Item</a>
+                                                    <a href="#" class="btn btn-success" id="addMoreItem">Add More Item</a>
                                                 </div>
                                             </td>
                                             <td>
@@ -129,7 +129,7 @@
                                                 </h6>
                                             </td>
                                             <td>
-                                                <input type="text" class="form-control" readonly>
+                                                <input type="text" class="form-control" id="grandTotal" readonly>
                                             </td>
                                             <td>
                                             </td>
