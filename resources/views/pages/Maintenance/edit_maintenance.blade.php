@@ -81,7 +81,11 @@
 
                         </div>
                         <div class="row mt-3">
-                            <h4>Requisition Item Information</h4>
+                            <div class="d-flex justify-content-between col-md-12">
+                                <h4>Requisition Item Information</h4>
+                                <a href="/maintenanceitems" class="btn btn-info mb-3"><i class="fa fa-pencil-square-o"></i>Edit/Add Item</a>
+                            </div>
+                            <div>
                                 <table
                                     class="table text-center table-bordered nowrap">
                                     <thead>
@@ -145,6 +149,7 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                            </div>
 
                         </div>
 

@@ -6,10 +6,13 @@ let createRow = function() {
 
     // td 1
     let td1 = document.createElement('td');
-    let input1 = document.createElement('input');
-    input1.type = "text";
+    let input1 = document.createElement('select');
+    let option = document.createElement('option');
+    option.value = "Wheel";
+    option.innerText = "Wheel";
     input1.className = "form-control";
     input1.name = "item_type[]";
+    input1.appendChild(option);
     td1.appendChild(input1);
     tr.appendChild(td1);
 
@@ -133,14 +136,14 @@ let calculateTotalforUnitPrice = function(row, getTotalforUnitPrice) {
 
 
 
-let deleteRow = function() {
+function deleteRow() {
     let td = this.parentNode;
     let tr = td.parentNode;
     let tbody = tr.parentNode;
     tbody.removeChild(tr);
 
 }
-let bindRow = function(row, deleteButtonClick) {
+function bindRow(row, deleteButtonClick) {
     let deleteButton = row.querySelector('.delete');
     deleteButton.onclick = deleteButtonClick;
 }
@@ -148,9 +151,42 @@ let bindRow = function(row, deleteButtonClick) {
 let wrapper = document.getElementById("wrapper");
 let wrapperLength = wrapper.children.length;
 
-console.log(wrapperLength);
 for(let i=0; i<wrapperLength; i++) {
     bindRow(wrapper.children[i], deleteRow);
     calculateTotalforUnit(wrapper.children[i],getTotalforUnit);
     calculateTotalforUnitPrice(wrapper.children[i],getTotalforUnitPrice);
+}
+
+//maintenance item types and name/informations 
+function createInformationRow () {
+    // alert("Clicked");
+    let tr = document.createElement('tr');
+    tr.className = "information";
+
+    // td 1
+    let td1 = document.createElement('td');
+    let input1 = document.createElement('input');
+    input1.type = "text";
+    input1.className = "form-control";
+    input1.name = "item_name[]";
+    td1.appendChild(input1);
+    tr.appendChild(td1);
+
+    let td = document.createElement('td');
+    let a = document.createElement('a');
+    let i = document.createElement('i');
+    i.style.color = "white";
+    a.className = "delete btn btn-danger";
+    i.className = "ti-trash";
+    a.appendChild(i);
+    td.appendChild(a);
+    tr.appendChild(td);
+    return tr;
+}
+
+function myFunc() {
+    event.preventDefault();
+    let newRow = createInformationRow(); 
+    $("#maintenanceInformation .information:last").before(newRow);
+    bindRow(newRow, deleteRow);
 }

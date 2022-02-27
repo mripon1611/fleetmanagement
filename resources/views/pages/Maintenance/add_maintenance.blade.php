@@ -86,8 +86,13 @@
                             </div>
 
                         </div>
-                        <div class="row mt-3 w-100">
-                            <h4>Requisition Item Information</h4>
+                        <div class="row mt-5 w-100">
+                            <div class="d-flex justify-content-between col-md-12">
+                                <h4>Requisition Item Information</h4>
+                                <a href="/maintenanceitems" class="btn btn-info mb-3"><i class="fa fa-pencil-square-o"></i>Edit/Add Item</a>
+                            </div>
+                            
+                            <div>
                                 <table
                                     class="table text-center table-bordered nowrap table-responsive">
                                     <thead>
@@ -103,7 +108,11 @@
                                     <tbody id="wrapper">
                                         <tr class="content">
                                             <td>
-                                                <input type="text" class="form-control" name="item_type[]">
+                                                <select name="item_type[]" class="form-control">
+                                                    @foreach($maintenance_types as $maintenance_type)
+                                                    <option value="{{$maintenance_type['item_type']}}">{{$maintenance_type['item_type']}}</option>
+                                                    @endforeach
+                                                </select>
                                             </td>
                                             <td>
                                                 <input type="text" class="form-control" name="item_name[]">
@@ -136,8 +145,6 @@
                                             <td>
                                                 <input type="text" class="form-control" id="grandTotal" readonly>
                                             </td>
-                                            <td>
-                                            </td>
                                         </tr>
                                         <tr>
                                             <td colspan="5">
@@ -145,12 +152,10 @@
                                                     <button class="btn btn-success" type="submit">Add</button>
                                                 </div>
                                             </td>
-                                            <td>
-                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
-
+                            </div>
                         </div>
 
                     </form>

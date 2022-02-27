@@ -92,4 +92,7 @@ Route::get('/maintenanceview', [MaintenanceController::class, 'viewMaintenance']
 Route::get('/add_maintenance', [MaintenanceController::class, 'addMaintenance']);
 Route::get('/edit_maintenance-{id}', [MaintenanceController::class, 'editMaintenance']);
 Route::post('/save_maintenance', [MaintenanceController::class, 'saveMaintenance']);
+Route::get('/maintenanceitems', [MaintenanceController::class, 'maintenanceItems']);
+Route::get('/add_maintenanceitems', [MaintenanceController::class, 'addMaintenanceItem']);
+Route::post('/save_maintenanceitem', [MaintenanceController::class, 'saveMaintenanceItem']);
 

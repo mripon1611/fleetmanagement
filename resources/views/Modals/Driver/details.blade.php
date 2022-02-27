@@ -14,13 +14,14 @@
                                                     </div>
                                                 </div>
                                                 <hr />
-                                                <button class="driver_edit" style="border:none;background-color:white;"><i class="far fa-edit text-info"></i></button>
+                                                
                                             </div>
                                             <form class="md-float-material" action="/driverupdate" method="POST" enctype="multipart/form-data">
                                                 <div class="card">
                                                     <div class="auth-box card-block">
+                                                        <a class="driver_edit" id="driver_edit" onclick="editDriver()" style="border:none;background-color:white;cursor:pointer;"><i class="far fa-edit text-info"></i></a>
                                                         @csrf()
-                                                        <div class="row">
+                                                        <div class="row driverDetails">
                                                             <div class="form-group col-md-12 text-center">
                                                                 <img src="uploads/{{$data['photograph']}}" alt="Driver Photograph" width="180px">
                                                             </div>
