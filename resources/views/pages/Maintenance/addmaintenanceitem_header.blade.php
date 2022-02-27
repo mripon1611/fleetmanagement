@@ -12,6 +12,9 @@
                     <li class="breadcrumb-item" style="float: left;">
                         <a href="/maintenanceitems">Maintenance Types</a>
                     </li>
+                    <li class="breadcrumb-item" style="float: left;">
+                        <a >Add Maintenance Types Item</a>
+                    </li>
                 </ul>
             </div>
         </div>

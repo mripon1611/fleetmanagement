@@ -61,6 +61,17 @@ class MaintenanceController extends Controller
                     'maintenance_items'=>$maintenance_items]);
     }
 
+    public function editMaintenanceItem( $id ) {
+        $totalNotifications = NotificationsController::expireDocuments();
+        $maintenance_type = Maintenanceitemtype::where('id', $id)->first();
+
+        $maintenance_items = Maintenanceitemname::select("item_name")->where('maintenanceitemtype_id',$id)->get();
+        // return $maintenance_items;
+
+        return view('pages.Maintenance.edit_maintenance_item',['maintenance_type'=>$maintenance_type,'maintenance_items'=>$maintenance_items,
+                    'totalNotifications'=>$totalNotifications]);
+    }
+
     public function saveMaintenance( Request $req) {
 
         $reqdata = $req->input();

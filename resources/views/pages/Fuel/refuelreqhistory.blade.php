@@ -49,7 +49,11 @@
                                     <td>{{$data->ttlqty}}</td>
                                     <td>{{$data->totalprice}}</td>
                                     <td>{{$data->fueltype}}</td>
-                                    <td>{{$data->status}}</td>
+                                    <td>
+                                        <span class="{{$data->status == 'present'? 'label label-primary':'label label-danger'}}">
+                                            {{$data->status}}
+                                        </span>
+                                    </td>
                                     <td>{{$data->created_date}}</td>
                                     <td>
                                         <button class="btn btn-info p-1" data-toggle="modal" data-target="#refueledit_{{$data->id}}"><i class="fas fa-edit"></i>Edit</button>

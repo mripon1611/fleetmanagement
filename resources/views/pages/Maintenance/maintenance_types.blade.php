@@ -46,7 +46,7 @@
                                     <td>{{$sl++}}</td>
                                     <td>{{$maintenance['item_type']}}</td>
                                     <td>
-                                        <a href="/edit_maintenance-{{$maintenance['id']}}" class="btn btn-success"><i class="fa fa-pencil"></i></a>
+                                        <a href="/edit_maintenanceitems-{{$maintenance['id']}}" class="btn btn-success"><i class="fa fa-pencil"></i></a>
                                         <a href="#" class="btn btn-info" data-toggle="modal" data-target="#viewdetails_{{$maintenance['id']}}"><i class="far fa-eye"></i></a>
                                         <a href="#" class="btn btn-danger"><i class="ti-trash"></i></a>
                                     </td>

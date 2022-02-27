@@ -3,7 +3,7 @@
 @section('maincontents')
 
 <!-- Page-header start -->
-@include('pages.Maintenance.addmaintenanceitem_header')
+@include('pages.Maintenance.editmaintenanceitem_header')
 <!-- Page-header end -->
 
 <!-- Page-body start -->
@@ -26,8 +26,8 @@
                                 <div class="row">
                                     <div class="col-md-10">
                                         <div class="form-group">
-                                            <label for="requested_by">Item Type<span style="color: red;">*</span></label>
-                                            <input type="text" class="form-control" name="item_type">
+                                            <label for="requested_by">Item Type</label>
+                                            <input type="text" class="form-control" name="item_type" value="{{$maintenance_type['item_type']}}" readonly>
                                         </div>
 
                                     </div>
@@ -48,14 +48,16 @@
                                         </tr>
                                     </thead>
                                     <tbody id="maintenanceInformation">
+                                        @foreach($maintenance_items as $maintenance_item)
                                         <tr class="information">
                                             <td>
-                                                <input type="text" class="form-control" name="item_name[]">
+                                                <input type="text" class="form-control" name="item_name[]" value="{{$maintenance_item['item_name']}}" readonly>
                                             </td>
                                             <td>
                                                 <a href="#" class="delete btn btn-danger"><i class="ti-trash"></i></a>
                                             </td>
                                         </tr>
+                                        @endforeach
                                        
                                         <tr class="information">
                                             <td colspan="2">
@@ -67,7 +69,7 @@
                                         <tr>
                                             <td colspan="2">
                                                 <div class="d-flex justify-content-end">
-                                                    <button class="btn btn-info" type="submit">Add</button>
+                                                    <button class="btn btn-info" type="submit">Update</button>
                                                 </div>
                                             </td>
                                         </tr>

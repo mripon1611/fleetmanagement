@@ -94,5 +94,6 @@ Route::get('/edit_maintenance-{id}', [MaintenanceController::class, 'editMainten
 Route::post('/save_maintenance', [MaintenanceController::class, 'saveMaintenance']);
 Route::get('/maintenanceitems', [MaintenanceController::class, 'maintenanceItems']);
 Route::get('/add_maintenanceitems', [MaintenanceController::class, 'addMaintenanceItem']);
+Route::get('/edit_maintenanceitems-{id}', [MaintenanceController::class, 'editMaintenanceItem']);
 Route::post('/save_maintenanceitem', [MaintenanceController::class, 'saveMaintenanceItem']);
 
