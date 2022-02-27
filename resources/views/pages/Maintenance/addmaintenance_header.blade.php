@@ -9,6 +9,9 @@
                     <li class="breadcrumb-item" style="float: left;">
                         <a href="/maintenanceview">Maintenance View</a>
                     </li>
+                    <li class="breadcrumb-item" style="float: left;">
+                        <a href="/add_maintenance">Add Maintenance</a>
+                    </li>
                 </ul>
             </div>
         </div>

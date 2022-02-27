@@ -70,11 +70,6 @@
                     <span class="pcoded-mtext">Maintenance-1</span>
                 </a>
                 <ul class="pcoded-submenu">
-                    <!-- <li class="{{ url()->current() == url('create-weekly-report') ? 'active':'' }}">
-                        <a href="/create-weekly-report">
-                            <span class="pcoded-mtext">Create Report</span>
-                        </a>
-                    </li> -->
                     <li class="{{ url()->current() == url('ministrations') ? 'active pcoded-trigger':'' }}">
                         <a href="/ministrations">
                             <span class="pcoded-mtext">View Maintenance</span>
@@ -85,13 +80,19 @@
             <!-- Maintenance-1 ends here -->
 
             <!--  Maintenance start here -->
-            <li class="pcoded-hasmenu {{ url()->current() == url('maintenanceview') ? 'active pcoded-trigger':'' }}">
+            <li class="pcoded-hasmenu {{ url()->current() == url('maintenanceview') ? 'active pcoded-trigger':'' }}
+                                       {{ url()->current() == url('add_maintenance')? 'active pcoded-trigger':'' }}
+                                       {{ url()->current() == url('maintenanceitems')? 'active pcoded-trigger':'' }}
+                                       {{ url()->current() == url('add_maintenanceitems')? 'active pcoded-trigger':'' }}">
                 <a href="javascript:void(0)">
                     <span class="pcoded-micon"><i class="fa fa-gamepad"></i></span>
                     <span class="pcoded-mtext">Maintenance</span>
                 </a>
                 <ul class="pcoded-submenu">
-                    <li class="{{ url()->current() == url('maintenanceview') ? 'active':'' }}">
+                    <li class="{{ url()->current() == url('maintenanceview') ? 'active':'' }}
+                                {{ url()->current() == url('add_maintenance')? 'active':'' }}
+                                {{ url()->current() == url('maintenanceitems')? 'active':'' }}
+                                {{ url()->current() == url('add_maintenanceitems')? 'active':'' }}">
                         <a href="/maintenanceview">
                             <span class="pcoded-mtext">Maintenance Requisition</span>
                         </a>
